@@ -269,13 +269,33 @@ Evaluated across 11 diverse gastroenterology and internal medicine consultations
 
 ### Step 1: Clone Repository & Install Dependencies
 ```bash
-git clone https://github.com/your-username/MediTOD.git
-cd MediTOD
+git clone https://github.com/aman75verma/fypppp.git
+cd fypppp
 
 pip install -r requirements.txt
 ```
 
-### Step 2: Set Up Local OpenBioLLM Daemon
+### Step 2: Set Up Environment Variables
+
+The diagnosis engine can optionally use the **HuggingFace Inference API** as a fallback when the local Ollama server is unavailable. To enable this, set your HuggingFace token:
+
+```bash
+# Linux / macOS
+export HF_TOKEN="hf_your_token_here"
+
+# Windows (PowerShell)
+$env:HF_TOKEN = "hf_your_token_here"
+
+# Windows (CMD)
+set HF_TOKEN=hf_your_token_here
+```
+
+> [!TIP]
+> Get a free token at [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens). The HF API is **optional** — the primary inference path uses a local Ollama model (see Step 3). If `HF_TOKEN` is not set, the pipeline simply skips the HF API fallback.
+
+To make it permanent, add it to your shell profile (`~/.bashrc`, `~/.zshrc`) or set it as a Windows System Environment Variable.
+
+### Step 3: Set Up Local OpenBioLLM Daemon
 Download and serve the OpenBioLLM model via Ollama:
 ```bash
 # Pull biomedical 8B model (Q4_K_M quantized GGUF)
@@ -284,13 +304,13 @@ ollama run hf.co/bartowski/OpenBioLLM-Llama3-8B-GGUF:Q4_K_M
 # Ollama daemon runs locally on http://127.0.0.1:11434
 ```
 
-### Step 3: Run the Streamlit Clinician Dashboard
+### Step 4: Run the Streamlit Clinician Dashboard
 ```bash
 streamlit run pipeline/app.py --server.port 8501
 ```
 Navigate to `http://localhost:8501` to view the interactive dashboard.
 
-### Step 4: Run the Complete Batch Benchmark
+### Step 5: Run the Complete Batch Benchmark
 To re-process all 11 patient cases and evaluate concordance:
 ```bash
 python scratch/update_all_cases_and_pdf.py
@@ -342,7 +362,7 @@ git commit -m "feat: initial commit of MediTOD research repository, benchmarks, 
 
 # Link to GitHub and push
 git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+git remote add origin https://github.com/aman75verma/fypppp.git
 git push -u origin main
 ```
 
@@ -358,7 +378,7 @@ If you utilize the MediTOD pipeline, dataset annotations, or clinical de-contami
   author  = {MediTOD Research Team},
   journal = {Preprint / In Preparation},
   year    = {2026},
-  url     = {https://github.com/your-username/MediTOD}
+  url     = {https://github.com/aman75verma/fypppp}
 }
 ```
 
