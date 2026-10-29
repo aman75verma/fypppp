@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Acute Upper Gastrointestinal Hemorrhage Secondary to Bleeding Gastric / Peptic Ulcer",
+  "secondary_diagnoses": [
+    "Severe Acute Blood Loss Anemia",
+    "Refractory Peptic Ulcer Disease (Rule out H. pylori resistance / NSAID use)"
+  ],
+  "clinical_reasoning": "Patient with endoscopic confirmation of gastric ulcer 4 months ago now presents with classic melena (black tarry stool) and hematochezia, signaling brisk acute upper gastrointestinal hemorrhage. This is a life-threatening complication requiring emergency inpatient stabilization, hemodynamic monitoring, intravenous proton pump inhibitors, and urgent therapeutic endoscopy.",
+  "recommended_tests": [
+    "Emergency Diagnostic & Therapeutic Upper GI Endoscopy (EGD)",
+    "Serial Complete Blood Count (CBC) & Hematocrit Monitoring",
+    "Blood Grouping, Typing, and Crossmatch for immediate PRBC transfusion",
+    "Coagulation Profile (PT/INR, aPTT) and Serum Electrolytes"
+  ]
+}

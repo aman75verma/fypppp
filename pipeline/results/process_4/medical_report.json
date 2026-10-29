@@ -1,0 +1,172 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0006",
+      "sentence": "Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning",
+      "NER_tags": [
+        {
+          "entity": "mild,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "irritation",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "stomach stomach",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "burning churning",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0007",
+      "sentence": "Bowel movements and urination?",
+      "NER_tags": [
+        {
+          "entity": "movements",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0008",
+      "sentence": "The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood).",
+      "NER_tags": [
+        {
+          "entity": "bowels",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "clear—even",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "bowel movement",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "incomplete, uneasy",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "dysentery(loose motion",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0006",
+      "sentence": "Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning",
+      "NER_tags": [
+        {
+          "entity": "mild,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "irritation",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "stomach stomach",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "burning churning",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0008",
+      "sentence": "The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood).",
+      "NER_tags": [
+        {
+          "entity": "bowels",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "clear—even",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "bowel movement",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "incomplete, uneasy",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "dysentery(loose motion",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0019",
+      "sentence": "Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks.",
+      "NER_tags": [
+        {
+          "entity": "1–2 weeks.",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Inform-Etiology",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0011",
+      "sentence": "Any other illnesses—like diabetes, blood pressure, or anything else?",
+      "NER_tags": [
+        {
+          "entity": "diabetes,",
+          "type": "MEDICAL_HISTORY_VALUE"
+        },
+        {
+          "entity": "blood pressure,",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Etiology",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": [
+    {
+      "sentence_id": "sent_0003",
+      "sentence": "And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain",
+      "NER_tags": [
+        {
+          "entity": "rich food food,",
+          "type": "HABIT_VALUE"
+        },
+        {
+          "entity": "stomach pain",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Etiology",
+      "SLI_tags": []
+    }
+  ]
+}

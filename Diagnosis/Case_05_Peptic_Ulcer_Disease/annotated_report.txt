@@ -1,0 +1,37 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 5: Chronic Dyspepsia with Suspected Peptic Ulceration
+===========================================================================
+Expected Clinical Diagnosis: Chronic Dyspepsia with Suspected Peptic Ulcer Disease (PUD)
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "So right now, the problem is that sometimes there is a burning sensation."
+      Dialogue Act: [Request-Basic_Information]
+      Extracted Medical Entities: burning sensation. (SYMPTOM_VALUE)
+  [2] "yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi..."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: Yes, (POLARITY), heavy and tight, (SYMPTOM_CHARACTERISTICS), stiff swollen dhi... (SYMPTOM_VALUE)
+  [3] "Yes, I mean there is pain."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: pain. (SYMPTOM_VALUE)
+  [4] "My appetite isn't very good."
+      Dialogue Act: [Request-Symptom]
+      Extracted Medical Entities: appetite (SYMPTOM_VALUE)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  [1] "Also, please get an endoscopy done and show me the report once."
+      Entities: endoscopy (MEDICAL_TEST_NAME)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Gastroesophageal Reflux Disease (GERD)
+  Secondary / Differential Diagnoses: Peptic Ulcer Disease (PUD), Gastritis, Esophagitis Clinical Reasoning: The patient's symptoms of burning sensation, pain, decreased appetite are indicative of GERD
+
+  Pathophysiological Clinical Reasoning:
+    The patient's symptoms of burning sensation, pain, and decreased appetite are indicative of GERD. These symptoms often occur after eating and can be relieved by taking antacids. However, further investigation is needed to rule out other conditions such as PUD, gastritis, or esophagitis
+
+  Recommended Diagnostic Investigations & Workup:
+    1. Endoscopy
+
+===========================================================================

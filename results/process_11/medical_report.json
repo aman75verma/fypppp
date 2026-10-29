@@ -1,0 +1,114 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "It feels heavy on this side, near the side of the abdomen (towards the flank).",
+      "NER_tags": [
+        {
+          "entity": "heavy",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "side abdomen flank).",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0020",
+      "speaker": "Patient",
+      "sentence": "yes But I feel very little hunger—I hardly feel hungry at all.",
+      "NER_tags": [
+        {
+          "entity": "yes",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "hunger—I hungry",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "It feels heavy on this side, near the side of the abdomen (towards the flank).",
+      "NER_tags": [
+        {
+          "entity": "heavy",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "side abdomen flank).",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0020",
+      "speaker": "Patient",
+      "sentence": "yes But I feel very little hunger—I hardly feel hungry at all.",
+      "NER_tags": [
+        {
+          "entity": "yes",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "hunger—I hungry",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [
+    {
+      "sentence_id": "sent_0023",
+      "speaker": "Doctor",
+      "sentence": "okay, I don't think it is a stomach problem specific, I think it is a problem related to nerve , later you need to get checked up by a nerve doctor , 1st the report should be done here then",
+      "NER_tags": [
+        {
+          "entity": "don't think",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "stomach problem",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "nerve",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Medical_Advice",
+      "SLI_tags": []
+    }
+  ],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0011",
+      "speaker": "Patient",
+      "sentence": "I did the ultrasonography said it was fat",
+      "NER_tags": [
+        {
+          "entity": "ultrasonography",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

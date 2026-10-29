@@ -1,0 +1,204 @@
+{
+  "sent_0001": {
+    "sentence": "so whats the problem you are having how",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0002": {
+    "sentence": "Whatever I eat causes pinching effect in my stomach—like if I eat chickpeas, it causes pinching trouble; even eating peanuts causes discomfort.",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "pinching",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "stomach",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "discomfort",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0003": {
+    "sentence": "And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "pain",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "stomach",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ]
+  },
+  "sent_0004": {
+    "sentence": "Since when has this been happening?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0005": {
+    "sentence": "It has been happening for about two months.",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "two months",
+        "type": "TEMPORAL"
+      }
+    ]
+  },
+  "sent_0006": {
+    "sentence": "Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "irritation",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "stomach",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "burning",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "churning",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0007": {
+    "sentence": "Bowel movements and urination?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "bowel",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "urination",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0008": {
+    "sentence": "The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood).",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "bowel",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "bowel movement",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "uneasy sensation",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "dysentery",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "loose motion",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0009": {
+    "sentence": "Any addictions or habits",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0010": {
+    "sentence": "no",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0011": {
+    "sentence": "Any other illnesses—like diabetes, blood pressure, or anything else?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "diabetes",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "blood pressure",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0012": {
+    "sentence": "no",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0013": {
+    "sentence": "Are you not taking any medicines for anything?",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  },
+  "sent_0014": {
+    "sentence": "No—medicines are ongoing, I mean gyne medicines are ongoing",
+    "DAC_tag": "Inform-Basic_Information",
+    "NER_tags": [
+      {
+        "entity": "gyne",
+        "type": "MEDICATION"
+      }
+    ]
+  },
+  "sent_0015": {
+    "sentence": "What gynecological problem is there?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "gynecological",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0016": {
+    "sentence": "trying to have a baby",
+    "DAC_tag": "Inform-Basic_Information",
+    "NER_tags": []
+  },
+  "sent_0017": {
+    "sentence": "okay, medicines are given for that, okay Then it's difficult to prescribe too many medicines for you, because if you conceive, these medicines could have side effects on the baby, okay?",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": []
+  },
+  "sent_0018": {
+    "sentence": "feel like my body has become very weak",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "body",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "weak",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0019": {
+    "sentence": "Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks.",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": []
+  },
+  "sent_0020": {
+    "sentence": "So I'm not giving too many medicines; I'll prescribe a small amount for about 3 weeks.",
+    "DAC_tag": "Inform-Drug_Recommendation",
+    "NER_tags": []
+  }
+}

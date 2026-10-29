@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Thoracoabdominal Radiculopathy / Intercostal Nerve Entrapment Syndrome vs Functional Flank Dyspepsia",
+  "secondary_diagnoses": [
+    "Abdominal Wall Pain Syndrome (Carnett's Syndrome)",
+    "Mild Functional Anorexia"
+  ],
+  "clinical_reasoning": "Patient reports localized heaviness and discomfort in the abdominal flank rather than epigastric burning, without acute peritoneal signs. Negative intra-abdominal ultrasound findings and lack of gastrointestinal alarm symptoms support the clinician's diagnostic impression of a neuropathic or musculoskeletal etiology (intercostal neuralgia or thoracoabdominal radiculopathy). Neurological assessment and confirmatory imaging are indicated.",
+  "recommended_tests": [
+    "Focused Thoracolumbar Spine & Abdominal Wall Physical Examination (Carnett's test)",
+    "Repeat High-Resolution Abdominal & Retroperitoneal Ultrasonography",
+    "Spinal MRI / Nerve Conduction Study (if radicular symptoms persist)",
+    "Basic Metabolic Panel and Routine Urinalysis (to exclude renal colic)"
+  ]
+}

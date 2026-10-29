@@ -1,0 +1,196 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "There is abdominal pain, and when food stays here, it feels swollen or bloated.",
+      "NER_tags": [
+        {
+          "entity": "abdominal pain,",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "swollen",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "yes My abdomen feels swollen, and my body—hands and feet—also get swollen",
+      "NER_tags": [
+        {
+          "entity": "abdomen",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "swollen,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "body—hands feet—also",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0016",
+      "speaker": "Patient",
+      "sentence": "I have bowel movements once every two days.",
+      "NER_tags": [
+        {
+          "entity": "bowel movements",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "once every two days.",
+          "type": "SYMPTOM_FREQUENCY"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0018",
+      "speaker": "Patient",
+      "sentence": "bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this",
+      "NER_tags": [
+        {
+          "entity": "bowel movement",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "moths",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0027",
+      "speaker": "Patient",
+      "sentence": "okay , And I'm not able to digest food properly; my stomach stays bloated",
+      "NER_tags": [
+        {
+          "entity": "able to",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "stomach",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "bloated",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "There is abdominal pain, and when food stays here, it feels swollen or bloated.",
+      "NER_tags": [
+        {
+          "entity": "abdominal pain,",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "swollen",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "yes My abdomen feels swollen, and my body—hands and feet—also get swollen",
+      "NER_tags": [
+        {
+          "entity": "abdomen",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "swollen,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "body—hands feet—also",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0016",
+      "speaker": "Patient",
+      "sentence": "I have bowel movements once every two days.",
+      "NER_tags": [
+        {
+          "entity": "bowel movements",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "once every two days.",
+          "type": "SYMPTOM_FREQUENCY"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0018",
+      "speaker": "Patient",
+      "sentence": "bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this",
+      "NER_tags": [
+        {
+          "entity": "bowel movement",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "moths",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0027",
+      "speaker": "Patient",
+      "sentence": "okay , And I'm not able to digest food properly; my stomach stays bloated",
+      "NER_tags": [
+        {
+          "entity": "able to",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "stomach",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "bloated",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [],
+  "social_history": []
+}

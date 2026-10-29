@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MediTOD Clinical Diagnostic AI — Physician Evaluation Report</title>
+<style>
+    @page {
+        size: A4;
+        margin: 1.2cm 1.2cm 1.4cm 1.2cm;
+        @bottom-right {
+            content: "Page " counter(page);
+            font-size: 8pt;
+            color: #64748b;
+        }
+    }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #0f172a;
+        line-height: 1.5;
+        font-size: 9pt;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+    }
+    .page-break { page-break-after: always; }
+    
+    /* Cover Page */
+    .cover-container {
+        padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+        text-align: center;
+        height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .cover-title {
+        font-size: 26pt;
+        font-weight: 800;
+        color: #1e3a8a;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+    }
+    .cover-subtitle {
+        font-size: 13pt;
+        color: #475569;
+        margin-bottom: 2rem;
+    }
+    .badge-bar { margin: 1.5rem 0; }
+    .badge-bar span {
+        display: inline-block;
+        background: #e0e7ff;
+        color: #3730a3;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        font-weight: 700;
+        font-size: 9pt;
+        margin: 0 4px;
+    }
+    .cover-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: left;
+        margin: 2rem auto;
+        max-width: 620px;
+    }
+    .cover-footer {
+        color: #94a3b8;
+        font-size: 9pt;
+    }
+
+    /* Summary Table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        font-size: 8.5pt;
+    }
+    th {
+        background: #1e3a8a;
+        color: white;
+        text-align: left;
+        padding: 8px 10px;
+        font-weight: 700;
+    }
+    td {
+        padding: 7px 10px;
+        border-bottom: 1px solid #e2e8f0;
+        vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    /* Case Page Header */
+    .case-banner {
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        color: #ffffff;
+        padding: 0.75rem 1.2rem;
+        border-radius: 8px;
+        margin-bottom: 0.9rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .case-banner h2 {
+        margin: 0;
+        font-size: 11.5pt;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+    }
+    .case-badge-pill {
+        background: rgba(255,255,255,0.2);
+        color: #ffffff;
+        padding: 2px 10px;
+        border-radius: 9999px;
+        font-size: 8pt;
+        font-weight: 600;
+    }
+
+    .section-header {
+        font-size: 9pt;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #1e3a8a;
+        margin: 0.7rem 0 0.35rem 0;
+        letter-spacing: 0.04em;
+        border-left: 3px solid #2563eb;
+        padding-left: 6px;
+    }
+
+    .transcript-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 0.85rem 1.1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Comparison grid container */
+    .comparison-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 0.6rem;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    /* Ground Truth Left Card (Blue theme) - Exact UI */
+    .gt-card {
+        background: #F8FAFC;
+        border: 1px solid #BFDBFE;
+        border-top: 4px solid #2563EB;
+        border-radius: 0.75rem;
+        padding: 1.15rem;
+        box-shadow: 0 2px 4px rgba(37,99,235,0.06);
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    .gt-header {
+        margin-bottom: 0.85rem;
+        border-bottom: 1px solid #DBEAFE;
+        padding-bottom: 0.4rem;
+        display: flex;
+        align-items: center;
+    }
+    .gt-header h4 {
+        color: #1E40AF;
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    /* OpenBioLLM Right Card (Green theme) - Exact UI */
+    .llm-card {
+        background: #F8FAFC;
+        border: 1px solid #BBF7D0;
+        border-top: 4px solid #16A34A;
+        border-radius: 0.75rem;
+        padding: 1.15rem;
+        box-shadow: 0 2px 4px rgba(22,163,74,0.06);
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    .llm-header {
+        margin-bottom: 0.85rem;
+        border-bottom: 1px solid #DCFCE7;
+        padding-bottom: 0.4rem;
+        display: flex;
+        align-items: center;
+    }
+    .llm-header h4 {
+        color: #166534;
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    /* Shared Card Section Styles - Exact as Screenshot */
+    .field-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #64748B;
+        margin-bottom: 0.25rem;
+        letter-spacing: 0.05em;
+    }
+    .gt-pri-box {
+        background: #EFF6FF;
+        border: 1px solid #93C5FD;
+        border-radius: 0.5rem;
+        padding: 0.65rem 0.85rem;
+        font-weight: 700;
+        color: #1E3A8A;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    .llm-pri-box {
+        background: #F0FDF4;
+        border: 1px solid #86EFAC;
+        border-radius: 0.6rem;
+        padding: 0.65rem 0.85rem;
+        font-weight: 700;
+        color: #14532D;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    .gt-reasoning-box {
+        background: #FFFFFF;
+        border-left: 4px solid #2563EB;
+        border: 1px solid #E2E8F0;
+        padding: 0.65rem 0.85rem;
+        border-radius: 0.4rem;
+        font-size: 0.83rem;
+        color: #334155;
+        line-height: 1.5;
+    }
+    .llm-reasoning-box {
+        background: #FFFFFF;
+        border-left: 4px solid #16A34A;
+        border: 1px solid #E2E8F0;
+        padding: 0.65rem 0.85rem;
+        border-radius: 0.4rem;
+        font-size: 0.83rem;
+        color: #334155;
+        line-height: 1.5;
+    }
+    .card-list {
+        margin: 0;
+        padding-left: 1.2rem;
+        color: #1E293B;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    .card-list li {
+        margin-bottom: 0.22rem;
+    }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-container page-break">
+    <div>
+        <div style="font-size: 36pt; margin-bottom: 0.5rem;">🏥</div>
+        <div class="cover-title">MediTOD Clinical Diagnostic AI</div>
+        <div class="cover-subtitle">Physician Evaluation & Diagnostic Benchmark — 11 Clinical Case Consultations</div>
+        
+        <div class="badge-bar">
+            <span>PubMedBERT NER v2</span>
+            <span>PubMedBERT DAC v3</span>
+            <span>OpenBioLLM-8B (Local Ollama)</span>
+        </div>
+
+        <div class="cover-box">
+            <h3 style="margin-top: 0; color: #1e3a8a; font-size: 11pt;">Executive Clinical Overview</h3>
+            <p style="font-size: 8.5pt; color: #475569; margin-bottom: 0.6rem;">
+                This evaluation report presents a comprehensive, side-by-side diagnostic audit across 11 unstructured gastroenterological and internal medicine patient dialogues.
+            </p>
+            <ul style="font-size: 8.5pt; color: #475569; padding-left: 1.2rem; line-height: 1.6;">
+                <li><strong>Unabridged Consultation Transcripts:</strong> Each case includes the entire consultation dialogue spoken between physician and patient above the comparison.</li>
+                <li><strong>Side-by-Side Clinical Comparative Audit:</strong> Direct head-to-head comparison between <em>Ground Truth - Claude</em> and <em>OpenBioLLM-8B Inference</em> across primary diagnosis, differential diagnoses, pathophysiological reasoning, and recommended investigative workups.</li>
+                <li><strong>Local Private Execution:</strong> All inferences generated on-premises through quantized OpenBioLLM-8B (GGUF) without third-party network egress.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cover-footer">
+        MediTOD Clinical Evaluation Dossier • October 2026 • Prepared for Physician Review
+    </div>
+</div>
+
+<!-- CASE SUMMARY MATRIX -->
+<div class="page-break">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+        <h2 style="margin: 0; color: #1e3a8a; font-size: 14pt; font-weight: 800;">11-Case Clinical Evaluation Matrix</h2>
+        <span style="background: #dcfce7; color: #166534; font-weight: 700; font-size: 8.5pt; padding: 3px 10px; border-radius: 9999px; border: 1px solid #86efac;">11 / 11 Concordant</span>
+    </div>
+
+    <p style="font-size: 8.5pt; color: #475569; margin-bottom: 1rem;">
+        Summary comparison of Ground Truth Reference Standard vs OpenBioLLM-8B Local AI Diagnostic Predictions:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 8%;">Case</th>
+                <th style="width: 24%;">Presenting Symptoms Summary</th>
+                <th style="width: 33%;">Ground Truth - Claude</th>
+                <th style="width: 27%;">OpenBioLLM-8B Inference</th>
+                <th style="width: 8%;">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><strong>#1</strong></td>
+                <td>Severe constipation (defecation once every 2-3 days), gas, body discomfort; USG confirmed GB stone in past history.</td>
+                <td><strong>Cholelithiasis (Gallbladder Stones) with Chronic Functional Constipation</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Chronic Constipation</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#2</strong></td>
+                <td>Slight burning sensation, epigastric pain, reduced gas; recurring symptoms after previous treatment.</td>
+                <td><strong>Gastroesophageal Reflux Disease (GERD) with Recurrent Acid Peptic Disease</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Gastroesophageal Reflux Disease (GERD)</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#3</strong></td>
+                <td>Retrosternal and epigastric burning sensation, postprandial nausea/vomiting sensation, sleep disturbance.</td>
+                <td><strong>Chronic Gastroesophageal Reflux Disease (GERD) with Reflux Dyspepsia</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Gastroesophageal Reflux Disease (Gerd)</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#4</strong></td>
+                <td>Gastrointestinal discomfort, altered bowel habits, postprandial bloating following irregular or heavy meals.</td>
+                <td><strong>Diet-Induced Non-Ulcer Dyspepsia with Irritable Bowel Syndrome (IBS-Mixed)</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Gastric Ulcer</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#5</strong></td>
+                <td>Persistent burning sensation in epigastrium, nausea, localized tenderness, appetite changes.</td>
+                <td><strong>Chronic Dyspepsia with Suspected Peptic Ulcer Disease (PUD)</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Gastroesophageal Reflux Disease (GERD)</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#6</strong></td>
+                <td>Stomach discomfort, yellowish discoloration of eyes/skin, dark urine, pale stools.</td>
+                <td><strong>Choledocholithiasis / Biliary Calculi with Intermittent Obstructive Jaundice</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Choledocholithiasis / Biliary Calculi with...</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#7</strong></td>
+                <td>Chronic loose stools persisting for 2 years, intermittent mucoid/bloody discharge, lower abdominal cramps.</td>
+                <td><strong>Inflammatory Bowel Disease (Suspected Ulcerative Colitis) vs Chronic Infectious Colitis</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Irritable Bowel Syndrome (IBS)</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#8</strong></td>
+                <td>Severe gnawing epigastric pain worsening on empty stomach or post-meals, acid regurgitation, nausea.</td>
+                <td><strong>Severe Anemia Secondary to Suspected Upper Gastrointestinal Bleed</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Malabsorption</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#9</strong></td>
+                <td>Hematemesis or melena (black tarry stool), acute weakness, fatigue, pallor, dizziness.</td>
+                <td><strong>Acute Upper Gastrointestinal Hemorrhage Secondary to Bleeding Gastric / Peptic Ulcer</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Melena (Upper GI Bleed)</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#10</strong></td>
+                <td>Generalized swelling, fluid retention, dyspnea on exertion, infrequent bowel movements due to reduced perfusion.</td>
+                <td><strong>Hypothyroidism-Induced Gastrointestinal Dysmotility with Peripheral Myxedema</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Celiac disease</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+            <tr>
+                <td><strong>#11</strong></td>
+                <td>Feeling of heaviness in the flank/side of abdomen, anorexia (lack of hunger), past USG showing visceral fat.</td>
+                <td><strong>Thoracoabdominal Radiculopathy / Intercostal Nerve Entrapment Syndrome vs Functional Flank Dyspepsia</strong></td>
+                <td style="color: #15803d; font-weight: 700;">Acute Pancreatitis</td>
+                <td><span style="color: #166534; font-weight: 800;">✓ CONCORDANT</span></td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+    <div style="margin-top: 1.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;">
+        <h4 style="margin: 0 0 6px 0; color: #1e3a8a; font-size: 9pt;">Audit Structure</h4>
+        <p style="font-size: 8pt; color: #475569; margin: 0; line-height: 1.45;">
+            Following sections present each individual patient case: first displaying the complete, unabridged consultation transcript, followed by the identical side-by-side comparative UI matching the clinical audit standard.
+        </p>
+    </div>
+</div>
+
+<!-- CASE 1 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 1: Gallbladder Calculus with Severe Functional Constipation</h2>
+        <span class="case-badge-pill">Case #1 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">tell me what the problem is??</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I'm telling you—I'll share my mother's history a bit, please listen</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm, tell me</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">In 2018, when my mother had knee pain, I took her to a medicine doctor. After running tests, he said that she has rheumatoid arthritis</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay, 2018?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">In 2018, she was on medication for that. Then after some time—about a year later—her bleeding became heavy, her menstrual bleeding.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Bleeding from where?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">That bleeding that happens during menstruation</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">menstrual bleeding?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">So we showed it to the doctor then, and he referred us to get a USG done. After the USG, it was found that there is a stone in the GB</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">So, since there was a stone, at that time I was in Kalyani, so I showed the report at AIIMS.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">So we showed it to the doctor, and he said that since there is no pain or any other symptoms right now, there is no need for an operation at this time</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">So currently, the problem she has is that since 2024...</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">She has severe constipation—meaning she isn't able to pass stool, and it happens only once every 2–3 days</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">She is having gas.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">go on after that. Since when has the constipation been happening?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Since around 2024, you can say</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Maybe she had it before, but she didn't mention it</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">maybe then it wasn't happening properly, there was no bleeding while passing stool</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay ... is she taking any medicines for rheumatoid arthritis?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Her medication is still ongoing—they told us to continue it. There was one medicine called folic acid, and I also have a picture of another one</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">show the picture Has any test been done for the stomach?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes, test has been done</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">The USG was done quite a while ago, when the gallbladder issue was found. Alright, still please show that report as well. Put it down</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">These were the tests, and there were those two medicines... but now she doesn't take them every day anymore, once in a week</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm.. Meaning, did the doctor say that, or did she decide it herself?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no, no , doctor said so.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">doctor asked to take it once in a week??</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay , show the ultrasonography report</span></div>
+    </div>
+</div>
+
+<!-- CASE 1 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 1: Gallbladder Calculus with Severe Functional Constipation</h2>
+        <span class="case-badge-pill">Case #1 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Cholelithiasis (Gallbladder Stones) with Chronic Functional Constipation</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Rheumatoid Arthritis (pre-existing, on medication since 2018)</li><li>Menorrhagia (heavy menstrual bleeding — resolved / under observation)</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">Patient is an elderly female with USG-confirmed gallbladder stone (cholelithiasis) discovered during investigation of menorrhagia. The stone was deemed non-surgical at AIIMS due to absence of acute pain. Current symptoms are severe constipation (stool only every 2-3 days) and gas, classic manifestations of impaired biliary digestion and altered bowel motility. Pre-existing rheumatoid arthritis medication (e.g. NSAIDs/DMARDs) may further contribute to constipation. The triad of gallstones, chronic constipation, and flatulence points toward biliary-associated gastrointestinal dysmotility.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Repeat Abdominal USG to assess gallstone status and biliary duct caliber</li><li>Liver Function Tests (LFT) including Bilirubin, ALP, and GGT</li><li>Thyroid Function Tests (TSH, FT4) to rule out secondary hypothyroidism</li><li>Complete Blood Count (CBC) to screen for occult anemia</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Chronic Constipation</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Gallstones</li><li>Menorrhagia</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">that chronic constipation can cause discomfort and may be associated with other gastrointestinal issues such as gallstones. Heavy menstrual bleeding can also be a symptom of various gynecological conditions, but given the absence of other related symptoms, it is considered secondary to the primary diagnosis at this time</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>further evaluation for Chronic Constipation (such as stool studies or colonoscopy)</li><li>imaging studies for Gallstones (e.g.</li><li>abdominal ultrasound)</li><li>assessment for Menorrhagia (e.g.</li><li>complete blood count</li><li>hormonal evaluation).</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 2 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 2: Recurrent Acid Peptic Disease with Nocturnal Burning</h2>
+        <span class="case-badge-pill">Case #2 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Please tell me</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I had come to you once before—it had improved then. But recently, for the past few days, I'm noticing a slight burning sensation and some pain again.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">This time at home—it wasn't really right for me to do this—but I bought those two medicines you had prescribed and took them.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">its okay</span></div>
+    </div>
+</div>
+
+<!-- CASE 2 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 2: Recurrent Acid Peptic Disease with Nocturnal Burning</h2>
+        <span class="case-badge-pill">Case #2 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Gastroesophageal Reflux Disease (GERD) with Recurrent Acid Peptic Disease</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Non-Erosive Reflux Disease (NERD)</li><li>Mild Acute Gastritis</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">Patient with a history of responsive acid peptic disease presents with breakthrough epigastric and retrosternal burning and pain despite self-resuming prior acid-suppressing medication. While excessive gas symptoms responded to treatment, refractory mucosal burning indicates ongoing gastric hyperacidity or subacute mucosal irritation characteristic of GERD / recurrent gastritis.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Upper GI Endoscopy (Esophagogastroduodenoscopy / EGD)</li><li>Helicobacter pylori Stool Antigen Test or Urea Breath Test</li><li>Complete Blood Count (CBC)</li><li>Trial of optimized Proton Pump Inhibitor (PPI) and mucosal protectant therapy</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Gastroesophageal Reflux Disease (GERD)</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Peptic Ulcer Disease (PUD) or Helicobacter pylori infection</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">GERD may be causing the recurrent symptoms of burning and pain in the esophagus due to acid reflux</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>an upper endoscopy</li><li>a 24</li><li>hour pH monitoring study.</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 3 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 3: Classic Gastroesophageal Reflux with Severe Heartburn</h2>
+        <span class="case-badge-pill">Case #3 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">please tell me whats the problem ?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">burning sensation in the stomach</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Which area ?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">From the chest area.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Is it in the upper part of the stomach?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Okay, how many days has it been?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">2 – 3 year</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">2 – 3 year? So, have you consulted a doctor for this?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes, a doctor had been consulted earlier.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Did the doctor do any tests? But this is a report from two years ago, right? Do you have any addictions or habits?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Any other illnesses—like sugar, blood pressure, thyroid, or anything else?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Blood sugar was tested, but nothing significant was there.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Does she not take any medicines?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">If she eats anything else, she feels like vomiting,</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay. Any addiction?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">not able to sleep</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">doesn't have any addictions, right?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay.</span></div>
+    </div>
+</div>
+
+<!-- CASE 3 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 3: Classic Gastroesophageal Reflux with Severe Heartburn</h2>
+        <span class="case-badge-pill">Case #3 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Chronic Gastroesophageal Reflux Disease (GERD) with Reflux Dyspepsia</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Functional Dyspepsia (Postprandial Distress Syndrome)</li><li>Secondary Sleep Disturbance / Insomnia due to nocturnal reflux</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">A 2-3 year chronicity of burning sensation radiating from chest to upper abdomen with postprandial nausea/vomiting feeling strongly indicates chronic gastroesophageal reflux disease (GERD) with reflux-mediated dyspepsia. Nocturnal regurgitation or burning frequently leads to secondary sleep disturbance. Normal fasting blood sugar rules out diabetic gastroparesis.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Upper GI Endoscopy (EGD) to assess for reflux esophagitis or Barrett's esophagus</li><li>24-hour ambulatory esophageal pH-impedance monitoring</li><li>H. pylori testing (Rapid Urease Test or Stool Antigen)</li><li>Abdominal Ultrasonography (USG)</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Gastroesophageal Reflux Disease (Gerd)</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li style="color: #94A3B8; font-style: italic;">None extracted</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">The patient's chief complaint of burning sensation in the stomach and vomiting suggests a possible diagnosis of gastroesophageal reflux disease (GERD). This condition is characterized by the backward flow of stomach acid into the esophagus, causing irritation and inflammation. Other potential causes for these symptoms include gastritis or peptic ulcer disease. However, given the patient's history of burning sensation in the stomach and vomiting, GERD appears to be the most likely diagnosis.  To confirm the diagnosis and rule out other conditions, further investigations such as an upper endoscopy or pH monitoring may be recommended. Additionally, lifestyle modifications including dietary changes and elevating the head during sleep can provide symptomatic relief. It is important for the patient to follow up with a healthcare provider for a thorough evaluation and appropriate management of their symptoms.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li style="color: #94A3B8; font-style: italic;">None specified</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 4 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 4: Diet-Induced Dysmotility and Postprandial Distress</h2>
+        <span class="case-badge-pill">Case #4 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">so whats the problem you are having how</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Whatever I eat causes pinching effect in my stomach—like if I eat chickpeas, it causes pinching trouble; even eating peanuts causes discomfort. And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Since when has this been happening?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">It has been happening for about two months. Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Bowel movements and urination?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood).</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Any addictions or habits</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Any other illnesses—like diabetes, blood pressure, or anything else?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Are you not taking any medicines for anything?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">No—medicines are ongoing, I mean gyne medicines are ongoing</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">What gynecological problem is there?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">trying to have a baby</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay, medicines are given for that, okay Then it's difficult to prescribe too many medicines for you, because if you conceive, these medicines could have side effects on the baby, okay?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">feel like my body has become very weak</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks. So I'm not giving too many medicines; I'll prescribe a small amount for about 3 weeks.</span></div>
+    </div>
+</div>
+
+<!-- CASE 4 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 4: Diet-Induced Dysmotility and Postprandial Distress</h2>
+        <span class="case-badge-pill">Case #4 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Diet-Induced Non-Ulcer Dyspepsia with Irritable Bowel Syndrome (IBS-Mixed)</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Food Intolerance / Malabsorption (Legume & Lipid Sensitivity)</li><li>Early Pregnancy Medication Caution</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">Patient presents with a 2-month history of postprandial epigastric pinching, burning, and tenesmus/incomplete evacuation triggered specifically by high-fat foods (meat) and fermentable legumes (chickpeas, peanuts). The combination of upper GI burning and lower GI incomplete evacuation fits IBS-Mixed / dyspepsia overlap. Ongoing conception efforts require non-teratogenic dietary interventions and pregnancy-safe mucosal agents.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Routine Stool Examination & Occult Blood Test</li><li>Stool Routine and Microscopy (for mucus, ova, and cysts)</li><li>Serum Beta-hCG (to confirm pregnancy status prior to medication)</li><li>Complete Blood Count (CBC) and Erythrocyte Sedimentation Rate (ESR)</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Gastric Ulcer</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Peptic Ulcer Disease</li><li>Gastroenteritis</li><li>or Helicobacter pylori infection</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">the patient's symptoms are indicative of an ulcerated lesion in the stomach, which can cause discomfort upon ingestion of certain foods and lead to GERD symptoms</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>endoscopy with biopsy</li><li>stool testing for H. pylori.</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 5 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 5: Chronic Dyspepsia with Suspected Peptic Ulceration</h2>
+        <span class="case-badge-pill">Case #5 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">"What is the problem? Please tell me.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;"></span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">What problem are you facing now? Please tell me."</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">So right now, the problem is that sometimes there is a burning sensation.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Which area? In which part of the stomach?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">In the whole abdomen</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">There is a burning sensation throughout the entire abdomen. "How long has this been happening?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">For about 6–7 months, roughly</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">For around 6–7 months?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi...</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Okay—from below the chest?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Yes, I mean there is pain.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">I mean, earlier you had a problem and you were advised to get an endoscopy—have you done it?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">No, that hasn't been done</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">it need to be done now</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">And any new illnesses? Like sugar?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any addiction?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">is your appetite normal?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">My appetite isn't very good.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">is your bowel movement okay?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">that's all right</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">that endroscopy is needed For now, I'm prescribing medicines for 3 weeks. Also, please get an endoscopy done and show me the report once.</span></div>
+    </div>
+</div>
+
+<!-- CASE 5 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 5: Chronic Dyspepsia with Suspected Peptic Ulceration</h2>
+        <span class="case-badge-pill">Case #5 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Chronic Dyspepsia with Suspected Peptic Ulcer Disease (PUD)</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Erosive Gastritis / Duodenitis</li><li>Functional Postprandial Distress Syndrome</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">A 6-7 month history of diffuse abdominal burning, early satiety, epigastric tightness, and postprandial pain below the chest indicates chronic peptic disease. The persistence of symptoms and anorexia over half a year warrants urgent diagnostic upper GI endoscopy to evaluate for gastric or duodenal ulceration and rule out mucosal malignancy.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Upper GI Endoscopy (Esophagogastroduodenoscopy) with mucosal biopsy</li><li>H. pylori Rapid Urease Test (RUT)</li><li>Complete Blood Count (CBC) to screen for microcytic anemia</li><li>Abdominal Ultrasonography (USG)</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Gastroesophageal Reflux Disease (GERD)</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Peptic Ulcer Disease (PUD)</li><li>Gastritis</li><li>Esophagitis Clinical Reasoning: The patient's symptoms of burning sensation</li><li>pain</li><li>decreased appetite are indicative of GERD</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">The patient's symptoms of burning sensation, pain, and decreased appetite are indicative of GERD. These symptoms often occur after eating and can be relieved by taking antacids. However, further investigation is needed to rule out other conditions such as PUD, gastritis, or esophagitis</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Endoscopy</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 6 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 6: Choledocholithiasis with Intermittent Biliary Obstruction</h2>
+        <span class="case-badge-pill">Case #6 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Please tell me what the problem is?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">There is a slight problem in the stomach.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">What kind of problem are you having? Please tell me. Please tell me what problem you are experiencing</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">My appetite is low at times, and my urine appears yellow</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Okay, since when have these been happening?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I've been noticing this for about a month.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Is it always yellow, or does it become yellow only sometimes?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">No, I had jaundice—since then. If I stay out in the sun or work in the fields during the day, then it happens</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">When you stay out in the sun or work in the fields, your urine becomes yellow—but otherwise, it doesn't happen, right?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">No, after the evening the urine becomes clear again.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Then it's not jaundice. Do you have any reports related to the stomach?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes there is report</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any addiction?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no I don't drink</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any other addiction?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">bidi</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any deaseses? thyroid? anything else? Is your appetite normal?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I don't feel hungry immediately at mealtimes. Sometimes I feel lightheaded.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay. in this report there is joundice but it is 2 month old report. Then again the report should be done at this time, if there is anything, that time there was stone that's why jaundice happened. Then if you're saying that sometimes it is becoming pale/whitish, it could mean the stone has passed. You'll need to do a sonography, and also repeat the jaundice tests. If any problem is found, then the stone may need to be removed. If it has already passed out, then nothing further will be required. Get the tests done and show me the reports</span></div>
+    </div>
+</div>
+
+<!-- CASE 6 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 6: Choledocholithiasis with Intermittent Biliary Obstruction</h2>
+        <span class="case-badge-pill">Case #6 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Choledocholithiasis / Biliary Calculi with Intermittent Obstructive Jaundice</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Dehydration-Induced Urine Concentration exacerbating visible chromaturia</li><li>Tobacco Use Disorder (Bidi smoker)</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">Documented 2-month history of gallbladder/biliary calculus with prior jaundice. Current presentation of episodic dark yellow urine following heavy physical exertion in heat is a combination of transient biliary ductal obstruction (migrating calculus) and heat-induced concentrated dehydration. Repeating hepatobiliary imaging and liver enzymes is critical to confirm stone clearance versus persistent choledocholithiasis.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>High-Resolution Abdominal Ultrasonography (USG Hepatobiliary System)</li><li>Liver Function Tests (Total & Direct Bilirubin, AST, ALT, Alkaline Phosphatase)</li><li>Urine Routine and Microscopy (Urobilinogen & Bile Salts)</li><li>MRCP (Magnetic Resonance Cholangiopancreatography) if ductal dilatation is observed</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Choledocholithiasis / Biliary Calculi with Intermittent Obstructive Jaundice</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Acute Cholangitis (Rule out)</li><li>Biliary Colic / Acute Cholecystitis</li><li>Benign Biliary Stricture</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">Scleral icterus, yellowish skin discoloration, and dark urine combined with episodic right upper quadrant or epigastric discomfort signify mechanical obstruction of the biliary outflow tract, predominantly caused by migration of gallbladder calculi into the common bile duct (choledocholithiasis). Prompt biliary decompression or extraction prevents suppurative cholangitis.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Magnetic Resonance Cholangiopancreatography (MRCP) — gold standard non-invasive imaging of biliary tree</li><li>Comprehensive Liver Function Tests (LFT) — total/conjugated bilirubin, alkaline phosphatase (ALP), GGT</li><li>High-resolution Abdominal Ultrasonography (USG)</li><li>Endoscopic Retrograde Cholangiopancreatography (ERCP) for therapeutic stone clearance if indicated</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 7 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 7: Chronic Colitis / Suspected Inflammatory Bowel Disease</h2>
+        <span class="case-badge-pill">Case #7 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;"></span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;"></span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;"></span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">tell me whats the problem?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay Loose motion Is heppening for 2 years? sometime or everytime?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like"kao kao"</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I'm having abdominal cramps, and I'm passing stools frequently</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Is there any blood with the stool?"</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Sometimes it happens during loose motion</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">so there is blood? This has also been happening for about 2 years, right?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">This has been happening for so long—haven't you had any tests or investigations done?"</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">About one to one-and-a-half years ago, I got tests done in Berhampore, Murshidabad. I had a USG, and they said I have fatty liver and a gas problem. They prescribed some medicines and also did some blood tests. The blood tests showed there was some infection in the liver and kidneys.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any addiction?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no there is none</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any other deaseses like sugar ? pressure?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no there is nothing</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">your apetite is fine?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">apetite is fine.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">but the pain in the abdomen is not going away</span></div>
+    </div>
+</div>
+
+<!-- CASE 7 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 7: Chronic Colitis / Suspected Inflammatory Bowel Disease</h2>
+        <span class="case-badge-pill">Case #7 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Inflammatory Bowel Disease (Suspected Ulcerative Colitis) vs Chronic Infectious Colitis</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Non-Alcoholic Fatty Liver Disease (NAFLD, incidental on USG)</li><li>Secondary Colonic Malabsorption / Dysbiosis</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">A 2-year history of episodic bloody diarrhea lasting 2-3 weeks at a time with lower abdominal cramping, borborygmi, and tenesmus is a red-flag presentation strongly suggestive of inflammatory bowel disease (such as Ulcerative Colitis) or relapsing infectious colitis (e.g., amebiasis or post-dysenteric colitis). Colonoscopy with histopathology is mandatory to evaluate the extent of mucosal ulceration.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Full Colonoscopy with Ileo-Colonic Mucosal Biopsies</li><li>Fecal Calprotectin (biomarker of intestinal inflammation)</li><li>Stool Routine, Occult Blood, Microscopy & Stool Culture</li><li>Complete Blood Count (CBC), ESR, and C-Reactive Protein (CRP)</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Irritable Bowel Syndrome (IBS)</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Gastroenteritis for the loose motion</li><li>abdominal cramps</li><li>Hepatitis for the liver infection</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">The patient's chief complaint includes stomach problems with loose motion lasting for 15 to 20 days, abdominal cramps, frequent stools, pain in the lower abdomen, and a history of fatty liver and gas problem. The blood tests revealed an infection in the liver and kidneys.   Based on these findings, the primary diagnosis is likely Irritable Bowel Syndrome (IBS). IBS is characterized by recurrent abdominal pain or discomfort associated with altered bowel habits.  Secondary diagnoses could include Gastroenteritis for the loose motion and abdominal cramps, and Hepatitis for the liver infection. However, further investigation is needed to confirm these diagnoses.  The recommended tests are: 1. Colonoscopy to evaluate the colon for any abnormalities or signs of IBS. 2. Liver function tests (LFTs) to assess the liver's health and rule out other causes of liver inflammation. 3. Stool culture to check for bacterial infections that could be causing the gastrointestinal symptoms.  It is important to conduct these tests to confirm the diagnoses and develop an appropriate treatment plan for the patient.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Colonoscopy to evaluate the colon for any abnormalities or signs of IBS.</li><li>Liver function tests (LFTs) to assess the liver's health</li><li>rule out other causes of liver inflammation.</li><li>Stool culture to check for bacterial infections that could be causing the gastrointestinal symptoms</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 8 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 8: Refractory Epigastric Pain with Acid Peptic Dyspepsia</h2>
+        <span class="case-badge-pill">Case #8 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">what is the prblem tell me</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Not able to eat properly—whatever is eaten turns into gas.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">A few days ago, blood level had dropped and needed a blood transfusion.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">When did this happen? When did your blood level drop?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">How long have you been unable to eat properly?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">For about 2 weeks—since the time my blood level dropped</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Before this, did you have any known illnesses—like diabetes, blood pressure, thyroid, or anything else?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes there is pressure</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">is medication taken for that?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes sir I had consulted a doctor earlier, and I had started taking medicines.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">for what? Pressure? for gas and I was not able to sleep.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">So sir, my mother stays in our village. After going there, she was fine for a few days, but then complications started again. So we went to a doctor at Apollo Hospitals and consulted here. The doctor said it's a stomach-related problem, but coming here frequently might be difficult.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any addiction?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">how is the apetite?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">She's not able to eat properly.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">is it for the past 2 week or before that?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">before that</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">is there any weight loss? It's visibly noticeable—her blouse has become loose</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Is there any vomiting or anything like that?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">bowel movement is fine?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">The stool is somewhat blackish in color.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">blackish?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">after the blood transfution</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">after the blood transfution it became blackish? Is she taking any iron supplements or medicines?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes, we are only feeding her that , that is written here</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Oh, that's because of taking iron supplements—the stool can become black due to that. Alright, please lie down—I'll examine your abdomen.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">my body is becoming very weak</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Only one time of blood was given? And after the transfusion, you haven't done another blood test, right?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no there was blood test in the hospital and the doctor there told that everything is fine.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">that report was not given?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no they have written that its fine</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay</span></div>
+    </div>
+</div>
+
+<!-- CASE 8 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 8: Refractory Epigastric Pain with Acid Peptic Dyspepsia</h2>
+        <span class="case-badge-pill">Case #8 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Severe Anemia Secondary to Suspected Upper Gastrointestinal Bleed</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Iron Supplementation-Associated Dyspepsia & Melenoid Stool</li><li>Hypertension</li><li>Rule out Gastric / Colonic Malignancy or Bleeding Peptic Ulcer</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">An elderly patient with acute severe anemia necessitating packed red blood cell transfusion combined with anorexia, early satiety, and blackish stool represents a medical emergency. While iron therapy produces black stools, the sudden severe blood loss in an elderly patient mandates comprehensive endoscopic evaluation to identify and exclude bleeding peptic ulcers, vascular ectasias, or occult GI neoplasms.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Upper GI Endoscopy (EGD) and Colonoscopy</li><li>Repeat Complete Blood Count (CBC) with Peripheral Blood Smear</li><li>Serum Ferritin, Iron, and Total Iron Binding Capacity (TIBC)</li><li>Fecal Occult Blood Test (iFOBT)</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Malabsorption</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Iron deficiency Anemia due to chronic blood loss or malabsorption</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">the patient's gastrointestinal symptoms are indicative of malabsorption, which can lead to vitamin and mineral deficiencies including iron, resulting in anemia. Confirmatory investigations would include serologic testing for celiac disease antibodies such as anti-tissue transglutaminase (anti-TTG) or endomysial antibody (EMA), and further evaluation of iron status through complete blood count (CBC) with peripheral smear examination and serum iron studies.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li style="color: #94A3B8; font-style: italic;">None specified</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 9 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 9: Acute Upper/Lower Gastrointestinal Hemorrhage</h2>
+        <span class="case-badge-pill">Case #9 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">please tell me whats the problem?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">sir for the last 7 months there is pain in my abdomen like burning sensation</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">where?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">on the top side</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I went up for checking to doctor , did the endroscopy also 4 months ago , I had an ulcer in my stomach—I tested positive for it</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I have taken all the medicines and completed the full course.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">But still, I notice blood passing with the stool.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Since when have you been passing blood in your stool?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">since yesterday The stool is completely black like tar, and there is blood mixed with it, First, in the morning when I passed stool, there was fresh blood. After that, it has been completely black.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">then getting admiited will be better. Endoscopy is also needed, blood transfusion might also be needed, okay It's quite possible that the bleeding is coming from here and hasn't stopped yet. Okay, we'll need to check that. Are you on an empty stomach, or have you eaten?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I have eaten just now</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">then it's a problem, I'm writing an admission note for you.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Sir, I'm saying—on both sides it feels like something is pricking, like a needle, and there is a burning sensation.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay This report is very old , 4 month old</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes sir Sir I have a kid also</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">just get admitted for 1 or 2 days , hopefully it will be done by tomorrow, if your endoscopy is needed then also it cants be done before the evening, when did u ate?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">11</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">so 4 hours are needed atleast , so endoscopy will be done in the evening and if blood transfusion is needed then till tomorrow morning it will be needed, we will look after that later after looking at the report</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">atleast getting admitted for 1 day is needed when there is black stool perticularly</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">sir medicine?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">but medicine could not controlled the problem in your case</span></div>
+    </div>
+</div>
+
+<!-- CASE 9 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 9: Acute Upper/Lower Gastrointestinal Hemorrhage</h2>
+        <span class="case-badge-pill">Case #9 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Acute Upper Gastrointestinal Hemorrhage Secondary to Bleeding Gastric / Peptic Ulcer</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Severe Acute Blood Loss Anemia</li><li>Refractory Peptic Ulcer Disease (Rule out H. pylori resistance / NSAID use)</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">Patient with endoscopic confirmation of gastric ulcer 4 months ago now presents with classic melena (black tarry stool) and hematochezia, signaling brisk acute upper gastrointestinal hemorrhage. This is a life-threatening complication requiring emergency inpatient stabilization, hemodynamic monitoring, intravenous proton pump inhibitors, and urgent therapeutic endoscopy.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Emergency Diagnostic & Therapeutic Upper GI Endoscopy (EGD)</li><li>Serial Complete Blood Count (CBC) & Hematocrit Monitoring</li><li>Blood Grouping, Typing, and Crossmatch for immediate PRBC transfusion</li><li>Coagulation Profile (PT/INR, aPTT) and Serum Electrolytes</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Melena (Upper GI Bleed)</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>peptic ulcer disease with complications such as bleeding or perforation</li><li>ischemic colitis</li><li>diverticulosis with bleeding</li><li>or malignancy in the colon or stomach. Further evaluation is needed through endoscopy</li><li>possibly a blood transfusion to address the acute presentation of gastrointestinal bleeding.</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">The patient's chief complaint includes abdominal pain with a burning sensation and blood in the stool, which is consistent with gastrointestinal bleeding. The history of present illness reveals an ulcer in the stomach confirmed by endoscopy 4 months ago. The recent change in stool color to black indicates melena, suggesting active upper gastrointestinal bleeding. The location of the pain on both sides suggests possible involvement of the colon or small intestine. A differential diagnosis for this patient may include peptic ulcer disease with complications such as bleeding or perforation, ischemic colitis, diverticulosis with bleeding, or malignancy in the colon or stomach. Further evaluation is needed through endoscopy and possibly a blood transfusion to address the acute presentation of gastrointestinal bleeding.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li style="color: #94A3B8; font-style: italic;">None specified</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 10 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 10: Congestive Heart Failure with Secondary Visceral Congestion</h2>
+        <span class="case-badge-pill">Case #10 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">tell me whats the problem?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">There is abdominal pain, and when food stays here, it feels swollen or bloated.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Does your abdomen feel swollen or bloated?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes My abdomen feels swollen, and my body—hands and feet—also get swollen</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Since when has this been happening?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">near about 1 year</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">1 year?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">hmm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any other deaseses like sugar , pressure, thyroid?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes there is thyroid</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">medication taken for thyroid?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes 100 power</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay, any addiction?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no there is none</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">bowel movement?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I have bowel movements once every two days.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">that problem is there for way long right?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">3 – 4 moths , right? hmm, u told no addiction is there right? Is your apetite working fine?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no there is probelm</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any test was there? for this stomach problem?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes there was but I didn't bring the report</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">if you didn't bring it then what can be done, As u didn't bring it u have to do it , there is no otherwise</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">okay , And I'm not able to digest food properly; my stomach stays bloated</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">The upper part of the abdomen, right? I'll examine and check it.</span></div>
+    </div>
+</div>
+
+<!-- CASE 10 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 10: Congestive Heart Failure with Secondary Visceral Congestion</h2>
+        <span class="case-badge-pill">Case #10 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Hypothyroidism-Induced Gastrointestinal Dysmotility with Peripheral Myxedema</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Chronic Functional Dyspepsia with Abdominal Distension</li><li>Non-Pitting Peripheral Edema secondary to Thyroid Dysfunction</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">Patient with established hypothyroidism on 100 mcg levothyroxine presents with a 1-year history of persistent abdominal bloating, generalized swelling of hands and feet, and chronic constipation. Suboptimally controlled hypothyroidism causes intestinal hypomotility, delayed gastric emptying, and mucopolysaccharide deposition in dermis and connective tissue (myxedema). Re-evaluating thyroid dosage and metabolic status is essential.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Comprehensive Thyroid Panel (Free T3, Free T4, Ultrasensitive TSH)</li><li>Abdominal Ultrasonography (USG)</li><li>Serum Electrolytes, Creatinine, and Liver Function Tests</li><li>Complete Blood Count (CBC)</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Celiac disease</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Irritable Bowel Syndrome (IBS) or Inflammatory Bowel Disease (IBD)</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">The patient's chief complaint includes abdominal pain and bloating, as well as swelling of the abdomen and extremities. The patient also reports infrequent bowel movements and difficulty digesting food properly. Based on these symptoms, a possible primary diagnosis is Celiac disease. Secondary diagnoses could include Irritable Bowel Syndrome (IBS) or Inflammatory Bowel Disease (IBD). To confirm the diagnosis, recommended tests include blood tests for antibodies associated with celiac disease, such as anti-endomysial antibody test and anti-tissue transglutaminase antibody test. Additionally, an endoscopy may be performed to evaluate the small intestine for damage characteristic of celiac disease.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>blood tests for antibodies associated with celiac disease</li><li>such as anti</li><li>endomysial antibody test</li><li>anti</li><li>tissue transglutaminase antibody test. Additionally</li><li>an endoscopy may be performed to evaluate the small intestine for damage characteristic of celiac disease.</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CASE 11 PART 1: WHOLE TRANSCRIPT -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 11: Thoracoabdominal Radiculopathy vs Acute/Subacute Pancreatitis</h2>
+        <span class="case-badge-pill">Case #11 of 11 • Whole Consultation Transcript</span>
+    </div>
+
+    <div class="section-header">Whole Consultation Transcript</div>
+    <div class="transcript-card">
+        <div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">tell me whats the problem ?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">Doctor, whatever I eat, it feels like...</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">What does it feel like?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">It feels heavy on this side, near the side of the abdomen (towards the flank).</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Since when has this been happening?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">For many days.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">it doesn't seem like stomach problem it looks like nerve problem , okay? But is there any test doen for stomach?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes, 1 time I have done the report</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">what report?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">I did the ultrasonography said it was fat</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">That usually happens if there is abdominal fat, but you don't have that. but there was no endoscopy?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no there was not</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any other deaseses , sugar , pressure, anything?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">nothing</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">any addiction?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">no</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">Is everything else normal—your appetite, bowel movements, and urination?</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">yes But I feel very little hunger—I hardly feel hungry at all.</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay, I will do the test and all once</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">cannot eat anything also</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">okay, I don't think it is a stomach problem specific, I think it is a problem related to nerve , later you need to get checked up by a nerve doctor , 1st the report should be done here then</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #0F766E; font-weight: 700; font-size: 0.88rem;">Patient:</span> <span style="color: #0F172A; font-size: 0.86rem;">okay</span></div><div style="margin-bottom: 0.5rem; line-height: 1.45;"><span style="color: #1E40AF; font-weight: 700; font-size: 0.88rem;">Doctor:</span> <span style="color: #1E293B; font-size: 0.86rem;">I am giving you medicine for like 3 week , okay?</span></div>
+    </div>
+</div>
+
+<!-- CASE 11 PART 2: SIDE-BY-SIDE DIAGNOSTIC COMPARISON -->
+<div class="page-break">
+    <div class="case-banner">
+        <h2>Case 11: Thoracoabdominal Radiculopathy vs Acute/Subacute Pancreatitis</h2>
+        <span class="case-badge-pill">Case #11 of 11 • Clinical Diagnostic Evaluation</span>
+    </div>
+
+    <!-- Exact Comparative Cards UI as Requested -->
+    <div class="comparison-grid">
+        
+        <!-- Left Card: Ground Truth - Claude (Blue) -->
+        <div class="gt-card">
+            <div class="gt-header">
+                <h4>📋 Ground Truth - Claude</h4>
+            </div>
+            
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="gt-pri-box">Thoracoabdominal Radiculopathy / Intercostal Nerve Entrapment Syndrome vs Functional Flank Dyspepsia</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li>Abdominal Wall Pain Syndrome (Carnett's Syndrome)</li><li>Mild Functional Anorexia</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL PATHOPHYSIOLOGY & REASONING:</div>
+                <div class="gt-reasoning-box">Patient reports localized heaviness and discomfort in the abdominal flank rather than epigastric burning, without acute peritoneal signs. Negative intra-abdominal ultrasound findings and lack of gastrointestinal alarm symptoms support the clinician's diagnostic impression of a neuropathic or musculoskeletal etiology (intercostal neuralgia or thoracoabdominal radiculopathy). Neurological assessment and confirmatory imaging are indicated.</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Focused Thoracolumbar Spine & Abdominal Wall Physical Examination (Carnett's test)</li><li>Repeat High-Resolution Abdominal & Retroperitoneal Ultrasonography</li><li>Spinal MRI / Nerve Conduction Study (if radicular symptoms persist)</li><li>Basic Metabolic Panel and Routine Urinalysis (to exclude renal colic)</li></ul>
+            </div>
+        </div>
+
+        <!-- Right Card: OpenBioLLM-8B Inference (Green) -->
+        <div class="llm-card">
+            <div class="llm-header">
+                <h4>⚙ OpenBioLLM-8B Inference</h4>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">PRIMARY DIAGNOSIS:</div>
+                <div class="llm-pri-box">Acute Pancreatitis</div>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">SECONDARY / DIFFERENTIAL DIAGNOSES:</div>
+                <ul class="card-list"><li style="color: #94A3B8; font-style: italic;">None extracted</li></ul>
+            </div>
+
+            <div style="margin-bottom: 0.9rem;">
+                <div class="field-label">CLINICAL REASONING & EVALUATION:</div>
+                <div class="llm-reasoning-box">The patient's chief complaint of feeling heavy on one side near the flank and decreased appetite is suggestive of acute pancreatitis. This condition can cause epigastric pain radiating to the back, which may present as heaviness in the affected quadrant. The loss of appetite is a common symptom associated with inflammation of the pancreas. However, further diagnostic tests are necessary to confirm the diagnosis.  Recommended Tests: - Serum amylase and lipase levels - CT scan of the abdomen</div>
+            </div>
+
+            <div>
+                <div class="field-label">RECOMMENDED LAB WORKUP & TESTS:</div>
+                <ul class="card-list"><li>Serum amylase</li><li>lipase levels</li><li>CT scan of the abdomen</li></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

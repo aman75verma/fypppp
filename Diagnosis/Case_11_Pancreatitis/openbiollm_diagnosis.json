@@ -1,0 +1,15 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - It feels heavy on this side, near the side of the abdomen (towards the flank). [Location: side abdomen flank). | Characteristics: heavy]\n  - yes But I feel very little hunger—I hardly feel hungry at all. [Symptoms: hunger—I hungry]\n\nHISTORY OF PRESENT ILLNESS:\n  - It feels heavy on this side, near the side of the abdomen (towards the flank).\n  - yes But I feel very little hunger—I hardly feel hungry at all.\n\nPAST MEDICAL HISTORY:\n  - I did the ultrasonography said it was fat [Tests: ultrasonography]",
+  "prediction": {
+    "primary_diagnosis": "Acute Pancreatitis",
+    "secondary_diagnoses": [],
+    "clinical_reasoning": "The patient's chief complaint of feeling heavy on one side near the flank and decreased appetite is suggestive of acute pancreatitis. This condition can cause epigastric pain radiating to the back, which may present as heaviness in the affected quadrant. The loss of appetite is a common symptom associated with inflammation of the pancreas. However, further diagnostic tests are necessary to confirm the diagnosis.  Recommended Tests: - Serum amylase and lipase levels - CT scan of the abdomen",
+    "recommended_tests": [
+      "Serum amylase",
+      "lipase levels",
+      "CT scan of the abdomen"
+    ]
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

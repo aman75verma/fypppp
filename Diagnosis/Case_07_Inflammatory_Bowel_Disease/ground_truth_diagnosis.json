@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Inflammatory Bowel Disease (Suspected Ulcerative Colitis) vs Chronic Infectious Colitis",
+  "secondary_diagnoses": [
+    "Non-Alcoholic Fatty Liver Disease (NAFLD, incidental on USG)",
+    "Secondary Colonic Malabsorption / Dysbiosis"
+  ],
+  "clinical_reasoning": "A 2-year history of episodic bloody diarrhea lasting 2-3 weeks at a time with lower abdominal cramping, borborygmi, and tenesmus is a red-flag presentation strongly suggestive of inflammatory bowel disease (such as Ulcerative Colitis) or relapsing infectious colitis (e.g., amebiasis or post-dysenteric colitis). Colonoscopy with histopathology is mandatory to evaluate the extent of mucosal ulceration.",
+  "recommended_tests": [
+    "Full Colonoscopy with Ileo-Colonic Mucosal Biopsies",
+    "Fecal Calprotectin (biomarker of intestinal inflammation)",
+    "Stool Routine, Occult Blood, Microscopy & Stool Culture",
+    "Complete Blood Count (CBC), ESR, and C-Reactive Protein (CRP)"
+  ]
+}

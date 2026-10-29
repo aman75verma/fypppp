@@ -1,0 +1,28 @@
+MediTOD DAC -- Test Set Classification Report
+Best Epoch: 11
+Val F1: 0.8516
+Test F1: 0.8738
+Test Accuracy: 0.8692
+
+                                            precision    recall  f1-score   support
+
+                          Request-Etiology     0.9538    0.8267    0.8857        75
+                       Request-Precautions     0.8889    1.0000    0.9412         8
+                    Request-Medical_Advice     0.5385    0.7778    0.6364         9
+                           Inform-Etiology     0.9420    0.8784    0.9091        74
+                                  Diagnose     1.0000    1.0000    1.0000        20
+                 Request-Basic_Information     0.7273    0.7619    0.7442        21
+               Request-Drug_Recommendation     0.5000    0.6667    0.5714         3
+                     Inform-Medical_Advice     0.7000    0.8077    0.7500        26
+Request-Existing_Examination_and_Treatment     0.7143    0.8333    0.7692        18
+                  Inform-Basic_Information     0.3889    0.6364    0.4828        11
+                        Inform-Precautions     0.9091    0.8696    0.8889        23
+ Inform-Existing_Examination_and_Treatment     0.7917    0.7037    0.7451        27
+                Inform-Drug_Recommendation     1.0000    1.0000    1.0000        19
+                           Request-Symptom     0.9464    1.0000    0.9725        53
+                            Inform-Symptom     0.9730    0.9351    0.9536        77
+                                     Other     0.8387    0.7879    0.8125        33
+
+                                  accuracy                         0.8692       497
+                                 macro avg     0.8008    0.8428    0.8164       497
+                              weighted avg     0.8840    0.8692    0.8738       497

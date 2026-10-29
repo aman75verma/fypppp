@@ -1,0 +1,179 @@
+{
+  "sent_0001": {
+    "sentence": "please tell me whats the problem?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0002": {
+    "sentence": "sir for the last 7 months there is pain in my abdomen like burning sensation",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "pain",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0003": {
+    "sentence": "where?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0004": {
+    "sentence": "on the top side",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0005": {
+    "sentence": "okay",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0006": {
+    "sentence": "I went up for checking to doctor , did the endroscopy also 4 months ago , I had an ulcer in my stomach—I tested positive for it",
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "NER_tags": [
+      {
+        "entity": "4 months ago",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "ulcer",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "stomach",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ]
+  },
+  "sent_0007": {
+    "sentence": "okay",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0008": {
+    "sentence": "I have taken all the medicines and completed the full course.",
+    "DAC_tag": "Inform-Drug_Recommendation",
+    "NER_tags": []
+  },
+  "sent_0009": {
+    "sentence": "hmm",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0010": {
+    "sentence": "But still, I notice blood passing with the stool.",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0011": {
+    "sentence": "Since when have you been passing blood in your stool?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0012": {
+    "sentence": "since yesterday The stool is completely black like tar, and there is blood mixed with it, First, in the morning when I passed stool, there was fresh blood.",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "yes",
+        "type": "POLARITY"
+      }
+    ]
+  },
+  "sent_0013": {
+    "sentence": "After that, it has been completely black.",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "completely",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "black",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ]
+  },
+  "sent_0014": {
+    "sentence": "then getting admiited will be better.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0015": {
+    "sentence": "Endoscopy is also needed, blood transfusion might also be needed, okay It's quite possible that the bleeding is coming from here and hasn't stopped yet.",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": []
+  },
+  "sent_0016": {
+    "sentence": "Okay, we'll need to check that.",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": []
+  },
+  "sent_0017": {
+    "sentence": "Are you on an empty stomach, or have you eaten?",
+    "DAC_tag": "Request-Basic_Information",
+    "NER_tags": []
+  },
+  "sent_0018": {
+    "sentence": "I have eaten just now",
+    "DAC_tag": "Inform-Drug_Recommendation",
+    "NER_tags": []
+  },
+  "sent_0019": {
+    "sentence": "then it's a problem, I'm writing an admission note for you.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0020": {
+    "sentence": "Sir, I'm saying—on both sides it feels like something is pricking, like a needle, and there is a burning sensation.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0021": {
+    "sentence": "okay This report is very old , 4 month old",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0022": {
+    "sentence": "yes sir Sir I have a kid also",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0023": {
+    "sentence": "just get admitted for 1 or 2 days , hopefully it will be done by tomorrow, if your endoscopy is needed then also it cants be done before the evening, when did u ate?",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": []
+  },
+  "sent_0024": {
+    "sentence": "11",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0025": {
+    "sentence": "so 4 hours are needed atleast , so endoscopy will be done in the evening and if blood transfusion is needed then till tomorrow morning it will be needed, we will look after that later after looking at the report",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": []
+  },
+  "sent_0026": {
+    "sentence": "okay",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0027": {
+    "sentence": "atleast getting admitted for 1 day is needed when there is black stool perticularly",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": []
+  },
+  "sent_0028": {
+    "sentence": "sir medicine?",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  },
+  "sent_0029": {
+    "sentence": "but medicine could not controlled the problem in your case",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  }
+}

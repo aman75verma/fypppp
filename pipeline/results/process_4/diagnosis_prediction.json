@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning [Symptoms: irritation, burning churning | Location: stomach stomach | Characteristics: mild,]\n  - Bowel movements and urination? [Symptoms: movements]\n  - The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood). [Symptoms: bowel movement, dysentery(loose motion | Location: bowels | Characteristics: clear—even, incomplete, uneasy]\n\nHISTORY OF PRESENT ILLNESS:\n  - Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning\n  - The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood).\n  - Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks. [Timeline: 1–2 weeks.]\n\nPAST MEDICAL HISTORY:\n  - Any other illnesses—like diabetes, blood pressure, or anything else? [History: diabetes,]\n\nSOCIAL HISTORY:\n  - And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain",
+  "prediction": {
+    "primary_diagnosis": "Gastroesophageal Reflux Disease (GERD) / Non-Ulcer Dyspepsia",
+    "secondary_diagnoses": [
+      "Gastric Hyperacidity",
+      "Erosive Esophagitis (differential)"
+    ],
+    "clinical_reasoning": "Prominent complaints of burning sensation, gaseous distension, and upper digestive discomfort are cardinal features of acid reflux disease and non-ulcer dyspepsia. Response to proton pump inhibitors and dietary modification is expected.",
+    "recommended_tests": [
+      "Upper GI Endoscopy (EGD)",
+      "Esophageal pH Monitoring (if refractory)",
+      "H. pylori Testing",
+      "Routine Complete Hemogram"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

@@ -1,0 +1,238 @@
+{
+  "sent_0001": {
+    "sentence": "Please tell me what the problem is?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0002": {
+    "sentence": "There is a slight problem in the stomach.",
+    "DAC_tag": "Other",
+    "NER_tags": [
+      {
+        "entity": "stomach",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ]
+  },
+  "sent_0003": {
+    "sentence": "What kind of problem are you having?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0004": {
+    "sentence": "Please tell me.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0005": {
+    "sentence": "Please tell me what problem you are experiencing",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0006": {
+    "sentence": "My appetite is low at times, and my urine appears yellow",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0007": {
+    "sentence": "Okay, since when have these been happening?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0008": {
+    "sentence": "I've been noticing this for about a month.",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "a month",
+        "type": "TEMPORAL"
+      }
+    ]
+  },
+  "sent_0009": {
+    "sentence": "Is it always yellow, or does it become yellow only sometimes?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "yellow",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "yellow",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "only",
+        "type": "SYMPTOM_FREQUENCY"
+      },
+      {
+        "entity": "sometimes",
+        "type": "SYMPTOM_FREQUENCY"
+      }
+    ]
+  },
+  "sent_0010": {
+    "sentence": "No, I had jaundice—since then.",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "no",
+        "type": "POLARITY"
+      },
+      {
+        "entity": "jaundice",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ]
+  },
+  "sent_0011": {
+    "sentence": "If I stay out in the sun or work in the fields during the day, then it happens",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0012": {
+    "sentence": "When you stay out in the sun or work in the fields, your urine becomes yellow—but otherwise, it doesn't happen, right?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "yellow",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ]
+  },
+  "sent_0013": {
+    "sentence": "No, after the evening the urine becomes clear again.",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "after",
+        "type": "TEMPORAL"
+      }
+    ]
+  },
+  "sent_0014": {
+    "sentence": "Then it's not jaundice.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0015": {
+    "sentence": "Do you have any reports related to the stomach?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0016": {
+    "sentence": "yes there is report",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0017": {
+    "sentence": "any addiction?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0018": {
+    "sentence": "no I don't drink",
+    "DAC_tag": "Inform-Precautions",
+    "NER_tags": [
+      {
+        "entity": "no",
+        "type": "POLARITY"
+      }
+    ]
+  },
+  "sent_0019": {
+    "sentence": "any other addiction?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0020": {
+    "sentence": "bidi",
+    "DAC_tag": "Inform-Drug_Recommendation",
+    "NER_tags": []
+  },
+  "sent_0021": {
+    "sentence": "any deaseses?",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  },
+  "sent_0022": {
+    "sentence": "thyroid?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0023": {
+    "sentence": "anything else?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0024": {
+    "sentence": "Is your appetite normal?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "normal",
+        "type": "POLARITY"
+      }
+    ]
+  },
+  "sent_0025": {
+    "sentence": "I don't feel hungry immediately at mealtimes.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0026": {
+    "sentence": "Sometimes I feel lightheaded.",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0027": {
+    "sentence": "okay.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0028": {
+    "sentence": "in this report there is joundice but it is 2 month old report.",
+    "DAC_tag": "Inform-Basic_Information",
+    "NER_tags": []
+  },
+  "sent_0029": {
+    "sentence": "Then again the report should be done at this time, if there is anything, that time there was stone that's why jaundice happened.",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": []
+  },
+  "sent_0030": {
+    "sentence": "Then if you're saying that sometimes it is becoming pale/whitish, it could mean the stone has passed.",
+    "DAC_tag": "Other",
+    "NER_tags": [
+      {
+        "entity": "pale / whitish",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ]
+  },
+  "sent_0031": {
+    "sentence": "You'll need to do a sonography, and also repeat the jaundice tests.",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": [
+      {
+        "entity": "jaundice tests",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ]
+  },
+  "sent_0032": {
+    "sentence": "If any problem is found, then the stone may need to be removed.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0033": {
+    "sentence": "If it has already passed out, then nothing further will be required.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0034": {
+    "sentence": "Get the tests done and show me the reports",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  }
+}

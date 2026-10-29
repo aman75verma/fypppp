@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Hypothyroidism-Induced Gastrointestinal Dysmotility with Peripheral Myxedema",
+  "secondary_diagnoses": [
+    "Chronic Functional Dyspepsia with Abdominal Distension",
+    "Non-Pitting Peripheral Edema secondary to Thyroid Dysfunction"
+  ],
+  "clinical_reasoning": "Patient with established hypothyroidism on 100 mcg levothyroxine presents with a 1-year history of persistent abdominal bloating, generalized swelling of hands and feet, and chronic constipation. Suboptimally controlled hypothyroidism causes intestinal hypomotility, delayed gastric emptying, and mucopolysaccharide deposition in dermis and connective tissue (myxedema). Re-evaluating thyroid dosage and metabolic status is essential.",
+  "recommended_tests": [
+    "Comprehensive Thyroid Panel (Free T3, Free T4, Ultrasensitive TSH)",
+    "Abdominal Ultrasonography (USG)",
+    "Serum Electrolytes, Creatinine, and Liver Function Tests",
+    "Complete Blood Count (CBC)"
+  ]
+}

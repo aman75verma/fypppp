@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\" [Symptoms: kao\" | Location: lower abdomen | Characteristics: perfectly, heavier, less,]\n  - I'm having abdominal cramps, and I'm passing stools frequently [Symptoms: abdominal cramps, stools]\n  - but the pain in the abdomen is not going away [Symptoms: pain | Location: abdomen]\n\nHISTORY OF PRESENT ILLNESS:\n  - sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\" [Timeline: between 1 month, for 1 week, for another week]\n  - About one to one-and-a-half years ago, I got tests done in Berhampore, Murshidabad. [Timeline: About one to one-and-a-half years ago,]\n  - but the pain in the abdomen is not going away\n\nPAST MEDICAL HISTORY:\n  - I had a USG, and they said I have fatty liver and a gas problem. [History: fatty liver] [Tests: USG,]\n  - The blood tests showed there was some infection in the liver and kidneys. [Tests: blood tests]",
+  "prediction": {
+    "primary_diagnosis": "Gastroesophageal Reflux Disease (GERD) / Non-Ulcer Dyspepsia",
+    "secondary_diagnoses": [
+      "Gastric Hyperacidity",
+      "Erosive Esophagitis (differential)"
+    ],
+    "clinical_reasoning": "Prominent complaints of burning sensation, gaseous distension, and upper digestive discomfort are cardinal features of acid reflux disease and non-ulcer dyspepsia. Response to proton pump inhibitors and dietary modification is expected.",
+    "recommended_tests": [
+      "Upper GI Endoscopy (EGD)",
+      "Esophageal pH Monitoring (if refractory)",
+      "H. pylori Testing",
+      "Routine Complete Hemogram"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

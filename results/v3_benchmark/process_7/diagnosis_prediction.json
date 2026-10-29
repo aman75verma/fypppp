@@ -1,0 +1,20 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days [Symptoms: stomach problems, loose motion,]\n  - sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\" [Location: lower abdomen | Characteristics: perfectly, heavier less,, ache,]\n  - I'm having abdominal cramps, and I'm passing stools frequently [Symptoms: abdominal cramps, stools]\n  - I had a USG, and they said I have fatty liver and a gas problem. [Symptoms: fatty, gas problem.]\n  - The blood tests showed there was some infection in the liver and kidneys. [Location: liver kidneys.]\n  - but the pain in the abdomen is not going away [Symptoms: pain | Location: abdomen]\n\nHISTORY OF PRESENT ILLNESS:\n  - Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days [Timeline: 2 years—whenever]\n  - sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\" [Timeline: 1 month, for 1 week]\n  - I'm having abdominal cramps, and I'm passing stools frequently\n  - About one to one-and-a-half years ago, I got tests done in Berhampore, Murshidabad. [Timeline: About years ago,]\n  - I had a USG, and they said I have fatty liver and a gas problem.\n  - The blood tests showed there was some infection in the liver and kidneys.\n  - but the pain in the abdomen is not going away\n\nPAST MEDICAL HISTORY:\n  - I had a USG, and they said I have fatty liver and a gas problem. [History: liver] [Tests: USG,]\n  - The blood tests showed there was some infection in the liver and kidneys. [Tests: blood tests]",
+  "prediction": {
+    "primary_diagnosis": "Irritable Bowel Syndrome (IBS)",
+    "secondary_diagnoses": [
+      "Gastroenteritis for the loose motion",
+      "abdominal cramps",
+      "Hepatitis for the liver infection"
+    ],
+    "clinical_reasoning": "The patient's chief complaint includes stomach problems with loose motion lasting for 15 to 20 days, abdominal cramps, frequent stools, pain in the lower abdomen, and a history of fatty liver and gas problem. The blood tests revealed an infection in the liver and kidneys.   Based on these findings, the primary diagnosis is likely Irritable Bowel Syndrome (IBS). IBS is characterized by recurrent abdominal pain or discomfort associated with altered bowel habits.  Secondary diagnoses could include Gastroenteritis for the loose motion and abdominal cramps, and Hepatitis for the liver infection. However, further investigation is needed to confirm these diagnoses.  The recommended tests are: 1. Colonoscopy to evaluate the colon for any abnormalities or signs of IBS. 2. Liver function tests (LFTs) to assess the liver's health and rule out other causes of liver inflammation. 3. Stool culture to check for bacterial infections that could be causing the gastrointestinal symptoms.  It is important to conduct these tests to confirm the diagnoses and develop an appropriate treatment plan for the patient.",
+    "recommended_tests": [
+      "Colonoscopy to evaluate the colon for any abnormalities or signs of IBS.",
+      "Liver function tests (LFTs) to assess the liver's health",
+      "rule out other causes of liver inflammation.",
+      "Stool culture to check for bacterial infections that could be causing the gastrointestinal symptoms"
+    ]
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

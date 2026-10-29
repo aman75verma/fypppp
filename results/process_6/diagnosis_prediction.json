@@ -1,0 +1,22 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - There is a slight problem in the stomach. [Location: stomach.]\n  - My appetite is low at times, and my urine appears yellow [Symptoms: appetite, urine yellow | Characteristics: low at]\n  - No, I had jaundice—since then. [Symptoms: jaundice—since]\n  - I don't feel hungry immediately at mealtimes. [Symptoms: hungry]\n\nHISTORY OF PRESENT ILLNESS:\n  - There is a slight problem in the stomach.\n  - My appetite is low at times, and my urine appears yellow\n  - I've been noticing this for about a month. [Timeline: for about a month.]\n  - No, I had jaundice—since then. [Timeline: then.]\n  - No, after the evening the urine becomes clear again. [Timeline: after the evening]\n  - Then it's not jaundice.\n  - I don't feel hungry immediately at mealtimes.\n  - Sometimes I feel lightheaded.\n  - in this report there is joundice but it is 2 month old report. [Timeline: 2 month old]\n  - Then again the report should be done at this time, if there is anything, that time there was stone that's why jaundice happened.\n\nPAST MEDICAL HISTORY:\n  - Then again the report should be done at this time, if there is anything, that time there was stone that's why jaundice happened. [History: stone]\n  - You'll need to do a sonography, and also repeat the jaundice tests. [Tests: sonography, jaundice tests.]\n\nSOCIAL HISTORY:\n  - When you stay out in the sun or work in the fields, your urine becomes yellow—but otherwise, it doesn't happen, right?\n\nEXISTING DIAGNOSIS NOTES:\n  - Then if you're saying that sometimes it is becoming pale/whitish, it could mean the stone has passed.\n  - If any problem is found, then the stone may need to be removed.\n\nMEDICATIONS/SUGGESTIONS:\n  - You'll need to do a sonography, and also repeat the jaundice tests.",
+  "prediction": {
+    "primary_diagnosis": "Gallstone",
+    "secondary_diagnoses": [
+      "None Clinical Reasoning: The patient's symptoms of jaundice",
+      "low appetite suggest a possible recurrence of gallstone",
+      "related issues. The yellow urine could be due to the breakdown of bilirubin from the liver",
+      "indicating ongoing biliary obstruction"
+    ],
+    "clinical_reasoning": "The patient's symptoms of jaundice and low appetite suggest a possible recurrence of gallstone-related issues. The yellow urine could be due to the breakdown of bilirubin from the liver, indicating ongoing biliary obstruction. However, further investigation is needed to confirm the diagnosis",
+    "recommended_tests": [
+      "Sonography",
+      "This will help evaluate the biliary system for any signs of stones or other abnormalities.",
+      "Jaundice tests",
+      "Repeat testing can provide additional information on liver function",
+      "bilirubin levels."
+    ]
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

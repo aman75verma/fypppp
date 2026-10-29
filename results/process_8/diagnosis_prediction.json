@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - Not able to eat properly—whatever is eaten turns into gas. [Symptoms: Not able to eat gas.]\n  - A few days ago, blood level had dropped and needed a blood transfusion. [Symptoms: blood level]\n  - For about 2 weeks—since the time my blood level dropped [Symptoms: blood level]\n  - After going there, she was fine for a few days, but then complications started again. [Symptoms: complications]\n  - She's not able to eat properly. [Symptoms: not able to]\n  - The stool is somewhat blackish in color. [Symptoms: stool | Characteristics: somewhat blackish in color.]\n  - my body is becoming very weak [Location: body]\n\nHISTORY OF PRESENT ILLNESS:\n  - Not able to eat properly—whatever is eaten turns into gas.\n  - A few days ago, blood level had dropped and needed a blood transfusion. [Timeline: A few days ago,]\n  - My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago. [Timeline: about 2 weeks ago,, 2–4 days ago.]\n  - For about 2 weeks—since the time my blood level dropped [Timeline: 2 weeks—since]\n  - After going there, she was fine for a few days, but then complications started again.\n  - The doctor said it's a stomach-related problem, but coming here frequently might be difficult.\n  - She's not able to eat properly.\n  - The stool is somewhat blackish in color.\n  - my body is becoming very weak\n\nPAST MEDICAL HISTORY:\n  - A few days ago, blood level had dropped and needed a blood transfusion. [History: blood transfusion.]\n  - after the blood transfution [History: blood transfution]\n  - no there was blood test in the hospital and the doctor there told that everything is fine. [Tests: blood test]",
+  "prediction": {
+    "primary_diagnosis": "Diet-Induced Non-Ulcer Dyspepsia with Irritable Bowel Syndrome (IBS-Mixed)",
+    "secondary_diagnoses": [
+      "Functional Gastrointestinal Disorder (FGID)",
+      "Dietary / Lifestyle-Induced Bowel Dysmotility"
+    ],
+    "clinical_reasoning": "Clinical manifestations demonstrate recurring upper and lower gastrointestinal disturbance without acute alarm features. Management focuses on dietary modulation and symptomatic relief while ruling out organic disease.",
+    "recommended_tests": [
+      "Complete Blood Count (CBC)",
+      "Abdominal Ultrasonography (USG)",
+      "Routine Stool Examination & Microscopy",
+      "Liver and Renal Function Panels"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

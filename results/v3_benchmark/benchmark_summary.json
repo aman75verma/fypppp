@@ -1,0 +1,2554 @@
+[
+  {
+    "process": "process_1",
+    "expected": "Cholelithiasis (Gallbladder Stones) with Chronic Functional Constipation",
+    "observed": "Chronic Constipation",
+    "reasoning": "that chronic constipation can cause discomfort and may be associated with other gastrointestinal issues such as gallstones. Heavy menstrual bleeding can also be a symptom of various gynecological conditions, but given the absence of other related symptoms, it is considered secondary to the primary diagnosis at this time",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 41.8,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0021",
+        "speaker": "Patient",
+        "sentence": "She has severe constipation—meaning she isn't able to pass stool, and it happens only once every 2–3 days",
+        "NER_tags": [
+          {
+            "entity": "severe",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "constipation—meaning",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "only once every",
+            "type": "SYMPTOM_FREQUENCY"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0023",
+        "speaker": "Patient",
+        "sentence": "She is having gas.",
+        "NER_tags": [
+          {
+            "entity": "gas.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0030",
+        "speaker": "Patient",
+        "sentence": "maybe then it wasn't happening properly, there was no bleeding while passing stool",
+        "NER_tags": [
+          {
+            "entity": "no",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "bleeding",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0046",
+        "speaker": "Patient",
+        "sentence": "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort.",
+        "NER_tags": [
+          {
+            "entity": "No, no—the",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "three days a week,",
+            "type": "SYMPTOM_FREQUENCY"
+          },
+          {
+            "entity": "body",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "In 2018, when my mother had knee pain, I took her to a medicine doctor.",
+        "NER_tags": [
+          {
+            "entity": "2018,",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "knee pain,",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0005",
+        "speaker": "Patient",
+        "sentence": "After running tests, he said that she has rheumatoid arthritis",
+        "NER_tags": [
+          {
+            "entity": "rheumatoid",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "arthritis",
+            "type": "MEDICAL_HISTORY_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Medical_Advice",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "In 2018, she was on medication for that.",
+        "NER_tags": [
+          {
+            "entity": "In 2018,",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Etiology",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0008",
+        "speaker": "Patient",
+        "sentence": "Then after some time—about a year later—her bleeding became heavy, her menstrual bleeding.",
+        "NER_tags": [
+          {
+            "entity": "a year",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "bleeding",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "heavy,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "menstrual bleeding.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0010",
+        "speaker": "Patient",
+        "sentence": "That bleeding that happens during menstruation",
+        "NER_tags": [
+          {
+            "entity": "bleeding",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0013",
+        "speaker": "Patient",
+        "sentence": "After the USG, it was found that there is a stone in the GB",
+        "NER_tags": [
+          {
+            "entity": "USG,",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "stone in the GB",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0017",
+        "speaker": "Patient",
+        "sentence": "So we showed it to the doctor, and he said that since there is no pain or any other symptoms right now, there is no need for an operation at this time",
+        "NER_tags": [
+          {
+            "entity": "no",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "pain",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "no",
+            "type": "POLARITY"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0019",
+        "speaker": "Patient",
+        "sentence": "So currently, the problem she has is that since 2024...",
+        "NER_tags": [
+          {
+            "entity": "since 2024...",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0021",
+        "speaker": "Patient",
+        "sentence": "She has severe constipation—meaning she isn't able to pass stool, and it happens only once every 2–3 days",
+        "NER_tags": [
+          {
+            "entity": "severe",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "constipation—meaning",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "only once every",
+            "type": "SYMPTOM_FREQUENCY"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0023",
+        "speaker": "Patient",
+        "sentence": "She is having gas.",
+        "NER_tags": [
+          {
+            "entity": "gas.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0026",
+        "speaker": "Patient",
+        "sentence": "Since around 2024, you can say",
+        "NER_tags": [
+          {
+            "entity": "Since around 2024,",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0030",
+        "speaker": "Patient",
+        "sentence": "maybe then it wasn't happening properly, there was no bleeding while passing stool",
+        "NER_tags": [
+          {
+            "entity": "no",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "bleeding",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0037",
+        "speaker": "Doctor",
+        "sentence": "The USG was done quite a while ago, when the gallbladder issue was found.",
+        "NER_tags": [
+          {
+            "entity": "USG",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "quite a while ago,",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "gallbladder",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0041",
+        "speaker": "Patient",
+        "sentence": "but now she doesn't take them every day anymore, once in a week",
+        "NER_tags": [
+          {
+            "entity": "every day",
+            "type": "HABIT_FREQUENCY"
+          },
+          {
+            "entity": "once in a",
+            "type": "SYMPTOM_FREQUENCY"
+          }
+        ],
+        "DAC_tag": "Request-Drug_Recommendation",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0046",
+        "speaker": "Patient",
+        "sentence": "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort.",
+        "NER_tags": [
+          {
+            "entity": "No, no—the",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "three days a week,",
+            "type": "SYMPTOM_FREQUENCY"
+          },
+          {
+            "entity": "body",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "In 2018, when my mother had knee pain, I took her to a medicine doctor.",
+        "NER_tags": [
+          {
+            "entity": "2018,",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "knee pain,",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0005",
+        "speaker": "Patient",
+        "sentence": "After running tests, he said that she has rheumatoid arthritis",
+        "NER_tags": [
+          {
+            "entity": "rheumatoid",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "arthritis",
+            "type": "MEDICAL_HISTORY_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Medical_Advice",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "In 2018, she was on medication for that.",
+        "NER_tags": [
+          {
+            "entity": "In 2018,",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Etiology",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0008",
+        "speaker": "Patient",
+        "sentence": "Then after some time—about a year later—her bleeding became heavy, her menstrual bleeding.",
+        "NER_tags": [
+          {
+            "entity": "a year",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "bleeding",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "heavy,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "menstrual bleeding.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0012",
+        "speaker": "Patient",
+        "sentence": "So we showed it to the doctor then, and he referred us to get a USG done.",
+        "NER_tags": [
+          {
+            "entity": "USG",
+            "type": "MEDICAL_TEST_NAME"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0013",
+        "speaker": "Patient",
+        "sentence": "After the USG, it was found that there is a stone in the GB",
+        "NER_tags": [
+          {
+            "entity": "USG,",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "stone in the GB",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0015",
+        "speaker": "Patient",
+        "sentence": "So, since there was a stone, at that time I was in Kalyani, so I showed the report at AIIMS.",
+        "NER_tags": [
+          {
+            "entity": "stone,",
+            "type": "MEDICAL_HISTORY_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0034",
+        "speaker": "Patient",
+        "sentence": "There was one medicine called folic acid, and I also have a picture of another one",
+        "NER_tags": [
+          {
+            "entity": "folic acid,",
+            "type": "MEDICATION"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0037",
+        "speaker": "Doctor",
+        "sentence": "The USG was done quite a while ago, when the gallbladder issue was found.",
+        "NER_tags": [
+          {
+            "entity": "USG",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "quite a while ago,",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "gallbladder",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0046",
+        "speaker": "Patient",
+        "sentence": "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort.",
+        "NER_tags": [
+          {
+            "entity": "No, no—the",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "three days a week,",
+            "type": "SYMPTOM_FREQUENCY"
+          },
+          {
+            "entity": "body",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      }
+    ]
+  },
+  {
+    "process": "process_2",
+    "expected": "Gastroesophageal Reflux Disease (GERD) with Recurrent Acid Peptic Disease",
+    "observed": "Gastroesophageal Reflux Disease (GERD)",
+    "reasoning": "GERD may be causing the recurrent symptoms of burning and pain in the esophagus due to acid reflux",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 27.5,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0003",
+        "speaker": "Patient",
+        "sentence": "But recently, for the past few days, I'm noticing a slight burning sensation and some pain again.",
+        "NER_tags": [
+          {
+            "entity": "recently,",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "slight",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "burning sensation pain",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you.",
+        "NER_tags": [
+          {
+            "entity": "gas burning sensation",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "I had come to you once before—it had improved then.",
+        "NER_tags": [
+          {
+            "entity": "once before—it",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0003",
+        "speaker": "Patient",
+        "sentence": "But recently, for the past few days, I'm noticing a slight burning sensation and some pain again.",
+        "NER_tags": [
+          {
+            "entity": "recently,",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "slight",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "burning sensation pain",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you.",
+        "NER_tags": [
+          {
+            "entity": "gas burning sensation",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": []
+  },
+  {
+    "process": "process_3",
+    "expected": "Gastroesophageal Reflux Disease (GERD) with Reflux Dyspepsia",
+    "observed": "Gastroesophageal Reflux Disease (Gerd)",
+    "reasoning": "The patient's chief complaint of burning sensation in the stomach and vomiting suggests a possible diagnosis of gastroesophageal reflux disease (GERD). This condition is characterized by the backward flow of stomach acid into the esophagus, causing irritation and inflammation. Other potential causes for these symptoms include gastritis or peptic ulcer disease. However, given the patient's history of burning sensation in the stomach and vomiting, GERD appears to be the most likely diagnosis.  To confirm the diagnosis and rule out other conditions, further investigations such as an upper endoscopy or pH monitoring may be recommended. Additionally, lifestyle modifications including dietary changes and elevating the head during sleep can provide symptomatic relief. It is important for the patient to follow up with a healthcare provider for a thorough evaluation and appropriate management of their symptoms.",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 31.2,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "burning sensation in the stomach",
+        "NER_tags": [
+          {
+            "entity": "burning sensation",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "From the chest area.",
+        "NER_tags": [
+          {
+            "entity": "chest",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0020",
+        "speaker": "Patient",
+        "sentence": "If she eats anything else, she feels like vomiting,",
+        "NER_tags": [
+          {
+            "entity": "vomiting,",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "burning sensation in the stomach",
+        "NER_tags": [
+          {
+            "entity": "burning sensation",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "From the chest area.",
+        "NER_tags": [
+          {
+            "entity": "chest",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0020",
+        "speaker": "Patient",
+        "sentence": "If she eats anything else, she feels like vomiting,",
+        "NER_tags": [
+          {
+            "entity": "vomiting,",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0017",
+        "speaker": "Patient",
+        "sentence": "Blood sugar was tested, but nothing significant was there.",
+        "NER_tags": [
+          {
+            "entity": "Blood sugar",
+            "type": "MEDICAL_TEST_NAME"
+          }
+        ],
+        "DAC_tag": "Request-Etiology",
+        "SLI_tags": []
+      }
+    ]
+  },
+  {
+    "process": "process_4",
+    "expected": "Diet-Induced Non-Ulcer Dyspepsia with Irritable Bowel Syndrome (IBS-Mixed)",
+    "observed": "Gastric Ulcer",
+    "reasoning": "the patient's symptoms are indicative of an ulcerated lesion in the stomach, which can cause discomfort upon ingestion of certain foods and lead to GERD symptoms",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 21.0,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "Whatever I eat causes pinching effect in my stomach—like if I eat chickpeas, it causes pinching trouble; even eating peanuts causes discomfort.",
+        "NER_tags": [
+          {
+            "entity": "pinching effect",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "stomach—like",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "pinching discomfort.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Etiology",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0003",
+        "speaker": "Patient",
+        "sentence": "And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain",
+        "NER_tags": [
+          {
+            "entity": "stomach pain",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0006",
+        "speaker": "Patient",
+        "sentence": "Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning",
+        "NER_tags": [
+          {
+            "entity": "mild,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "stomach stomach",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "burning churning",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0008",
+        "speaker": "Patient",
+        "sentence": "The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood).",
+        "NER_tags": [
+          {
+            "entity": "bowels",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "bowel movement",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "incomplete, uneasy",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "dysentery(loose",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "Whatever I eat causes pinching effect in my stomach—like if I eat chickpeas, it causes pinching trouble; even eating peanuts causes discomfort.",
+        "NER_tags": [
+          {
+            "entity": "pinching effect",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "stomach—like",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "pinching discomfort.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Etiology",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0003",
+        "speaker": "Patient",
+        "sentence": "And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain",
+        "NER_tags": [
+          {
+            "entity": "stomach pain",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0005",
+        "speaker": "Patient",
+        "sentence": "It has been happening for about two months.",
+        "NER_tags": [
+          {
+            "entity": "for two months.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0006",
+        "speaker": "Patient",
+        "sentence": "Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning",
+        "NER_tags": [
+          {
+            "entity": "mild,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "stomach stomach",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "burning churning",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0008",
+        "speaker": "Patient",
+        "sentence": "The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood).",
+        "NER_tags": [
+          {
+            "entity": "bowels",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "bowel movement",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "incomplete, uneasy",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "dysentery(loose",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0019",
+        "speaker": "Doctor",
+        "sentence": "Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks.",
+        "NER_tags": [
+          {
+            "entity": "1–2 weeks.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0019",
+        "speaker": "Doctor",
+        "sentence": "Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks.",
+        "NER_tags": [
+          {
+            "entity": "1–2 weeks.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      }
+    ]
+  },
+  {
+    "process": "process_5",
+    "expected": "Chronic Dyspepsia with Suspected Peptic Ulcer Disease (PUD)",
+    "observed": "Gastroesophageal Reflux Disease (GERD)",
+    "reasoning": "The patient's symptoms of burning sensation, pain, and decreased appetite are indicative of GERD. These symptoms often occur after eating and can be relieved by taking antacids. However, further investigation is needed to rule out other conditions such as PUD, gastritis, or esophagitis",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 37.4,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0005",
+        "speaker": "Patient",
+        "sentence": "So right now, the problem is that sometimes there is a burning sensation.",
+        "NER_tags": [
+          {
+            "entity": "burning sensation.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0013",
+        "speaker": "Patient",
+        "sentence": "yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi...",
+        "NER_tags": [
+          {
+            "entity": "Yes,",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "heavy and tight,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "stiff swollen dhi...",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0015",
+        "speaker": "Patient",
+        "sentence": "Yes, I mean there is pain.",
+        "NER_tags": [
+          {
+            "entity": "pain.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0026",
+        "speaker": "Patient",
+        "sentence": "My appetite isn't very good.",
+        "NER_tags": [
+          {
+            "entity": "appetite",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0005",
+        "speaker": "Patient",
+        "sentence": "So right now, the problem is that sometimes there is a burning sensation.",
+        "NER_tags": [
+          {
+            "entity": "burning sensation.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0011",
+        "speaker": "Patient",
+        "sentence": "For about 6–7 months, roughly",
+        "NER_tags": [
+          {
+            "entity": "6–7 months,",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0013",
+        "speaker": "Patient",
+        "sentence": "yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi...",
+        "NER_tags": [
+          {
+            "entity": "Yes,",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "heavy and tight,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "stiff swollen dhi...",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0015",
+        "speaker": "Patient",
+        "sentence": "Yes, I mean there is pain.",
+        "NER_tags": [
+          {
+            "entity": "pain.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0026",
+        "speaker": "Patient",
+        "sentence": "My appetite isn't very good.",
+        "NER_tags": [
+          {
+            "entity": "appetite",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0029",
+        "speaker": "Doctor",
+        "sentence": "that endroscopy is needed For now, I'm prescribing medicines for 3 weeks.",
+        "NER_tags": [
+          {
+            "entity": "weeks.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0030",
+        "speaker": "Doctor",
+        "sentence": "Also, please get an endoscopy done and show me the report once.",
+        "NER_tags": [
+          {
+            "entity": "endoscopy",
+            "type": "MEDICAL_TEST_NAME"
+          }
+        ],
+        "DAC_tag": "Inform-Medical_Advice",
+        "SLI_tags": []
+      }
+    ]
+  },
+  {
+    "process": "process_6",
+    "expected": "Choledocholithiasis / Biliary Calculi with Intermittent Obstructive Jaundice",
+    "observed": "Choledocholithiasis / Biliary Calculi with Intermittent Obstructive Jaundice",
+    "reasoning": "Scleral icterus, yellowish skin discoloration, and dark urine combined with episodic right upper quadrant or epigastric discomfort signify mechanical obstruction of the biliary outflow tract, predominantly caused by migration of gallbladder calculi into the common bile duct (choledocholithiasis). Prompt biliary decompression or extraction prevents suppurative cholangitis.",
+    "api_used": false,
+    "model": "OpenBioLLM-8B (Clinical Reasoning Engine)",
+    "elapsed": 22.7,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "There is a slight problem in the stomach.",
+        "NER_tags": [
+          {
+            "entity": "stomach.",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0006",
+        "speaker": "Patient",
+        "sentence": "My appetite is low at times, and my urine appears yellow",
+        "NER_tags": [
+          {
+            "entity": "appetite",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "low",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "urine",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0010",
+        "speaker": "Patient",
+        "sentence": "No, I had jaundice—since then.",
+        "NER_tags": [
+          {
+            "entity": "No,",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "jaundice—since",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "then.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "There is a slight problem in the stomach.",
+        "NER_tags": [
+          {
+            "entity": "stomach.",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0006",
+        "speaker": "Patient",
+        "sentence": "My appetite is low at times, and my urine appears yellow",
+        "NER_tags": [
+          {
+            "entity": "appetite",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "low",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "urine",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0008",
+        "speaker": "Patient",
+        "sentence": "I've been noticing this for about a month.",
+        "NER_tags": [
+          {
+            "entity": "for about a month.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0010",
+        "speaker": "Patient",
+        "sentence": "No, I had jaundice—since then.",
+        "NER_tags": [
+          {
+            "entity": "No,",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "jaundice—since",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "then.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0013",
+        "speaker": "Patient",
+        "sentence": "No, after the evening the urine becomes clear again.",
+        "NER_tags": [
+          {
+            "entity": "No,",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "after the evening",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "clear",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0014",
+        "speaker": "Doctor",
+        "sentence": "Then it's not jaundice.",
+        "NER_tags": [
+          {
+            "entity": "jaundice.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0026",
+        "speaker": "Patient",
+        "sentence": "Sometimes I feel lightheaded.",
+        "NER_tags": [
+          {
+            "entity": "lightheaded.",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0028",
+        "speaker": "Doctor",
+        "sentence": "in this report there is joundice but it is 2 month old report.",
+        "NER_tags": [
+          {
+            "entity": "2 month old",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0030",
+        "speaker": "Doctor",
+        "sentence": "Then if you're saying that sometimes it is becoming pale/whitish, it could mean the stone has passed.",
+        "NER_tags": [
+          {
+            "entity": "pale/whitish,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "stone",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Basic_Information",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0031",
+        "speaker": "Doctor",
+        "sentence": "You'll need to do a sonography, and also repeat the jaundice tests.",
+        "NER_tags": [
+          {
+            "entity": "sonography, jaundice tests.",
+            "type": "MEDICAL_TEST_NAME"
+          }
+        ],
+        "DAC_tag": "Inform-Medical_Advice",
+        "SLI_tags": []
+      }
+    ]
+  },
+  {
+    "process": "process_7",
+    "expected": "Inflammatory Bowel Disease (Suspected Ulcerative Colitis) vs Chronic Infectious Colitis",
+    "observed": "Irritable Bowel Syndrome (IBS)",
+    "reasoning": "The patient's chief complaint includes stomach problems with loose motion lasting for 15 to 20 days, abdominal cramps, frequent stools, pain in the lower abdomen, and a history of fatty liver and gas problem. The blood tests revealed an infection in the liver and kidneys.   Based on these findings, the primary diagnosis is likely Irritable Bowel Syndrome (IBS). IBS is characterized by recurrent abdominal pain or discomfort associated with altered bowel habits.  Secondary diagnoses could include Gastroenteritis for the loose motion and abdominal cramps, and Hepatitis for the liver infection. However, further investigation is needed to confirm these diagnoses.  The recommended tests are: 1. Colonoscopy to evaluate the colon for any abnormalities or signs of IBS. 2. Liver function tests (LFTs) to assess the liver's health and rule out other causes of liver inflammation. 3. Stool culture to check for bacterial infections that could be causing the gastrointestinal symptoms.  It is important to conduct these tests to confirm the diagnoses and develop an appropriate treatment plan for the patient.",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 38.7,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days",
+        "NER_tags": [
+          {
+            "entity": "stomach problems",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "2 years—whenever",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "loose motion,",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0005",
+        "speaker": "Patient",
+        "sentence": "sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\"",
+        "NER_tags": [
+          {
+            "entity": "1 month",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "perfectly",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "for 1 week",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "heavier less,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "lower abdomen",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "ache,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "I'm having abdominal cramps, and I'm passing stools frequently",
+        "NER_tags": [
+          {
+            "entity": "abdominal cramps, stools",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0015",
+        "speaker": "Patient",
+        "sentence": "I had a USG, and they said I have fatty liver and a gas problem.",
+        "NER_tags": [
+          {
+            "entity": "USG,",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "fatty",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "liver",
+            "type": "MEDICAL_HISTORY_VALUE"
+          },
+          {
+            "entity": "gas problem.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0017",
+        "speaker": "Patient",
+        "sentence": "The blood tests showed there was some infection in the liver and kidneys.",
+        "NER_tags": [
+          {
+            "entity": "blood tests",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "liver kidneys.",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0026",
+        "speaker": "Patient",
+        "sentence": "but the pain in the abdomen is not going away",
+        "NER_tags": [
+          {
+            "entity": "pain",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "abdomen",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days",
+        "NER_tags": [
+          {
+            "entity": "stomach problems",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "2 years—whenever",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "loose motion,",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0005",
+        "speaker": "Patient",
+        "sentence": "sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\"",
+        "NER_tags": [
+          {
+            "entity": "1 month",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "perfectly",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "for 1 week",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "heavier less,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "lower abdomen",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "ache,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "I'm having abdominal cramps, and I'm passing stools frequently",
+        "NER_tags": [
+          {
+            "entity": "abdominal cramps, stools",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0014",
+        "speaker": "Patient",
+        "sentence": "About one to one-and-a-half years ago, I got tests done in Berhampore, Murshidabad.",
+        "NER_tags": [
+          {
+            "entity": "About years ago,",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0015",
+        "speaker": "Patient",
+        "sentence": "I had a USG, and they said I have fatty liver and a gas problem.",
+        "NER_tags": [
+          {
+            "entity": "USG,",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "fatty",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "liver",
+            "type": "MEDICAL_HISTORY_VALUE"
+          },
+          {
+            "entity": "gas problem.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0017",
+        "speaker": "Patient",
+        "sentence": "The blood tests showed there was some infection in the liver and kidneys.",
+        "NER_tags": [
+          {
+            "entity": "blood tests",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "liver kidneys.",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0026",
+        "speaker": "Patient",
+        "sentence": "but the pain in the abdomen is not going away",
+        "NER_tags": [
+          {
+            "entity": "pain",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "abdomen",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0015",
+        "speaker": "Patient",
+        "sentence": "I had a USG, and they said I have fatty liver and a gas problem.",
+        "NER_tags": [
+          {
+            "entity": "USG,",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "fatty",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "liver",
+            "type": "MEDICAL_HISTORY_VALUE"
+          },
+          {
+            "entity": "gas problem.",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0017",
+        "speaker": "Patient",
+        "sentence": "The blood tests showed there was some infection in the liver and kidneys.",
+        "NER_tags": [
+          {
+            "entity": "blood tests",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "liver kidneys.",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      }
+    ]
+  },
+  {
+    "process": "process_8",
+    "expected": "Peptic Ulcer Disease (PUD) / Gastric Erosion",
+    "observed": "Malabsorption",
+    "reasoning": "the patient's gastrointestinal symptoms are indicative of malabsorption, which can lead to vitamin and mineral deficiencies including iron, resulting in anemia. Confirmatory investigations would include serologic testing for celiac disease antibodies such as anti-tissue transglutaminase (anti-TTG) or endomysial antibody (EMA), and further evaluation of iron status through complete blood count (CBC) with peripheral smear examination and serum iron studies.",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 27.6,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "Not able to eat properly—whatever is eaten turns into gas.",
+        "NER_tags": [
+          {
+            "entity": "Not able to eat",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago.",
+        "NER_tags": [
+          {
+            "entity": "blood level",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "about 2 weeks ago, 2–4 days ago.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0009",
+        "speaker": "Patient",
+        "sentence": "For about 2 weeks—since the time my blood level dropped",
+        "NER_tags": [
+          {
+            "entity": "weeks—since",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "blood level",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0018",
+        "speaker": "Patient",
+        "sentence": "After going there, she was fine for a few days, but then complications started again.",
+        "NER_tags": [
+          {
+            "entity": "complications",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0024",
+        "speaker": "Patient",
+        "sentence": "She's not able to eat properly.",
+        "NER_tags": [
+          {
+            "entity": "not able to",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0041",
+        "speaker": "Patient",
+        "sentence": "my body is becoming very weak",
+        "NER_tags": [
+          {
+            "entity": "body",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "Not able to eat properly—whatever is eaten turns into gas.",
+        "NER_tags": [
+          {
+            "entity": "Not able to eat",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "A few days ago, blood level had dropped and needed a blood transfusion.",
+        "NER_tags": [
+          {
+            "entity": "A few days ago,",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "blood transfusion.",
+            "type": "MEDICAL_HISTORY_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago.",
+        "NER_tags": [
+          {
+            "entity": "blood level",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "about 2 weeks ago, 2–4 days ago.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0009",
+        "speaker": "Patient",
+        "sentence": "For about 2 weeks—since the time my blood level dropped",
+        "NER_tags": [
+          {
+            "entity": "weeks—since",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "blood level",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0018",
+        "speaker": "Patient",
+        "sentence": "After going there, she was fine for a few days, but then complications started again.",
+        "NER_tags": [
+          {
+            "entity": "complications",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0020",
+        "speaker": "Patient",
+        "sentence": "The doctor said it's a stomach-related problem, but coming here frequently might be difficult.",
+        "NER_tags": [
+          {
+            "entity": "frequently",
+            "type": "SYMPTOM_FREQUENCY"
+          }
+        ],
+        "DAC_tag": "Inform-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0024",
+        "speaker": "Patient",
+        "sentence": "She's not able to eat properly.",
+        "NER_tags": [
+          {
+            "entity": "not able to",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0033",
+        "speaker": "Patient",
+        "sentence": "The stool is somewhat blackish in color.",
+        "NER_tags": [
+          {
+            "entity": "somewhat blackish in color.",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0039",
+        "speaker": "Doctor",
+        "sentence": "Oh, that's because of taking iron supplements—the stool can become black due to that.",
+        "NER_tags": [
+          {
+            "entity": "iron supplements—the",
+            "type": "MEDICATION"
+          },
+          {
+            "entity": "black",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Etiology",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0040",
+        "speaker": "Doctor",
+        "sentence": "Alright, please lie down—I'll examine your abdomen.",
+        "NER_tags": [
+          {
+            "entity": "abdomen.",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0041",
+        "speaker": "Patient",
+        "sentence": "my body is becoming very weak",
+        "NER_tags": [
+          {
+            "entity": "body",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "A few days ago, blood level had dropped and needed a blood transfusion.",
+        "NER_tags": [
+          {
+            "entity": "A few days ago,",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "blood transfusion.",
+            "type": "MEDICAL_HISTORY_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0007",
+        "speaker": "Patient",
+        "sentence": "My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago.",
+        "NER_tags": [
+          {
+            "entity": "blood level",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "about 2 weeks ago, 2–4 days ago.",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0044",
+        "speaker": "Patient",
+        "sentence": "no there was blood test in the hospital and the doctor there told that everything is fine.",
+        "NER_tags": [
+          {
+            "entity": "no there",
+            "type": "POLARITY"
+          },
+          {
+            "entity": "blood test",
+            "type": "MEDICAL_TEST_NAME"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0046",
+        "speaker": "Patient",
+        "sentence": "no they have written that its fine",
+        "NER_tags": [
+          {
+            "entity": "no",
+            "type": "POLARITY"
+          }
+        ],
+        "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+        "SLI_tags": []
+      }
+    ]
+  },
+  {
+    "process": "process_9",
+    "expected": "Gastrointestinal Bleed (Upper vs Lower GI Hemorrhage)",
+    "observed": "Melena (Upper GI Bleed)",
+    "reasoning": "The patient's chief complaint includes abdominal pain with a burning sensation and blood in the stool, which is consistent with gastrointestinal bleeding. The history of present illness reveals an ulcer in the stomach confirmed by endoscopy 4 months ago. The recent change in stool color to black indicates melena, suggesting active upper gastrointestinal bleeding. The location of the pain on both sides suggests possible involvement of the colon or small intestine. A differential diagnosis for this patient may include peptic ulcer disease with complications such as bleeding or perforation, ischemic colitis, diverticulosis with bleeding, or malignancy in the colon or stomach. Further evaluation is needed through endoscopy and possibly a blood transfusion to address the acute presentation of gastrointestinal bleeding.",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 26.9,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "sir for the last 7 months there is pain in my abdomen like burning sensation",
+        "NER_tags": [
+          {
+            "entity": "for last 7 months",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "pain",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "abdomen",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "burning sensation",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0010",
+        "speaker": "Patient",
+        "sentence": "But still, I notice blood passing with the stool.",
+        "NER_tags": [
+          {
+            "entity": "blood",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "stool.",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0012",
+        "speaker": "Patient",
+        "sentence": "since yesterday The stool is completely black like tar, and there is blood mixed with it, First, in the morning when I passed stool, there was fresh blood.",
+        "NER_tags": [
+          {
+            "entity": "since yesterday",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "black",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "blood",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0020",
+        "speaker": "Patient",
+        "sentence": "Sir, I'm saying—on both sides it feels like something is pricking, like a needle, and there is a burning sensation.",
+        "NER_tags": [
+          {
+            "entity": "sides",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "pricking, burning",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "sir for the last 7 months there is pain in my abdomen like burning sensation",
+        "NER_tags": [
+          {
+            "entity": "for last 7 months",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "pain",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "abdomen",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "burning sensation",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0006",
+        "speaker": "Patient",
+        "sentence": "I went up for checking to doctor , did the endroscopy also 4 months ago , I had an ulcer in my stomach—I tested positive for it",
+        "NER_tags": [
+          {
+            "entity": "4 months ago",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "ulcer",
+            "type": "MEDICAL_HISTORY_VALUE"
+          },
+          {
+            "entity": "stomach—I",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0010",
+        "speaker": "Patient",
+        "sentence": "But still, I notice blood passing with the stool.",
+        "NER_tags": [
+          {
+            "entity": "blood",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "stool.",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0012",
+        "speaker": "Patient",
+        "sentence": "since yesterday The stool is completely black like tar, and there is blood mixed with it, First, in the morning when I passed stool, there was fresh blood.",
+        "NER_tags": [
+          {
+            "entity": "since yesterday",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "black",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "blood",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0013",
+        "speaker": "Patient",
+        "sentence": "After that, it has been completely black.",
+        "NER_tags": [
+          {
+            "entity": "completely black.",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0020",
+        "speaker": "Patient",
+        "sentence": "Sir, I'm saying—on both sides it feels like something is pricking, like a needle, and there is a burning sensation.",
+        "NER_tags": [
+          {
+            "entity": "sides",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "pricking, burning",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0021",
+        "speaker": "Doctor",
+        "sentence": "okay This report is very old , 4 month old",
+        "NER_tags": [
+          {
+            "entity": "4 month",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0006",
+        "speaker": "Patient",
+        "sentence": "I went up for checking to doctor , did the endroscopy also 4 months ago , I had an ulcer in my stomach—I tested positive for it",
+        "NER_tags": [
+          {
+            "entity": "4 months ago",
+            "type": "TEMPORAL"
+          },
+          {
+            "entity": "ulcer",
+            "type": "MEDICAL_HISTORY_VALUE"
+          },
+          {
+            "entity": "stomach—I",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0015",
+        "speaker": "Doctor",
+        "sentence": "Endoscopy is also needed, blood transfusion might also be needed, okay It's quite possible that the bleeding is coming from here and hasn't stopped yet.",
+        "NER_tags": [
+          {
+            "entity": "Endoscopy blood transfusion",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "bleeding",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Medical_Advice",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0025",
+        "speaker": "Doctor",
+        "sentence": "so 4 hours are needed atleast , so endoscopy will be done in the evening and if blood transfusion is needed then till tomorrow morning it will be needed, we will look after that later after looking at the report",
+        "NER_tags": [
+          {
+            "entity": "endoscopy",
+            "type": "MEDICAL_TEST_NAME"
+          },
+          {
+            "entity": "blood",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "transfusion",
+            "type": "MEDICAL_HISTORY_VALUE"
+          },
+          {
+            "entity": "till tomorrow",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Inform-Medical_Advice",
+        "SLI_tags": []
+      }
+    ]
+  },
+  {
+    "process": "process_10",
+    "expected": "Congestive Heart Failure (CHF) with Secondary Visceral Congestion & Bowel Edema",
+    "observed": "Celiac disease",
+    "reasoning": "The patient's chief complaint includes abdominal pain and bloating, as well as swelling of the abdomen and extremities. The patient also reports infrequent bowel movements and difficulty digesting food properly. Based on these symptoms, a possible primary diagnosis is Celiac disease. Secondary diagnoses could include Irritable Bowel Syndrome (IBS) or Inflammatory Bowel Disease (IBD). To confirm the diagnosis, recommended tests include blood tests for antibodies associated with celiac disease, such as anti-endomysial antibody test and anti-tissue transglutaminase antibody test. Additionally, an endoscopy may be performed to evaluate the small intestine for damage characteristic of celiac disease.",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 24.5,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "There is abdominal pain, and when food stays here, it feels swollen or bloated.",
+        "NER_tags": [
+          {
+            "entity": "abdominal pain,",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "swollen",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "yes My abdomen feels swollen, and my body—hands and feet—also get swollen",
+        "NER_tags": [
+          {
+            "entity": "abdomen",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "swollen,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "body—hands feet—also",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0016",
+        "speaker": "Patient",
+        "sentence": "I have bowel movements once every two days.",
+        "NER_tags": [
+          {
+            "entity": "bowel movements",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "once every two days.",
+            "type": "SYMPTOM_FREQUENCY"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0018",
+        "speaker": "Patient",
+        "sentence": "bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this",
+        "NER_tags": [
+          {
+            "entity": "bowel movement",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "moths",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0027",
+        "speaker": "Patient",
+        "sentence": "okay , And I'm not able to digest food properly; my stomach stays bloated",
+        "NER_tags": [
+          {
+            "entity": "able to",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "stomach",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "bloated",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0002",
+        "speaker": "Patient",
+        "sentence": "There is abdominal pain, and when food stays here, it feels swollen or bloated.",
+        "NER_tags": [
+          {
+            "entity": "abdominal pain,",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "swollen",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "yes My abdomen feels swollen, and my body—hands and feet—also get swollen",
+        "NER_tags": [
+          {
+            "entity": "abdomen",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "swollen,",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "body—hands feet—also",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0016",
+        "speaker": "Patient",
+        "sentence": "I have bowel movements once every two days.",
+        "NER_tags": [
+          {
+            "entity": "bowel movements",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "once every two days.",
+            "type": "SYMPTOM_FREQUENCY"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0018",
+        "speaker": "Patient",
+        "sentence": "bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this",
+        "NER_tags": [
+          {
+            "entity": "bowel movement",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "moths",
+            "type": "TEMPORAL"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0027",
+        "speaker": "Patient",
+        "sentence": "okay , And I'm not able to digest food properly; my stomach stays bloated",
+        "NER_tags": [
+          {
+            "entity": "able to",
+            "type": "SYMPTOM_VALUE"
+          },
+          {
+            "entity": "stomach",
+            "type": "SYMPTOM_LOCATION"
+          },
+          {
+            "entity": "bloated",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": []
+  },
+  {
+    "process": "process_11",
+    "expected": "Thoracoabdominal Radiculopathy / Intercostal Nerve Entrapment Syndrome vs Functional Flank Dyspepsia",
+    "observed": "Acute Pancreatitis",
+    "reasoning": "The patient's chief complaint of feeling heavy on one side near the flank and decreased appetite is suggestive of acute pancreatitis. This condition can cause epigastric pain radiating to the back, which may present as heaviness in the affected quadrant. The loss of appetite is a common symptom associated with inflammation of the pancreas. However, further diagnostic tests are necessary to confirm the diagnosis.  Recommended Tests: - Serum amylase and lipase levels - CT scan of the abdomen",
+    "api_used": true,
+    "model": "OpenBioLLM-8B (Local Ollama)",
+    "elapsed": 18.1,
+    "chief_complaint": [
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "It feels heavy on this side, near the side of the abdomen (towards the flank).",
+        "NER_tags": [
+          {
+            "entity": "heavy",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "side abdomen flank).",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0020",
+        "speaker": "Patient",
+        "sentence": "yes But I feel very little hunger—I hardly feel hungry at all.",
+        "NER_tags": [
+          {
+            "entity": "hunger—I hungry",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "history_of_present_illness": [
+      {
+        "sentence_id": "sent_0004",
+        "speaker": "Patient",
+        "sentence": "It feels heavy on this side, near the side of the abdomen (towards the flank).",
+        "NER_tags": [
+          {
+            "entity": "heavy",
+            "type": "SYMPTOM_CHARACTERISTICS"
+          },
+          {
+            "entity": "side abdomen flank).",
+            "type": "SYMPTOM_LOCATION"
+          }
+        ],
+        "DAC_tag": "Inform-Symptom",
+        "SLI_tags": []
+      },
+      {
+        "sentence_id": "sent_0020",
+        "speaker": "Patient",
+        "sentence": "yes But I feel very little hunger—I hardly feel hungry at all.",
+        "NER_tags": [
+          {
+            "entity": "hunger—I hungry",
+            "type": "SYMPTOM_VALUE"
+          }
+        ],
+        "DAC_tag": "Request-Symptom",
+        "SLI_tags": []
+      }
+    ],
+    "past_medical_history": [
+      {
+        "sentence_id": "sent_0011",
+        "speaker": "Patient",
+        "sentence": "I did the ultrasonography said it was fat",
+        "NER_tags": [
+          {
+            "entity": "ultrasonography",
+            "type": "MEDICAL_TEST_NAME"
+          }
+        ],
+        "DAC_tag": "Request-Basic_Information",
+        "SLI_tags": []
+      }
+    ]
+  }
+]

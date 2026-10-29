@@ -1,0 +1,60 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 1: Gallbladder Calculus with Severe Functional Constipation
+===========================================================================
+Expected Clinical Diagnosis: Cholelithiasis (Gallbladder Stones) with Chronic Functional Constipation
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "She has severe constipation—meaning she isn't able to pass stool, and it happens only once every 2–3 days"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: severe (SYMPTOM_CHARACTERISTICS), constipation—meaning (SYMPTOM_VALUE), only once every (SYMPTOM_FREQUENCY)
+  [2] "She is having gas."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: gas. (SYMPTOM_VALUE)
+  [3] "maybe then it wasn't happening properly, there was no bleeding while passing stool"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: no (POLARITY), bleeding (SYMPTOM_VALUE)
+  [4] "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort."
+      Dialogue Act: [Inform-Existing_Examination_and_Treatment]
+      Extracted Medical Entities: No, no—the (POLARITY), three days a week, (SYMPTOM_FREQUENCY), body (SYMPTOM_VALUE)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  [1] "In 2018, when my mother had knee pain, I took her to a medicine doctor."
+      Entities: 2018, (TEMPORAL), knee pain, (SYMPTOM_VALUE)
+  [2] "After running tests, he said that she has rheumatoid arthritis"
+      Entities: rheumatoid (SYMPTOM_VALUE), arthritis (MEDICAL_HISTORY_VALUE)
+  [3] "In 2018, she was on medication for that."
+      Entities: In 2018, (TEMPORAL)
+  [4] "Then after some time—about a year later—her bleeding became heavy, her menstrual bleeding."
+      Entities: a year (TEMPORAL), bleeding (SYMPTOM_VALUE), heavy, (SYMPTOM_CHARACTERISTICS), menstrual bleeding. (SYMPTOM_VALUE)
+  [5] "So we showed it to the doctor then, and he referred us to get a USG done."
+      Entities: USG (MEDICAL_TEST_NAME)
+  [6] "After the USG, it was found that there is a stone in the GB"
+      Entities: USG, (MEDICAL_TEST_NAME), stone in the GB (SYMPTOM_VALUE)
+  [7] "So, since there was a stone, at that time I was in Kalyani, so I showed the report at AIIMS."
+      Entities: stone, (MEDICAL_HISTORY_VALUE)
+  [8] "There was one medicine called folic acid, and I also have a picture of another one"
+      Entities: folic acid, (MEDICATION)
+  [9] "The USG was done quite a while ago, when the gallbladder issue was found."
+      Entities: USG (MEDICAL_TEST_NAME), quite a while ago, (TEMPORAL), gallbladder (SYMPTOM_VALUE)
+  [10] "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort."
+      Entities: No, no—the (POLARITY), three days a week, (SYMPTOM_FREQUENCY), body (SYMPTOM_VALUE)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Chronic Constipation
+  Secondary / Differential Diagnoses: Gallstones, Menorrhagia
+
+  Pathophysiological Clinical Reasoning:
+    that chronic constipation can cause discomfort and may be associated with other gastrointestinal issues such as gallstones. Heavy menstrual bleeding can also be a symptom of various gynecological conditions, but given the absence of other related symptoms, it is considered secondary to the primary diagnosis at this time
+
+  Recommended Diagnostic Investigations & Workup:
+    1. further evaluation for Chronic Constipation (such as stool studies or colonoscopy)
+    2. imaging studies for Gallstones (e.g.
+    3. abdominal ultrasound)
+    4. assessment for Menorrhagia (e.g.
+    5. complete blood count
+    6. hormonal evaluation).
+
+===========================================================================

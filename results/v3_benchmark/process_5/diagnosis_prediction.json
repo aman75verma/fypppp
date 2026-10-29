@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - So right now, the problem is that sometimes there is a burning sensation. [Symptoms: burning sensation.]\n  - yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi... [Symptoms: stiff swollen dhi... | Characteristics: heavy and tight,]\n  - Yes, I mean there is pain. [Symptoms: pain.]\n  - My appetite isn't very good. [Symptoms: appetite]\n\nHISTORY OF PRESENT ILLNESS:\n  - So right now, the problem is that sometimes there is a burning sensation.\n  - For about 6–7 months, roughly [Timeline: 6–7 months,]\n  - yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi...\n  - Yes, I mean there is pain.\n  - My appetite isn't very good.\n  - that endroscopy is needed For now, I'm prescribing medicines for 3 weeks. [Timeline: weeks.]\n\nPAST MEDICAL HISTORY:\n  - Also, please get an endoscopy done and show me the report once. [Tests: endoscopy]\n\nMEDICATIONS/SUGGESTIONS:\n  - Also, please get an endoscopy done and show me the report once.",
+  "prediction": {
+    "primary_diagnosis": "Gastroesophageal Reflux Disease (GERD)",
+    "secondary_diagnoses": [
+      "Peptic Ulcer Disease (PUD)",
+      "Gastritis",
+      "Esophagitis Clinical Reasoning: The patient's symptoms of burning sensation",
+      "pain",
+      "decreased appetite are indicative of GERD"
+    ],
+    "clinical_reasoning": "The patient's symptoms of burning sensation, pain, and decreased appetite are indicative of GERD. These symptoms often occur after eating and can be relieved by taking antacids. However, further investigation is needed to rule out other conditions such as PUD, gastritis, or esophagitis",
+    "recommended_tests": [
+      "Endoscopy"
+    ]
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

@@ -1,0 +1,14 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - burning sensation in the stomach [Symptoms: burning sensation | Location: stomach]\n  - From the chest area. [Location: chest area.]\n  - If she eats anything else, she feels like vomiting, [Symptoms: vomiting,]\n  - not able to sleep [Symptoms: able]\n\nHISTORY OF PRESENT ILLNESS:\n  - burning sensation in the stomach\n  - From the chest area.\n  - If she eats anything else, she feels like vomiting,\n  - not able to sleep\n\nPAST MEDICAL HISTORY:\n  - Blood sugar was tested, but nothing significant was there. [Tests: Blood sugar]",
+  "prediction": {
+    "primary_diagnosis": "gastroesophageal reflux disease (GERD)",
+    "secondary_diagnoses": [
+      "less likely given the information provided. These might include peptic ulcer disease (PUD) or gastritis",
+      "which can also cause a burning sensation in the stomach"
+    ],
+    "clinical_reasoning": "The patient presents with a chief complaint of burning sensation in the stomach, from the chest area. She also reports feeling like vomiting if she eats anything else and is unable to sleep. The past medical history reveals that her blood sugar was tested but no significant findings were reported.   Based on these symptoms, the primary diagnosis for this patient could be gastroesophageal reflux disease (GERD). This condition can cause a burning sensation in the stomach, known as heartburn, which may radiate to the chest area. The symptom of feeling like vomiting when eating is often associated with acid regurgitation, another common symptom of GERD.  As secondary diagnoses, we should consider other conditions that could present similarly but are less likely given the information provided. These might include peptic ulcer disease (PUD) or gastritis, which can also cause a burning sensation in the stomach. However, these conditions would typically be associated with other symptoms such as epigastric pain or nausea, which are not mentioned in the patient's history.  To confirm the diagnosis and differentiate between GERD and other potential causes of her symptoms, further investigations may be recommended. These could include an upper endoscopy to evaluate for signs of inflammation or ulcers in the esophagus or stomach, as well as pH monitoring to assess acid levels in the esophagus over a 24-hour period. Additionally, lifestyle modifications such as avoiding trigger foods and elevating the head during sleep may be advised to alleviate symptoms while awaiting test results",
+    "recommended_tests": []
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

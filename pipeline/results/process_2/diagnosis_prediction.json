@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - But recently, for the past few days, I'm noticing a slight burning sensation and some pain again. [Symptoms: burning sensation pain]\n  - This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you. [Symptoms: gas burning sensation]\n\nHISTORY OF PRESENT ILLNESS:\n  - But recently, for the past few days, I'm noticing a slight burning sensation and some pain again. [Timeline: recently, for few days,]",
+  "prediction": {
+    "primary_diagnosis": "Gastroesophageal Reflux Disease (GERD) / Non-Ulcer Dyspepsia",
+    "secondary_diagnoses": [
+      "Gastric Hyperacidity",
+      "Erosive Esophagitis (differential)"
+    ],
+    "clinical_reasoning": "Prominent complaints of burning sensation, gaseous distension, and upper digestive discomfort are cardinal features of acid reflux disease and non-ulcer dyspepsia. Response to proton pump inhibitors and dietary modification is expected.",
+    "recommended_tests": [
+      "Upper GI Endoscopy (EGD)",
+      "Esophageal pH Monitoring (if refractory)",
+      "H. pylori Testing",
+      "Routine Complete Hemogram"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

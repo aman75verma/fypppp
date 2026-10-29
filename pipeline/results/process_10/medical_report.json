@@ -1,0 +1,183 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0004",
+      "sentence": "yes My abdomen feels swollen, and my body—hands and feet—also get swollen",
+      "NER_tags": [
+        {
+          "entity": "abdomen",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "swollen,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "body—hands feet—also",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "swollen",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0018",
+      "sentence": "bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this",
+      "NER_tags": [
+        {
+          "entity": "bowel movement",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "for 3 to 4 moths",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0027",
+      "sentence": "okay , And I'm not able to digest food properly; my stomach stays bloated",
+      "NER_tags": [
+        {
+          "entity": "not able to",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "stomach",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "bloated",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0028",
+      "sentence": "The upper part of the abdomen, right?",
+      "NER_tags": [
+        {
+          "entity": "upper part abdomen,",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0004",
+      "sentence": "yes My abdomen feels swollen, and my body—hands and feet—also get swollen",
+      "NER_tags": [
+        {
+          "entity": "abdomen",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "swollen,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "body—hands feet—also",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "swollen",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0006",
+      "sentence": "near about 1 year",
+      "NER_tags": [
+        {
+          "entity": "near about 1 year",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0018",
+      "sentence": "bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this",
+      "NER_tags": [
+        {
+          "entity": "bowel movement",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "for 3 to 4 moths",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0027",
+      "sentence": "okay , And I'm not able to digest food properly; my stomach stays bloated",
+      "NER_tags": [
+        {
+          "entity": "not able to",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "stomach",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "bloated",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0028",
+      "sentence": "The upper part of the abdomen, right?",
+      "NER_tags": [
+        {
+          "entity": "upper part abdomen,",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0011",
+      "sentence": "medication taken for thyroid?",
+      "NER_tags": [
+        {
+          "entity": "medication",
+          "type": "MEDICATION"
+        },
+        {
+          "entity": "thyroid?",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Etiology",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

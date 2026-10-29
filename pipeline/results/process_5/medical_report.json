@@ -1,0 +1,128 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0013",
+      "sentence": "yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi...",
+      "NER_tags": [
+        {
+          "entity": "Yes, yes—after",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "heavy and tight,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "stiff swollen dhi...",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0014",
+      "sentence": "Okay—from below the chest?",
+      "NER_tags": [
+        {
+          "entity": "chest?",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0015",
+      "sentence": "Yes, I mean there is pain.",
+      "NER_tags": [
+        {
+          "entity": "pain.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0013",
+      "sentence": "yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi...",
+      "NER_tags": [
+        {
+          "entity": "Yes, yes—after",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "heavy and tight,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "stiff swollen dhi...",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0014",
+      "sentence": "Okay—from below the chest?",
+      "NER_tags": [
+        {
+          "entity": "chest?",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [
+    {
+      "sentence_id": "sent_0030",
+      "sentence": "Also, please get an endoscopy done and show me the report once.",
+      "NER_tags": [
+        {
+          "entity": "endoscopy",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Inform-Medical_Advice",
+      "SLI_tags": []
+    }
+  ],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0016",
+      "sentence": "I mean, earlier you had a problem and you were advised to get an endoscopy—have you done it?",
+      "NER_tags": [
+        {
+          "entity": "problem",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "endoscopy—have",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0030",
+      "sentence": "Also, please get an endoscopy done and show me the report once.",
+      "NER_tags": [
+        {
+          "entity": "endoscopy",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Inform-Medical_Advice",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

@@ -1,0 +1,69 @@
+{
+  "sent_0001": {
+    "sentence": "Please tell me",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0002": {
+    "sentence": "I had come to you once before—it had improved then.",
+    "NER_tags": [
+      {
+        "entity": "once before—it",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0003": {
+    "sentence": "But recently, for the past few days, I'm noticing a slight burning sensation and some pain again.",
+    "NER_tags": [
+      {
+        "entity": "recently, for few days,",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "burning sensation pain",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0004": {
+    "sentence": "okay",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0005": {
+    "sentence": "This time at home—it wasn't really right for me to do this—but I bought those two medicines you had prescribed and took them.",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0006": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0007": {
+    "sentence": "This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you.",
+    "NER_tags": [
+      {
+        "entity": "gas burning sensation",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0008": {
+    "sentence": "its okay",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  }
+}

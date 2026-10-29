@@ -1,0 +1,48 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 7: Chronic Colitis / Suspected Inflammatory Bowel Disease
+===========================================================================
+Expected Clinical Diagnosis: Inflammatory Bowel Disease (Suspected Ulcerative Colitis) vs Chronic Infectious Colitis
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: stomach problems (SYMPTOM_VALUE), 2 years—whenever (TEMPORAL), loose motion, (SYMPTOM_VALUE)
+  [2] "sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like"kao kao""
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: 1 month (TEMPORAL), perfectly (SYMPTOM_CHARACTERISTICS), for 1 week (TEMPORAL), heavier less, (SYMPTOM_CHARACTERISTICS), lower abdomen (SYMPTOM_LOCATION), ache, (SYMPTOM_CHARACTERISTICS)
+  [3] "I'm having abdominal cramps, and I'm passing stools frequently"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: abdominal cramps, stools (SYMPTOM_VALUE)
+  [4] "I had a USG, and they said I have fatty liver and a gas problem."
+      Dialogue Act: [Inform-Existing_Examination_and_Treatment]
+      Extracted Medical Entities: USG, (MEDICAL_TEST_NAME), fatty (SYMPTOM_VALUE), liver (MEDICAL_HISTORY_VALUE), gas problem. (SYMPTOM_VALUE)
+  [5] "The blood tests showed there was some infection in the liver and kidneys."
+      Dialogue Act: [Inform-Existing_Examination_and_Treatment]
+      Extracted Medical Entities: blood tests (MEDICAL_TEST_NAME), liver kidneys. (SYMPTOM_LOCATION)
+  [6] "but the pain in the abdomen is not going away"
+      Dialogue Act: [Request-Basic_Information]
+      Extracted Medical Entities: pain (SYMPTOM_VALUE), abdomen (SYMPTOM_LOCATION)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  [1] "I had a USG, and they said I have fatty liver and a gas problem."
+      Entities: USG, (MEDICAL_TEST_NAME), fatty (SYMPTOM_VALUE), liver (MEDICAL_HISTORY_VALUE), gas problem. (SYMPTOM_VALUE)
+  [2] "The blood tests showed there was some infection in the liver and kidneys."
+      Entities: blood tests (MEDICAL_TEST_NAME), liver kidneys. (SYMPTOM_LOCATION)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Irritable Bowel Syndrome (IBS)
+  Secondary / Differential Diagnoses: Gastroenteritis for the loose motion, abdominal cramps, Hepatitis for the liver infection
+
+  Pathophysiological Clinical Reasoning:
+    The patient's chief complaint includes stomach problems with loose motion lasting for 15 to 20 days, abdominal cramps, frequent stools, pain in the lower abdomen, and a history of fatty liver and gas problem. The blood tests revealed an infection in the liver and kidneys.   Based on these findings, the primary diagnosis is likely Irritable Bowel Syndrome (IBS). IBS is characterized by recurrent abdominal pain or discomfort associated with altered bowel habits.  Secondary diagnoses could include Gastroenteritis for the loose motion and abdominal cramps, and Hepatitis for the liver infection. However, further investigation is needed to confirm these diagnoses.  The recommended tests are: 1. Colonoscopy to evaluate the colon for any abnormalities or signs of IBS. 2. Liver function tests (LFTs) to assess the liver's health and rule out other causes of liver inflammation. 3. Stool culture to check for bacterial infections that could be causing the gastrointestinal symptoms.  It is important to conduct these tests to confirm the diagnoses and develop an appropriate treatment plan for the patient.
+
+  Recommended Diagnostic Investigations & Workup:
+    1. Colonoscopy to evaluate the colon for any abnormalities or signs of IBS.
+    2. Liver function tests (LFTs) to assess the liver's health
+    3. rule out other causes of liver inflammation.
+    4. Stool culture to check for bacterial infections that could be causing the gastrointestinal symptoms
+
+===========================================================================

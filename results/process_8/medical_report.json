@@ -1,0 +1,314 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "Not able to eat properly—whatever is eaten turns into gas.",
+      "NER_tags": [
+        {
+          "entity": "Not able to eat gas.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "A few days ago, blood level had dropped and needed a blood transfusion.",
+      "NER_tags": [
+        {
+          "entity": "A few days ago,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "blood level",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "blood transfusion.",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0009",
+      "speaker": "Patient",
+      "sentence": "For about 2 weeks—since the time my blood level dropped",
+      "NER_tags": [
+        {
+          "entity": "2 weeks—since",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "blood level",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0018",
+      "speaker": "Patient",
+      "sentence": "After going there, she was fine for a few days, but then complications started again.",
+      "NER_tags": [
+        {
+          "entity": "complications",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0024",
+      "speaker": "Patient",
+      "sentence": "She's not able to eat properly.",
+      "NER_tags": [
+        {
+          "entity": "not able to",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0033",
+      "speaker": "Patient",
+      "sentence": "The stool is somewhat blackish in color.",
+      "NER_tags": [
+        {
+          "entity": "stool",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "somewhat blackish in color.",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0041",
+      "speaker": "Patient",
+      "sentence": "my body is becoming very weak",
+      "NER_tags": [
+        {
+          "entity": "body",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Medical_Advice",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "Not able to eat properly—whatever is eaten turns into gas.",
+      "NER_tags": [
+        {
+          "entity": "Not able to eat gas.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "A few days ago, blood level had dropped and needed a blood transfusion.",
+      "NER_tags": [
+        {
+          "entity": "A few days ago,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "blood level",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "blood transfusion.",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0007",
+      "speaker": "Patient",
+      "sentence": "My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago.",
+      "NER_tags": [
+        {
+          "entity": "blood level",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "about 2 weeks ago,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "blood",
+          "type": "MEDICATION"
+        },
+        {
+          "entity": "2–4 days ago.",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Etiology",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0009",
+      "speaker": "Patient",
+      "sentence": "For about 2 weeks—since the time my blood level dropped",
+      "NER_tags": [
+        {
+          "entity": "2 weeks—since",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "blood level",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0018",
+      "speaker": "Patient",
+      "sentence": "After going there, she was fine for a few days, but then complications started again.",
+      "NER_tags": [
+        {
+          "entity": "complications",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0020",
+      "speaker": "Patient",
+      "sentence": "The doctor said it's a stomach-related problem, but coming here frequently might be difficult.",
+      "NER_tags": [
+        {
+          "entity": "frequently",
+          "type": "SYMPTOM_FREQUENCY"
+        }
+      ],
+      "DAC_tag": "Inform-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0024",
+      "speaker": "Patient",
+      "sentence": "She's not able to eat properly.",
+      "NER_tags": [
+        {
+          "entity": "not able to",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0033",
+      "speaker": "Patient",
+      "sentence": "The stool is somewhat blackish in color.",
+      "NER_tags": [
+        {
+          "entity": "stool",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "somewhat blackish in color.",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0041",
+      "speaker": "Patient",
+      "sentence": "my body is becoming very weak",
+      "NER_tags": [
+        {
+          "entity": "body",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Medical_Advice",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "A few days ago, blood level had dropped and needed a blood transfusion.",
+      "NER_tags": [
+        {
+          "entity": "A few days ago,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "blood level",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "blood transfusion.",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0035",
+      "speaker": "Patient",
+      "sentence": "after the blood transfution",
+      "NER_tags": [
+        {
+          "entity": "blood transfution",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0044",
+      "speaker": "Patient",
+      "sentence": "no there was blood test in the hospital and the doctor there told that everything is fine.",
+      "NER_tags": [
+        {
+          "entity": "no",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "blood test",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

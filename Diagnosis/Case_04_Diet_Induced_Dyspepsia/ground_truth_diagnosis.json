@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Diet-Induced Non-Ulcer Dyspepsia with Irritable Bowel Syndrome (IBS-Mixed)",
+  "secondary_diagnoses": [
+    "Food Intolerance / Malabsorption (Legume & Lipid Sensitivity)",
+    "Early Pregnancy Medication Caution"
+  ],
+  "clinical_reasoning": "Patient presents with a 2-month history of postprandial epigastric pinching, burning, and tenesmus/incomplete evacuation triggered specifically by high-fat foods (meat) and fermentable legumes (chickpeas, peanuts). The combination of upper GI burning and lower GI incomplete evacuation fits IBS-Mixed / dyspepsia overlap. Ongoing conception efforts require non-teratogenic dietary interventions and pregnancy-safe mucosal agents.",
+  "recommended_tests": [
+    "Routine Stool Examination & Occult Blood Test",
+    "Stool Routine and Microscopy (for mucus, ova, and cysts)",
+    "Serum Beta-hCG (to confirm pregnancy status prior to medication)",
+    "Complete Blood Count (CBC) and Erythrocyte Sedimentation Rate (ESR)"
+  ]
+}

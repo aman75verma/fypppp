@@ -1,0 +1,84 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "It feels heavy on this side, near the side of the abdomen (towards the flank).",
+      "NER_tags": [
+        {
+          "entity": "heavy",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "side abdomen flank).",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0020",
+      "speaker": "Patient",
+      "sentence": "yes But I feel very little hunger—I hardly feel hungry at all.",
+      "NER_tags": [
+        {
+          "entity": "hunger—I hungry",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "It feels heavy on this side, near the side of the abdomen (towards the flank).",
+      "NER_tags": [
+        {
+          "entity": "heavy",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "side abdomen flank).",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0020",
+      "speaker": "Patient",
+      "sentence": "yes But I feel very little hunger—I hardly feel hungry at all.",
+      "NER_tags": [
+        {
+          "entity": "hunger—I hungry",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0011",
+      "speaker": "Patient",
+      "sentence": "I did the ultrasonography said it was fat",
+      "NER_tags": [
+        {
+          "entity": "ultrasonography",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

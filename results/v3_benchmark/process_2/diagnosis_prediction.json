@@ -1,0 +1,17 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - But recently, for the past few days, I'm noticing a slight burning sensation and some pain again. [Symptoms: burning sensation pain | Characteristics: slight]\n  - This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you. [Symptoms: gas burning sensation]\n\nHISTORY OF PRESENT ILLNESS:\n  - I had come to you once before—it had improved then. [Timeline: once before—it]\n  - But recently, for the past few days, I'm noticing a slight burning sensation and some pain again. [Timeline: recently,]\n  - This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you.",
+  "prediction": {
+    "primary_diagnosis": "Gastroesophageal Reflux Disease (GERD)",
+    "secondary_diagnoses": [
+      "Peptic Ulcer Disease (PUD) or Helicobacter pylori infection"
+    ],
+    "clinical_reasoning": "GERD may be causing the recurrent symptoms of burning and pain in the esophagus due to acid reflux",
+    "recommended_tests": [
+      "an upper endoscopy",
+      "a 24",
+      "hour pH monitoring study."
+    ]
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

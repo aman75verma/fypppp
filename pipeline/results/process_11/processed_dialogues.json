@@ -1,0 +1,240 @@
+{
+  "sent_0001": {
+    "sentence": "tell me whats the problem ?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0002": {
+    "sentence": "Doctor, whatever I eat, it feels like...",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0003": {
+    "sentence": "What does it feel like?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0004": {
+    "sentence": "It feels heavy on this side, near the side of the abdomen (towards the flank).",
+    "NER_tags": [
+      {
+        "entity": "heavy",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "side abdomen flank).",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0005": {
+    "sentence": "Since when has this been happening?",
+    "NER_tags": [
+      {
+        "entity": "Since when",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0006": {
+    "sentence": "For many days.",
+    "NER_tags": [],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0007": {
+    "sentence": "it doesn't seem like stomach problem it looks like nerve problem , okay?",
+    "NER_tags": [
+      {
+        "entity": "stomach problem nerve problem",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0008": {
+    "sentence": "But is there any test doen for stomach?",
+    "NER_tags": [
+      {
+        "entity": "stomach?",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0009": {
+    "sentence": "yes, 1 time I have done the report",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0010": {
+    "sentence": "what report?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0011": {
+    "sentence": "I did the ultrasonography said it was fat",
+    "NER_tags": [
+      {
+        "entity": "ultrasonography",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0012": {
+    "sentence": "That usually happens if there is abdominal fat, but you don't have that.",
+    "NER_tags": [
+      {
+        "entity": "abdominal fat,",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0013": {
+    "sentence": "but there was no endoscopy?",
+    "NER_tags": [
+      {
+        "entity": "endoscopy?",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0014": {
+    "sentence": "no there was not",
+    "NER_tags": [],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0015": {
+    "sentence": "any other deaseses , sugar , pressure, anything?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0016": {
+    "sentence": "nothing",
+    "NER_tags": [],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0017": {
+    "sentence": "any addiction?",
+    "NER_tags": [
+      {
+        "entity": "addiction?",
+        "type": "HABIT_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0018": {
+    "sentence": "no",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0019": {
+    "sentence": "Is everything else normal—your appetite, bowel movements, and urination?",
+    "NER_tags": [
+      {
+        "entity": "appetite,",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "bowel",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "movements,",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "urination?",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0020": {
+    "sentence": "yes But I feel very little hunger—I hardly feel hungry at all.",
+    "NER_tags": [
+      {
+        "entity": "yes",
+        "type": "POLARITY"
+      },
+      {
+        "entity": "hunger—I hungry",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0021": {
+    "sentence": "okay, I will do the test and all once",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0022": {
+    "sentence": "cannot eat anything also",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0023": {
+    "sentence": "okay, I don't think it is a stomach problem specific, I think it is a problem related to nerve , later you need to get checked up by a nerve doctor , 1st the report should be done here then",
+    "NER_tags": [
+      {
+        "entity": "don't think",
+        "type": "POLARITY"
+      },
+      {
+        "entity": "stomach problem",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "nerve",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Inform-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0024": {
+    "sentence": "okay",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0025": {
+    "sentence": "I am giving you medicine for like 3 week , okay?",
+    "NER_tags": [
+      {
+        "entity": "3 week",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Drug_Recommendation",
+    "SLI_tags": []
+  }
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Comparison — DAC & NER Results</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1e293b;
+            --border: #e2e8f0;
+            --header-bg: #f8fafc;
+            --highlight: #0f172a;
+            --best-bg: #f0fdf4;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2.5rem 3rem;
+            line-height: 1.5;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.6rem;
+            color: var(--highlight);
+            margin-bottom: 0.25rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            font-size: 1.15rem;
+            color: var(--highlight);
+            margin: 2.5rem 0 0.75rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        table {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto 1rem auto;
+            border-collapse: collapse;
+            border: 1px solid var(--border);
+            font-size: 0.92rem;
+        }
+        th {
+            background: var(--header-bg);
+            padding: 0.9rem 1rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            font-weight: 600;
+            color: #334155;
+            font-size: 0.88rem;
+        }
+        td {
+            padding: 0.85rem 1rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        td:first-child {
+            text-align: center;
+            font-weight: 600;
+        }
+        tr:hover { background: #fafbfc; }
+        .best-row { background: var(--best-bg); }
+        .best-row:hover { background: #e6f9ed; }
+        .best-val { font-weight: 700; }
+        .note {
+            max-width: 980px;
+            margin: 0.5rem auto 0 auto;
+            font-size: 0.78rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+        @media print {
+            body { padding: 1rem; }
+            table { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MediTOD: Model Evaluation Comparison</h1>
+    <p class="subtitle">Dialogue Act Classification (DAC) & Named Entity Recognition (NER) on MediTOD Test Set</p>
+
+    <!-- ───────────── DAC TABLE ───────────── -->
+    <h2>Table 1 — Dialogue Act Classification (DAC)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy (%)</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-score</th>
+                <th>Loss</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BERT-base-uncased</td>
+                <td>85.92</td>
+                <td>0.8653</td>
+                <td>0.8592</td>
+                <td>0.8602</td>
+                <td>0.4012</td>
+            </tr>
+            <tr class="best-row">
+                <td>PubMedBERT</td>
+                <td class="best-val">86.92</td>
+                <td class="best-val">0.8840</td>
+                <td class="best-val">0.8692</td>
+                <td class="best-val">0.8738</td>
+                <td class="best-val">0.3541</td>
+            </tr>
+            <tr>
+                <td>BioBERT v1.1</td>
+                <td>84.91</td>
+                <td>0.8688</td>
+                <td>0.8491</td>
+                <td>0.8556</td>
+                <td>0.4236</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="note">
+        <strong>Why we chose PubMedBERT for DAC:</strong> It achieves the highest overall metrics (0.8738 F1) by utilizing its domain-specific embeddings to robustly differentiate highly nuanced clinical intents that general-domain models miss.
+    </p>
+
+    <!-- ───────────── NER TABLE ───────────── -->
+    <h2>Table 2 — Named Entity Recognition (NER)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy (%)</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-score</th>
+                <th>Loss</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SciBERT</td>
+                <td>85.60</td>
+                <td class="best-val">0.7305</td>
+                <td>0.8560</td>
+                <td class="best-val">0.7860</td>
+                <td>0.0072</td>
+            </tr>
+            <tr class="best-row">
+                <td>PubMedBERT</td>
+                <td class="best-val">86.96</td>
+                <td>0.7012</td>
+                <td class="best-val">0.8696</td>
+                <td>0.7703</td>
+                <td class="best-val">0.0069</td>
+            </tr>
+            <tr>
+                <td>BioClinicalBERT</td>
+                <td>85.78</td>
+                <td>0.7051</td>
+                <td>0.8578</td>
+                <td>0.7715</td>
+                <td>0.0093</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="note">
+        <strong>Why we chose PubMedBERT for NER:</strong> Despite a slightly lower F1, it delivers the highest recall (0.8696)—which is paramount in clinical NLP to avoid missing critical entities (False Negatives)—and leverages a vocabulary trained entirely on biomedical literature.
+    </p>
+
+</body>
+</html>

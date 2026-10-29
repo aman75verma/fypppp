@@ -1,0 +1,33 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 11: Thoracoabdominal Radiculopathy vs Acute/Subacute Pancreatitis
+===========================================================================
+Expected Clinical Diagnosis: Thoracoabdominal Radiculopathy / Intercostal Nerve Entrapment Syndrome vs Functional Flank Dyspepsia
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "It feels heavy on this side, near the side of the abdomen (towards the flank)."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: heavy (SYMPTOM_CHARACTERISTICS), side abdomen flank). (SYMPTOM_LOCATION)
+  [2] "yes But I feel very little hunger—I hardly feel hungry at all."
+      Dialogue Act: [Request-Symptom]
+      Extracted Medical Entities: hunger—I hungry (SYMPTOM_VALUE)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  [1] "I did the ultrasonography said it was fat"
+      Entities: ultrasonography (MEDICAL_TEST_NAME)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Acute Pancreatitis
+  Secondary / Differential Diagnoses: None noted
+
+  Pathophysiological Clinical Reasoning:
+    The patient's chief complaint of feeling heavy on one side near the flank and decreased appetite is suggestive of acute pancreatitis. This condition can cause epigastric pain radiating to the back, which may present as heaviness in the affected quadrant. The loss of appetite is a common symptom associated with inflammation of the pancreas. However, further diagnostic tests are necessary to confirm the diagnosis.  Recommended Tests: - Serum amylase and lipase levels - CT scan of the abdomen
+
+  Recommended Diagnostic Investigations & Workup:
+    1. Serum amylase
+    2. lipase levels
+    3. CT scan of the abdomen
+
+===========================================================================

@@ -1,0 +1,252 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "There is a slight problem in the stomach.",
+      "NER_tags": [
+        {
+          "entity": "stomach.",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0006",
+      "speaker": "Patient",
+      "sentence": "My appetite is low at times, and my urine appears yellow",
+      "NER_tags": [
+        {
+          "entity": "appetite",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "low",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "urine",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0010",
+      "speaker": "Patient",
+      "sentence": "No, I had jaundice—since then.",
+      "NER_tags": [
+        {
+          "entity": "No,",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "jaundice—since",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "then.",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "There is a slight problem in the stomach.",
+      "NER_tags": [
+        {
+          "entity": "stomach.",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0006",
+      "speaker": "Patient",
+      "sentence": "My appetite is low at times, and my urine appears yellow",
+      "NER_tags": [
+        {
+          "entity": "appetite",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "low",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "urine",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0008",
+      "speaker": "Patient",
+      "sentence": "I've been noticing this for about a month.",
+      "NER_tags": [
+        {
+          "entity": "for about a month.",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0010",
+      "speaker": "Patient",
+      "sentence": "No, I had jaundice—since then.",
+      "NER_tags": [
+        {
+          "entity": "No,",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "jaundice—since",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "then.",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0013",
+      "speaker": "Patient",
+      "sentence": "No, after the evening the urine becomes clear again.",
+      "NER_tags": [
+        {
+          "entity": "No,",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "after the evening",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "clear",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0014",
+      "speaker": "Doctor",
+      "sentence": "Then it's not jaundice.",
+      "NER_tags": [
+        {
+          "entity": "jaundice.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0026",
+      "speaker": "Patient",
+      "sentence": "Sometimes I feel lightheaded.",
+      "NER_tags": [
+        {
+          "entity": "lightheaded.",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0028",
+      "speaker": "Doctor",
+      "sentence": "in this report there is joundice but it is 2 month old report.",
+      "NER_tags": [
+        {
+          "entity": "2 month old",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Inform-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0030",
+      "speaker": "Doctor",
+      "sentence": "Then if you're saying that sometimes it is becoming pale/whitish, it could mean the stone has passed.",
+      "NER_tags": [
+        {
+          "entity": "pale/whitish,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "stone",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Basic_Information",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [
+    {
+      "sentence_id": "sent_0031",
+      "speaker": "Doctor",
+      "sentence": "You'll need to do a sonography, and also repeat the jaundice tests.",
+      "NER_tags": [
+        {
+          "entity": "sonography, jaundice tests.",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Inform-Medical_Advice",
+      "SLI_tags": []
+    }
+  ],
+  "diagnosis": [
+    {
+      "sentence_id": "sent_0032",
+      "speaker": "Doctor",
+      "sentence": "If any problem is found, then the stone may need to be removed.",
+      "NER_tags": [
+        {
+          "entity": "stone",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Medical_Advice",
+      "SLI_tags": []
+    }
+  ],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0031",
+      "speaker": "Doctor",
+      "sentence": "You'll need to do a sonography, and also repeat the jaundice tests.",
+      "NER_tags": [
+        {
+          "entity": "sonography, jaundice tests.",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Inform-Medical_Advice",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

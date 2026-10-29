@@ -1,0 +1,13 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - It feels heavy on this side, near the side of the abdomen (towards the flank). [Location: side abdomen flank). | Characteristics: heavy]\n  - yes But I feel very little hunger—I hardly feel hungry at all. [Symptoms: hunger—I hungry]\n\nHISTORY OF PRESENT ILLNESS:\n  - It feels heavy on this side, near the side of the abdomen (towards the flank).\n  - yes But I feel very little hunger—I hardly feel hungry at all.\n\nPAST MEDICAL HISTORY:\n  - I did the ultrasonography said it was fat [Tests: ultrasonography]\n\nEXISTING DIAGNOSIS NOTES:\n  - okay, I don't think it is a stomach problem specific, I think it is a problem related to nerve , later you need to get checked up by a nerve doctor , 1st the report should be done here then",
+  "prediction": {
+    "primary_diagnosis": "pancreatitis",
+    "secondary_diagnoses": [
+      "peptic ulcer disease or gastritis. Further confirmatory investigations are recommended to guide appropriate management by a gastroenterologist."
+    ],
+    "clinical_reasoning": "The patient's chief complaint of feeling heavy on one side, near the side of the abdomen (towards the flank), along with a lack of hunger, suggests a possible gastrointestinal issue. Given the history of an ultrasonography showing fatty deposits, it is important to consider conditions that can cause abdominal pain and decreased appetite.  One potential primary diagnosis could be pancreatitis. This condition can present with epigastric pain radiating to the back, which may be described as heaviness in the side of the abdomen towards the flank. Loss of appetite is also a common symptom of pancreatitis. Other possible causes of these symptoms include peptic ulcer disease or gastritis, both of which can cause similar abdominal discomfort and changes in appetite.  To confirm the diagnosis, further investigations such as blood tests (e.g., amylase, lipase), imaging studies (CT scan, MRI), and possibly an endoscopy may be recommended. It is important for the patient to consult with a gastroenterologist who can conduct a thorough evaluation and provide appropriate treatment based on the diagnostic findings.  In summary, considering the patient's symptoms of heaviness in the side of the abdomen towards the flank and decreased appetite, along with the history of fatty deposits seen on ultrasonography, pancreatitis is a likely primary diagnosis. Secondary diagnoses could include peptic ulcer disease or gastritis. Further confirmatory investigations are recommended to guide appropriate management by a gastroenterologist.",
+    "recommended_tests": []
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

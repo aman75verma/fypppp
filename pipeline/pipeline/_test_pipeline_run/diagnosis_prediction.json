@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "HISTORY OF PRESENT ILLNESS:\n  - For about two days, and it gets worse in the heat.\n\nPAST MEDICAL HISTORY:\n  - Any history of stomach ulcers? [History: stomach ulcers?]\n\nSOCIAL HISTORY:\n  - For about two days, and it gets worse in the heat.",
+  "prediction": {
+    "primary_diagnosis": "Functional Gastrointestinal Disorder (FGID) / Dyspepsia",
+    "secondary_diagnoses": [
+      "Early Gastritis",
+      "Dietary / Lifestyle-Induced Bowel Dysmotility"
+    ],
+    "clinical_reasoning": "Clinical findings extracted from the consultation indicate recurring gastrointestinal symptomatology without acute surgical abdomen signs. Systematic workup is warranted to distinguish functional versus structural pathology.",
+    "recommended_tests": [
+      "Abdominal Ultrasonography (USG)",
+      "Complete Blood Count (CBC) with Differential",
+      "Basic Metabolic Panel & Liver Function Tests",
+      "Routine Stool Examination"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

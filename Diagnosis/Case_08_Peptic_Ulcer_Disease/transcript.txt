@@ -1,0 +1,75 @@
+# Process 8 Transcript
+
+Doctor: what is the prblem tell me
+
+Patient: Not able to eat properly—whatever is eaten turns into gas.
+
+Doctor: hmm
+
+Patient: A few days ago, blood level had dropped and needed a blood transfusion.
+
+Doctor: When did this happen? When did your blood level drop?
+
+Patient: My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago.
+
+Doctor: How long have you been unable to eat properly?
+
+Patient: For about 2 weeks—since the time my blood level dropped
+
+Doctor: Before this, did you have any known illnesses—like diabetes, blood pressure, thyroid, or anything else?
+
+Patient: yes there is pressure
+
+Doctor: is medication taken for that?
+
+Patient: yes sir I had consulted a doctor earlier, and I had started taking medicines.
+
+Doctor: for what? Pressure? for gas and I was not able to sleep.
+
+Patient: So sir, my mother stays in our village. After going there, she was fine for a few days, but then complications started again. So we went to a doctor at Apollo Hospitals and consulted here. The doctor said it's a stomach-related problem, but coming here frequently might be difficult.
+
+Doctor: any addiction?
+
+Patient: no
+
+Doctor: how is the apetite?
+
+Patient: She's not able to eat properly.
+
+Doctor: is it for the past 2 week or before that?
+
+Patient: before that
+
+Doctor: is there any weight loss? It's visibly noticeable—her blouse has become loose
+
+Patient: no
+
+Doctor: Is there any vomiting or anything like that?
+
+Patient: no
+
+Doctor: bowel movement is fine?
+
+Patient: The stool is somewhat blackish in color.
+
+Doctor: blackish?
+
+Patient: after the blood transfution
+
+Doctor: after the blood transfution it became blackish? Is she taking any iron supplements or medicines?
+
+Patient: yes, we are only feeding her that , that is written here
+
+Doctor: Oh, that's because of taking iron supplements—the stool can become black due to that. Alright, please lie down—I'll examine your abdomen.
+
+Patient: my body is becoming very weak
+
+Doctor: Only one time of blood was given? And after the transfusion, you haven't done another blood test, right?
+
+Patient: no there was blood test in the hospital and the doctor there told that everything is fine.
+
+Doctor: that report was not given?
+
+Patient: no they have written that its fine
+
+Doctor: okay

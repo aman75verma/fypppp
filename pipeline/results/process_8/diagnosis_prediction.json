@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - After going there, she was fine for a few days, but then complications started again. [Symptoms: complications]\n  - The stool is somewhat blackish in color. [Symptoms: stool | Characteristics: somewhat blackish in color.]\n\nHISTORY OF PRESENT ILLNESS:\n  - The doctor said it's a stomach-related problem, but coming here frequently might be difficult.\n  - The stool is somewhat blackish in color.\n\nPAST MEDICAL HISTORY:\n  - what is the prblem tell me [Tests: prblem]\n  - A few days ago, blood level had dropped and needed a blood transfusion. [History: blood transfusion.]\n  - Before this, did you have any known illnesses—like diabetes, blood pressure, thyroid, or anything else? [History: diabetes, blood pressure, thyroid,]\n  - after the blood transfution [History: blood transfution]\n  - after the blood transfution it became blackish? [History: blood transfution]\n  - And after the transfusion, you haven't done another blood test, right? [Tests: blood]\n  - no there was blood test in the hospital and the doctor there told that everything is fine. [Tests: blood test]",
+  "prediction": {
+    "primary_diagnosis": "Functional Gastrointestinal Disorder (FGID) / Dyspepsia",
+    "secondary_diagnoses": [
+      "Early Gastritis",
+      "Dietary / Lifestyle-Induced Bowel Dysmotility"
+    ],
+    "clinical_reasoning": "Clinical findings extracted from the consultation indicate recurring gastrointestinal symptomatology without acute surgical abdomen signs. Systematic workup is warranted to distinguish functional versus structural pathology.",
+    "recommended_tests": [
+      "Abdominal Ultrasonography (USG)",
+      "Complete Blood Count (CBC) with Differential",
+      "Basic Metabolic Panel & Liver Function Tests",
+      "Routine Stool Examination"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

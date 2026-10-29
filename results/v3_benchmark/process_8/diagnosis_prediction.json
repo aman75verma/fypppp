@@ -1,0 +1,13 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - Not able to eat properly—whatever is eaten turns into gas. [Symptoms: Not able to eat]\n  - My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago. [Symptoms: blood level]\n  - For about 2 weeks—since the time my blood level dropped [Symptoms: blood level]\n  - After going there, she was fine for a few days, but then complications started again. [Symptoms: complications]\n  - She's not able to eat properly. [Symptoms: not able to]\n  - my body is becoming very weak [Location: body]\n\nHISTORY OF PRESENT ILLNESS:\n  - Not able to eat properly—whatever is eaten turns into gas.\n  - A few days ago, blood level had dropped and needed a blood transfusion. [Timeline: A few days ago,]\n  - My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago. [Timeline: about 2 weeks ago, 2–4 days ago.]\n  - For about 2 weeks—since the time my blood level dropped [Timeline: weeks—since]\n  - After going there, she was fine for a few days, but then complications started again.\n  - The doctor said it's a stomach-related problem, but coming here frequently might be difficult.\n  - She's not able to eat properly.\n  - The stool is somewhat blackish in color.\n  - Oh, that's because of taking iron supplements—the stool can become black due to that.\n  - Alright, please lie down—I'll examine your abdomen.\n  - my body is becoming very weak\n\nPAST MEDICAL HISTORY:\n  - A few days ago, blood level had dropped and needed a blood transfusion. [History: blood transfusion.]\n  - My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago.\n  - no there was blood test in the hospital and the doctor there told that everything is fine. [Tests: blood test]\n  - no they have written that its fine",
+  "prediction": {
+    "primary_diagnosis": "Malabsorption",
+    "secondary_diagnoses": [
+      "Iron deficiency Anemia due to chronic blood loss or malabsorption"
+    ],
+    "clinical_reasoning": "the patient's gastrointestinal symptoms are indicative of malabsorption, which can lead to vitamin and mineral deficiencies including iron, resulting in anemia. Confirmatory investigations would include serologic testing for celiac disease antibodies such as anti-tissue transglutaminase (anti-TTG) or endomysial antibody (EMA), and further evaluation of iron status through complete blood count (CBC) with peripheral smear examination and serum iron studies.",
+    "recommended_tests": []
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

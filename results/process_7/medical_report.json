@@ -1,0 +1,389 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days",
+      "NER_tags": [
+        {
+          "entity": "Sir,",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "stomach problems",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "2 years—whenever",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "loose motion,",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0005",
+      "speaker": "Patient",
+      "sentence": "sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\"",
+      "NER_tags": [
+        {
+          "entity": "between 1 month",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "perfectly",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "for 1 week",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "heavier",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "for another week",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "less,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "no",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "lower abdomen",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "kao\"",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0007",
+      "speaker": "Patient",
+      "sentence": "I'm having abdominal cramps, and I'm passing stools frequently",
+      "NER_tags": [
+        {
+          "entity": "abdominal cramps, stools",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0009",
+      "speaker": "Patient",
+      "sentence": "Sometimes it happens during loose motion",
+      "NER_tags": [
+        {
+          "entity": "loose motion",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0015",
+      "speaker": "Patient",
+      "sentence": "I had a USG, and they said I have fatty liver and a gas problem.",
+      "NER_tags": [
+        {
+          "entity": "USG,",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "fatty liver",
+          "type": "MEDICAL_HISTORY_VALUE"
+        },
+        {
+          "entity": "gas problem.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0017",
+      "speaker": "Patient",
+      "sentence": "The blood tests showed there was some infection in the liver and kidneys.",
+      "NER_tags": [
+        {
+          "entity": "blood tests",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "infection",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "liver kidneys.",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0026",
+      "speaker": "Patient",
+      "sentence": "but the pain in the abdomen is not going away",
+      "NER_tags": [
+        {
+          "entity": "pain",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "abdomen",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days",
+      "NER_tags": [
+        {
+          "entity": "Sir,",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "stomach problems",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "2 years—whenever",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "loose motion,",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0005",
+      "speaker": "Patient",
+      "sentence": "sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\"",
+      "NER_tags": [
+        {
+          "entity": "between 1 month",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "perfectly",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "for 1 week",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "heavier",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "for another week",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "less,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "no",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "lower abdomen",
+          "type": "SYMPTOM_LOCATION"
+        },
+        {
+          "entity": "kao\"",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0007",
+      "speaker": "Patient",
+      "sentence": "I'm having abdominal cramps, and I'm passing stools frequently",
+      "NER_tags": [
+        {
+          "entity": "abdominal cramps, stools",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0009",
+      "speaker": "Patient",
+      "sentence": "Sometimes it happens during loose motion",
+      "NER_tags": [
+        {
+          "entity": "loose motion",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0014",
+      "speaker": "Patient",
+      "sentence": "About one to one-and-a-half years ago, I got tests done in Berhampore, Murshidabad.",
+      "NER_tags": [
+        {
+          "entity": "About one to one-and-a-half years ago,",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Inform-Etiology",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0015",
+      "speaker": "Patient",
+      "sentence": "I had a USG, and they said I have fatty liver and a gas problem.",
+      "NER_tags": [
+        {
+          "entity": "USG,",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "fatty liver",
+          "type": "MEDICAL_HISTORY_VALUE"
+        },
+        {
+          "entity": "gas problem.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0017",
+      "speaker": "Patient",
+      "sentence": "The blood tests showed there was some infection in the liver and kidneys.",
+      "NER_tags": [
+        {
+          "entity": "blood tests",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "infection",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "liver kidneys.",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0024",
+      "speaker": "Patient",
+      "sentence": "apetite is fine.",
+      "NER_tags": [
+        {
+          "entity": "apetite",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Other",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0026",
+      "speaker": "Patient",
+      "sentence": "but the pain in the abdomen is not going away",
+      "NER_tags": [
+        {
+          "entity": "pain",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "abdomen",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0015",
+      "speaker": "Patient",
+      "sentence": "I had a USG, and they said I have fatty liver and a gas problem.",
+      "NER_tags": [
+        {
+          "entity": "USG,",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "fatty liver",
+          "type": "MEDICAL_HISTORY_VALUE"
+        },
+        {
+          "entity": "gas problem.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0017",
+      "speaker": "Patient",
+      "sentence": "The blood tests showed there was some infection in the liver and kidneys.",
+      "NER_tags": [
+        {
+          "entity": "blood tests",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "infection",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "liver kidneys.",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

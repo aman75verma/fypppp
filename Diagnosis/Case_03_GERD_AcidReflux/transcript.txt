@@ -1,0 +1,45 @@
+# Process 3 Transcript
+
+Doctor: please tell me whats the problem ?
+
+Patient: burning sensation in the stomach
+
+Doctor: Which area ?
+
+Patient: From the chest area.
+
+Doctor: Is it in the upper part of the stomach?
+
+Patient: yes
+
+Doctor: Okay, how many days has it been?
+
+Patient: 2 – 3 year
+
+Doctor: 2 – 3 year? So, have you consulted a doctor for this?
+
+Patient: yes, a doctor had been consulted earlier.
+
+Doctor: Did the doctor do any tests? But this is a report from two years ago, right? Do you have any addictions or habits?
+
+Patient: no
+
+Doctor: Any other illnesses—like sugar, blood pressure, thyroid, or anything else?
+
+Patient: Blood sugar was tested, but nothing significant was there.
+
+Doctor: Does she not take any medicines?
+
+Patient: no.
+
+Patient: If she eats anything else, she feels like vomiting,
+
+Doctor: okay. Any addiction?
+
+Patient: not able to sleep
+
+Doctor: doesn't have any addictions, right?
+
+Patient: no no
+
+Doctor: okay.

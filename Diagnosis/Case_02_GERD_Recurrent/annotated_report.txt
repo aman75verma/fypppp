@@ -1,0 +1,32 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 2: Recurrent Acid Peptic Disease with Nocturnal Burning
+===========================================================================
+Expected Clinical Diagnosis: Gastroesophageal Reflux Disease (GERD) with Recurrent Acid Peptic Disease
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "But recently, for the past few days, I'm noticing a slight burning sensation and some pain again."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: recently, (TEMPORAL), slight (SYMPTOM_CHARACTERISTICS), burning sensation pain (SYMPTOM_VALUE)
+  [2] "This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: gas burning sensation (SYMPTOM_VALUE)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  (No relevant past medical history isolated)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Gastroesophageal Reflux Disease (GERD)
+  Secondary / Differential Diagnoses: Peptic Ulcer Disease (PUD) or Helicobacter pylori infection
+
+  Pathophysiological Clinical Reasoning:
+    GERD may be causing the recurrent symptoms of burning and pain in the esophagus due to acid reflux
+
+  Recommended Diagnostic Investigations & Workup:
+    1. an upper endoscopy
+    2. a 24
+    3. hour pH monitoring study.
+
+===========================================================================

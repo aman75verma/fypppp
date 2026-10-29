@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - yes My abdomen feels swollen, and my body—hands and feet—also get swollen [Symptoms: swollen | Location: abdomen, body—hands feet—also | Characteristics: swollen,]\n  - bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this [Symptoms: bowel movement]\n  - okay , And I'm not able to digest food properly; my stomach stays bloated [Symptoms: not able to, bloated | Location: stomach]\n  - The upper part of the abdomen, right? [Location: upper part abdomen,]\n\nHISTORY OF PRESENT ILLNESS:\n  - yes My abdomen feels swollen, and my body—hands and feet—also get swollen\n  - near about 1 year [Timeline: near about 1 year]\n  - bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this [Timeline: for 3 to 4 moths]\n  - okay , And I'm not able to digest food properly; my stomach stays bloated\n  - The upper part of the abdomen, right?\n\nPAST MEDICAL HISTORY:\n  - medication taken for thyroid? [History: thyroid?]",
+  "prediction": {
+    "primary_diagnosis": "Functional Gastrointestinal Disorder (FGID) / Dyspepsia",
+    "secondary_diagnoses": [
+      "Early Gastritis",
+      "Dietary / Lifestyle-Induced Bowel Dysmotility"
+    ],
+    "clinical_reasoning": "Clinical findings extracted from the consultation indicate recurring gastrointestinal symptomatology without acute surgical abdomen signs. Systematic workup is warranted to distinguish functional versus structural pathology.",
+    "recommended_tests": [
+      "Abdominal Ultrasonography (USG)",
+      "Complete Blood Count (CBC) with Differential",
+      "Basic Metabolic Panel & Liver Function Tests",
+      "Routine Stool Examination"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

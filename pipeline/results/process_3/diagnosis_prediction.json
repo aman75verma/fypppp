@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "PAST MEDICAL HISTORY:\n  - Any other illnesses—like sugar, blood pressure, thyroid, or anything else? [History: thyroid,]\n  - Blood sugar was tested, but nothing significant was there. [Tests: Blood sugar]\n  - doesn't have any addictions, right? [History: addictions,]",
+  "prediction": {
+    "primary_diagnosis": "Functional Gastrointestinal Disorder (FGID) / Dyspepsia",
+    "secondary_diagnoses": [
+      "Early Gastritis",
+      "Dietary / Lifestyle-Induced Bowel Dysmotility"
+    ],
+    "clinical_reasoning": "Clinical findings extracted from the consultation indicate recurring gastrointestinal symptomatology without acute surgical abdomen signs. Systematic workup is warranted to distinguish functional versus structural pathology.",
+    "recommended_tests": [
+      "Abdominal Ultrasonography (USG)",
+      "Complete Blood Count (CBC) with Differential",
+      "Basic Metabolic Panel & Liver Function Tests",
+      "Routine Stool Examination"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

@@ -1,0 +1,44 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 10: Congestive Heart Failure with Secondary Visceral Congestion
+===========================================================================
+Expected Clinical Diagnosis: Congestive Heart Failure (CHF) with Secondary Visceral Congestion & Bowel Edema
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "There is abdominal pain, and when food stays here, it feels swollen or bloated."
+      Dialogue Act: [Request-Symptom]
+      Extracted Medical Entities: abdominal pain, (SYMPTOM_VALUE), swollen (SYMPTOM_CHARACTERISTICS)
+  [2] "yes My abdomen feels swollen, and my body—hands and feet—also get swollen"
+      Dialogue Act: [Request-Symptom]
+      Extracted Medical Entities: abdomen (SYMPTOM_LOCATION), swollen, (SYMPTOM_CHARACTERISTICS), body—hands feet—also (SYMPTOM_LOCATION)
+  [3] "I have bowel movements once every two days."
+      Dialogue Act: [Request-Symptom]
+      Extracted Medical Entities: bowel movements (SYMPTOM_VALUE), once every two days. (SYMPTOM_FREQUENCY)
+  [4] "bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this"
+      Dialogue Act: [Request-Basic_Information]
+      Extracted Medical Entities: bowel movement (SYMPTOM_VALUE), moths (TEMPORAL)
+  [5] "okay , And I'm not able to digest food properly; my stomach stays bloated"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: able to (SYMPTOM_VALUE), stomach (SYMPTOM_LOCATION), bloated (SYMPTOM_VALUE)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  (No relevant past medical history isolated)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Celiac disease
+  Secondary / Differential Diagnoses: Irritable Bowel Syndrome (IBS) or Inflammatory Bowel Disease (IBD)
+
+  Pathophysiological Clinical Reasoning:
+    The patient's chief complaint includes abdominal pain and bloating, as well as swelling of the abdomen and extremities. The patient also reports infrequent bowel movements and difficulty digesting food properly. Based on these symptoms, a possible primary diagnosis is Celiac disease. Secondary diagnoses could include Irritable Bowel Syndrome (IBS) or Inflammatory Bowel Disease (IBD). To confirm the diagnosis, recommended tests include blood tests for antibodies associated with celiac disease, such as anti-endomysial antibody test and anti-tissue transglutaminase antibody test. Additionally, an endoscopy may be performed to evaluate the small intestine for damage characteristic of celiac disease.
+
+  Recommended Diagnostic Investigations & Workup:
+    1. blood tests for antibodies associated with celiac disease
+    2. such as anti
+    3. endomysial antibody test
+    4. anti
+    5. tissue transglutaminase antibody test. Additionally
+    6. an endoscopy may be performed to evaluate the small intestine for damage characteristic of celiac disease.
+
+===========================================================================

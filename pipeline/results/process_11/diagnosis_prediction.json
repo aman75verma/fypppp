@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - It feels heavy on this side, near the side of the abdomen (towards the flank). [Location: side abdomen flank). | Characteristics: heavy]\n\nHISTORY OF PRESENT ILLNESS:\n  - It feels heavy on this side, near the side of the abdomen (towards the flank).\n\nPAST MEDICAL HISTORY:\n  - I did the ultrasonography said it was fat [Tests: ultrasonography]\n  - but there was no endoscopy? [Tests: endoscopy?]\n\nEXISTING DIAGNOSIS NOTES:\n  - okay, I don't think it is a stomach problem specific, I think it is a problem related to nerve , later you need to get checked up by a nerve doctor , 1st the report should be done here then",
+  "prediction": {
+    "primary_diagnosis": "Functional Gastrointestinal Disorder (FGID) / Dyspepsia",
+    "secondary_diagnoses": [
+      "Early Gastritis",
+      "Dietary / Lifestyle-Induced Bowel Dysmotility"
+    ],
+    "clinical_reasoning": "Clinical findings extracted from the consultation indicate recurring gastrointestinal symptomatology without acute surgical abdomen signs. Systematic workup is warranted to distinguish functional versus structural pathology.",
+    "recommended_tests": [
+      "Abdominal Ultrasonography (USG)",
+      "Complete Blood Count (CBC) with Differential",
+      "Basic Metabolic Panel & Liver Function Tests",
+      "Routine Stool Examination"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

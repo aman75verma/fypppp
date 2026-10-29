@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Chronic Gastroesophageal Reflux Disease (GERD) with Reflux Dyspepsia",
+  "secondary_diagnoses": [
+    "Functional Dyspepsia (Postprandial Distress Syndrome)",
+    "Secondary Sleep Disturbance / Insomnia due to nocturnal reflux"
+  ],
+  "clinical_reasoning": "A 2-3 year chronicity of burning sensation radiating from chest to upper abdomen with postprandial nausea/vomiting feeling strongly indicates chronic gastroesophageal reflux disease (GERD) with reflux-mediated dyspepsia. Nocturnal regurgitation or burning frequently leads to secondary sleep disturbance. Normal fasting blood sugar rules out diabetic gastroparesis.",
+  "recommended_tests": [
+    "Upper GI Endoscopy (EGD) to assess for reflux esophagitis or Barrett's esophagus",
+    "24-hour ambulatory esophageal pH-impedance monitoring",
+    "H. pylori testing (Rapid Urease Test or Stool Antigen)",
+    "Abdominal Ultrasonography (USG)"
+  ]
+}

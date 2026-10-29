@@ -1,0 +1,38 @@
+{
+  "tag2id": {
+    "Request-Etiology": 0,
+    "Request-Precautions": 1,
+    "Request-Medical_Advice": 2,
+    "Inform-Etiology": 3,
+    "Diagnose": 4,
+    "Request-Basic_Information": 5,
+    "Request-Drug_Recommendation": 6,
+    "Inform-Medical_Advice": 7,
+    "Request-Existing_Examination_and_Treatment": 8,
+    "Inform-Basic_Information": 9,
+    "Inform-Precautions": 10,
+    "Inform-Existing_Examination_and_Treatment": 11,
+    "Inform-Drug_Recommendation": 12,
+    "Request-Symptom": 13,
+    "Inform-Symptom": 14,
+    "Other": 15
+  },
+  "id2tag": {
+    "0": "Request-Etiology",
+    "1": "Request-Precautions",
+    "2": "Request-Medical_Advice",
+    "3": "Inform-Etiology",
+    "4": "Diagnose",
+    "5": "Request-Basic_Information",
+    "6": "Request-Drug_Recommendation",
+    "7": "Inform-Medical_Advice",
+    "8": "Request-Existing_Examination_and_Treatment",
+    "9": "Inform-Basic_Information",
+    "10": "Inform-Precautions",
+    "11": "Inform-Existing_Examination_and_Treatment",
+    "12": "Inform-Drug_Recommendation",
+    "13": "Request-Symptom",
+    "14": "Inform-Symptom",
+    "15": "Other"
+  }
+}

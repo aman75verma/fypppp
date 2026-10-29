@@ -1,0 +1,167 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0018",
+      "sentence": "After going there, she was fine for a few days, but then complications started again.",
+      "NER_tags": [
+        {
+          "entity": "complications",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0033",
+      "sentence": "The stool is somewhat blackish in color.",
+      "NER_tags": [
+        {
+          "entity": "stool",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "somewhat blackish in color.",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0020",
+      "sentence": "The doctor said it's a stomach-related problem, but coming here frequently might be difficult.",
+      "NER_tags": [
+        {
+          "entity": "frequently",
+          "type": "SYMPTOM_FREQUENCY"
+        }
+      ],
+      "DAC_tag": "Inform-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0033",
+      "sentence": "The stool is somewhat blackish in color.",
+      "NER_tags": [
+        {
+          "entity": "stool",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "somewhat blackish in color.",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0001",
+      "sentence": "what is the prblem tell me",
+      "NER_tags": [
+        {
+          "entity": "prblem",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0004",
+      "sentence": "A few days ago, blood level had dropped and needed a blood transfusion.",
+      "NER_tags": [
+        {
+          "entity": "A few days ago,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "blood level",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "blood transfusion.",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0010",
+      "sentence": "Before this, did you have any known illnesses—like diabetes, blood pressure, thyroid, or anything else?",
+      "NER_tags": [
+        {
+          "entity": "diabetes, blood pressure, thyroid,",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Etiology",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0035",
+      "sentence": "after the blood transfution",
+      "NER_tags": [
+        {
+          "entity": "blood transfution",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0036",
+      "sentence": "after the blood transfution it became blackish?",
+      "NER_tags": [
+        {
+          "entity": "blood transfution",
+          "type": "MEDICAL_HISTORY_VALUE"
+        },
+        {
+          "entity": "blackish?",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0043",
+      "sentence": "And after the transfusion, you haven't done another blood test, right?",
+      "NER_tags": [
+        {
+          "entity": "blood",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Medical_Advice",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0044",
+      "sentence": "no there was blood test in the hospital and the doctor there told that everything is fine.",
+      "NER_tags": [
+        {
+          "entity": "no",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "blood test",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

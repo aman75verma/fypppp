@@ -1,0 +1,328 @@
+{
+  "sent_0001": {
+    "sentence": "tell me whats the problem?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0002": {
+    "sentence": "There is abdominal pain, and when food stays here, it feels swollen or bloated.",
+    "NER_tags": [
+      {
+        "entity": "abdominal pain,",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "swollen",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "bloated.",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0003": {
+    "sentence": "Does your abdomen feel swollen or bloated?",
+    "NER_tags": [
+      {
+        "entity": "abdomen",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "swollen",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "bloated?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0004": {
+    "sentence": "yes My abdomen feels swollen, and my body—hands and feet—also get swollen",
+    "NER_tags": [
+      {
+        "entity": "abdomen",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "swollen,",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "body—hands feet—also",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "swollen",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0005": {
+    "sentence": "Since when has this been happening?",
+    "NER_tags": [
+      {
+        "entity": "Since when",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0006": {
+    "sentence": "near about 1 year",
+    "NER_tags": [
+      {
+        "entity": "near about 1 year",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0007": {
+    "sentence": "1 year?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0008": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0009": {
+    "sentence": "any other deaseses like sugar , pressure, thyroid?",
+    "NER_tags": [
+      {
+        "entity": "sugar pressure,",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "thyroid?",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0010": {
+    "sentence": "yes there is thyroid",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0011": {
+    "sentence": "medication taken for thyroid?",
+    "NER_tags": [
+      {
+        "entity": "medication",
+        "type": "MEDICATION"
+      },
+      {
+        "entity": "thyroid?",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0012": {
+    "sentence": "yes 100 power",
+    "NER_tags": [],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0013": {
+    "sentence": "okay, any addiction?",
+    "NER_tags": [
+      {
+        "entity": "addiction?",
+        "type": "HABIT_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0014": {
+    "sentence": "no there is none",
+    "NER_tags": [
+      {
+        "entity": "no",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0015": {
+    "sentence": "bowel movement?",
+    "NER_tags": [
+      {
+        "entity": "bowel movement?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0016": {
+    "sentence": "I have bowel movements once every two days.",
+    "NER_tags": [
+      {
+        "entity": "bowel movements",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "once every two days.",
+        "type": "SYMPTOM_FREQUENCY"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0017": {
+    "sentence": "that problem is there for way long right?",
+    "NER_tags": [
+      {
+        "entity": "for way long",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0018": {
+    "sentence": "bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this",
+    "NER_tags": [
+      {
+        "entity": "bowel movement",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "for 3 to 4 moths",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0019": {
+    "sentence": "3 – 4 moths , right?",
+    "NER_tags": [
+      {
+        "entity": "3 – 4 moths",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0020": {
+    "sentence": "hmm, u told no addiction is there right?",
+    "NER_tags": [
+      {
+        "entity": "u told no",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0021": {
+    "sentence": "Is your apetite working fine?",
+    "NER_tags": [
+      {
+        "entity": "apetite",
+        "type": "HABIT_VALUE"
+      }
+    ],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0022": {
+    "sentence": "no there is probelm",
+    "NER_tags": [
+      {
+        "entity": "no there",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0023": {
+    "sentence": "any test was there?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0024": {
+    "sentence": "for this stomach problem?",
+    "NER_tags": [
+      {
+        "entity": "stomach problem?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0025": {
+    "sentence": "yes there was but I didn't bring the report",
+    "NER_tags": [],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0026": {
+    "sentence": "if you didn't bring it then what can be done, As u didn't bring it u have to do it , there is no otherwise",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0027": {
+    "sentence": "okay , And I'm not able to digest food properly; my stomach stays bloated",
+    "NER_tags": [
+      {
+        "entity": "not able to",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "stomach",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "bloated",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0028": {
+    "sentence": "The upper part of the abdomen, right?",
+    "NER_tags": [
+      {
+        "entity": "upper part abdomen,",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0029": {
+    "sentence": "I'll examine and check it.",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  }
+}

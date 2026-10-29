@@ -1,0 +1,194 @@
+{
+  "sent_0001": {
+    "sentence": "please tell me whats the problem ?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0002": {
+    "sentence": "burning sensation in the stomach",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "burning sensation",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "stomach",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ]
+  },
+  "sent_0003": {
+    "sentence": "Which area?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0004": {
+    "sentence": "From the chest area.",
+    "DAC_tag": "Other",
+    "NER_tags": [
+      {
+        "entity": "chest",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ]
+  },
+  "sent_0005": {
+    "sentence": "Is it in the upper part of the stomach?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "upper part of the stomach",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ]
+  },
+  "sent_0006": {
+    "sentence": "yes",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "yes",
+        "type": "POLARITY"
+      }
+    ]
+  },
+  "sent_0007": {
+    "sentence": "Okay, how many days has it been?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "how many days",
+        "type": "TEMPORAL"
+      }
+    ]
+  },
+  "sent_0008": {
+    "sentence": "2 – 3 year",
+    "DAC_tag": "Inform-Basic_Information",
+    "NER_tags": [
+      {
+        "entity": "2-3 year",
+        "type": "TEMPORAL"
+      }
+    ]
+  },
+  "sent_0009": {
+    "sentence": "2 – 3 year?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0010": {
+    "sentence": "So, have you consulted a doctor for this?",
+    "DAC_tag": "Request-Basic_Information",
+    "NER_tags": []
+  },
+  "sent_0011": {
+    "sentence": "yes, a doctor had been consulted earlier.",
+    "DAC_tag": "Inform-Basic_Information",
+    "NER_tags": []
+  },
+  "sent_0012": {
+    "sentence": "Did the doctor do any tests?",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  },
+  "sent_0013": {
+    "sentence": "But this is a report from two years ago, right?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0014": {
+    "sentence": "Do you have any addictions or habits?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0015": {
+    "sentence": "no",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0016": {
+    "sentence": "Any other illnesses—like sugar, blood pressure, thyroid, or anything else?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "sugar",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "blood pressure",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "thyroid",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0017": {
+    "sentence": "Blood sugar was tested, but nothing significant was there.",
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "NER_tags": [
+      {
+        "entity": "Blood sugar",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ]
+  },
+  "sent_0018": {
+    "sentence": "Does she not take any medicines?",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  },
+  "sent_0019": {
+    "sentence": "no.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0020": {
+    "sentence": "If she eats anything else, she feels like vomiting,",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "vomiting",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0021": {
+    "sentence": "okay.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0022": {
+    "sentence": "Any addiction?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0023": {
+    "sentence": "not able to sleep",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "not able to sleep",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0024": {
+    "sentence": "doesn't have any addictions, right?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0025": {
+    "sentence": "no no",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0026": {
+    "sentence": "okay.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  }
+}

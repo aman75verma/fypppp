@@ -1,0 +1,20 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days [Symptoms: stomach problems, loose motion,]\n  - sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\" [Symptoms: kao\" | Location: lower abdomen | Characteristics: perfectly, heavier, less,]\n  - I'm having abdominal cramps, and I'm passing stools frequently [Symptoms: abdominal cramps, stools]\n  - Sometimes it happens during loose motion [Symptoms: loose motion]\n  - I had a USG, and they said I have fatty liver and a gas problem. [Symptoms: gas problem.]\n  - The blood tests showed there was some infection in the liver and kidneys. [Symptoms: infection | Location: liver kidneys.]\n  - but the pain in the abdomen is not going away [Symptoms: pain | Location: abdomen]\n\nHISTORY OF PRESENT ILLNESS:\n  - Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days [Timeline: 2 years—whenever]\n  - sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\" [Timeline: between 1 month, for 1 week, for another week]\n  - I'm having abdominal cramps, and I'm passing stools frequently\n  - Sometimes it happens during loose motion\n  - About one to one-and-a-half years ago, I got tests done in Berhampore, Murshidabad. [Timeline: About one to one-and-a-half years ago,]\n  - I had a USG, and they said I have fatty liver and a gas problem.\n  - The blood tests showed there was some infection in the liver and kidneys.\n  - apetite is fine.\n  - but the pain in the abdomen is not going away\n\nPAST MEDICAL HISTORY:\n  - I had a USG, and they said I have fatty liver and a gas problem. [History: fatty liver] [Tests: USG,]\n  - The blood tests showed there was some infection in the liver and kidneys. [Tests: blood tests]",
+  "prediction": {
+    "primary_diagnosis": "Chronic Gastroesophageal Reflux Disease (GERD) with Reflux Dyspepsia",
+    "secondary_diagnoses": [
+      "Acid Peptic Disease (APD)",
+      "Functional Dyspepsia (Postprandial Distress Syndrome)",
+      "Secondary Sleep Disturbance due to Nocturnal Reflux"
+    ],
+    "clinical_reasoning": "Protracted history of retrosternal and epigastric burning sensation, postprandial nausea or vomiting sensation, and nocturnal reflux disturbing sleep strongly confirms chronic gastroesophageal reflux disease (GERD) with acid peptic dyspepsia. Endoscopic evaluation is indicated to assess for mucosal break and rule out Barrett's metaplasia.",
+    "recommended_tests": [
+      "Upper GI Endoscopy (EGD) — assess for erosive esophagitis, hiatal hernia, or Barrett's esophagus",
+      "H. pylori Testing (Stool Antigen or Rapid Urease Test)",
+      "24-Hour Ambulatory Esophageal pH-Impedance Study",
+      "Abdominal Ultrasonography (USG)"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

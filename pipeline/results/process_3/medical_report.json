@@ -1,0 +1,49 @@
+{
+  "chief_complaint": [],
+  "history_of_present_illness": [],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0016",
+      "sentence": "Any other illnesses—like sugar, blood pressure, thyroid, or anything else?",
+      "NER_tags": [
+        {
+          "entity": "sugar, blood pressure,",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "thyroid,",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Etiology",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0017",
+      "sentence": "Blood sugar was tested, but nothing significant was there.",
+      "NER_tags": [
+        {
+          "entity": "Blood sugar",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Etiology",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0024",
+      "sentence": "doesn't have any addictions, right?",
+      "NER_tags": [
+        {
+          "entity": "addictions,",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Etiology",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

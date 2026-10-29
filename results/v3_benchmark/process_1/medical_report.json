@@ -1,0 +1,512 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0021",
+      "speaker": "Patient",
+      "sentence": "She has severe constipation—meaning she isn't able to pass stool, and it happens only once every 2–3 days",
+      "NER_tags": [
+        {
+          "entity": "severe",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "constipation—meaning",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "only once every",
+          "type": "SYMPTOM_FREQUENCY"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0023",
+      "speaker": "Patient",
+      "sentence": "She is having gas.",
+      "NER_tags": [
+        {
+          "entity": "gas.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0030",
+      "speaker": "Patient",
+      "sentence": "maybe then it wasn't happening properly, there was no bleeding while passing stool",
+      "NER_tags": [
+        {
+          "entity": "no",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "bleeding",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0046",
+      "speaker": "Patient",
+      "sentence": "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort.",
+      "NER_tags": [
+        {
+          "entity": "No, no—the",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "three days a week,",
+          "type": "SYMPTOM_FREQUENCY"
+        },
+        {
+          "entity": "body",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "In 2018, when my mother had knee pain, I took her to a medicine doctor.",
+      "NER_tags": [
+        {
+          "entity": "2018,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "knee pain,",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0005",
+      "speaker": "Patient",
+      "sentence": "After running tests, he said that she has rheumatoid arthritis",
+      "NER_tags": [
+        {
+          "entity": "rheumatoid",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "arthritis",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Medical_Advice",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0007",
+      "speaker": "Patient",
+      "sentence": "In 2018, she was on medication for that.",
+      "NER_tags": [
+        {
+          "entity": "In 2018,",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Inform-Etiology",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0008",
+      "speaker": "Patient",
+      "sentence": "Then after some time—about a year later—her bleeding became heavy, her menstrual bleeding.",
+      "NER_tags": [
+        {
+          "entity": "a year",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "bleeding",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "heavy,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "menstrual bleeding.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0010",
+      "speaker": "Patient",
+      "sentence": "That bleeding that happens during menstruation",
+      "NER_tags": [
+        {
+          "entity": "bleeding",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0013",
+      "speaker": "Patient",
+      "sentence": "After the USG, it was found that there is a stone in the GB",
+      "NER_tags": [
+        {
+          "entity": "USG,",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "stone in the GB",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0017",
+      "speaker": "Patient",
+      "sentence": "So we showed it to the doctor, and he said that since there is no pain or any other symptoms right now, there is no need for an operation at this time",
+      "NER_tags": [
+        {
+          "entity": "no",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "pain",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "no",
+          "type": "POLARITY"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0019",
+      "speaker": "Patient",
+      "sentence": "So currently, the problem she has is that since 2024...",
+      "NER_tags": [
+        {
+          "entity": "since 2024...",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0021",
+      "speaker": "Patient",
+      "sentence": "She has severe constipation—meaning she isn't able to pass stool, and it happens only once every 2–3 days",
+      "NER_tags": [
+        {
+          "entity": "severe",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "constipation—meaning",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "only once every",
+          "type": "SYMPTOM_FREQUENCY"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0023",
+      "speaker": "Patient",
+      "sentence": "She is having gas.",
+      "NER_tags": [
+        {
+          "entity": "gas.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0026",
+      "speaker": "Patient",
+      "sentence": "Since around 2024, you can say",
+      "NER_tags": [
+        {
+          "entity": "Since around 2024,",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0030",
+      "speaker": "Patient",
+      "sentence": "maybe then it wasn't happening properly, there was no bleeding while passing stool",
+      "NER_tags": [
+        {
+          "entity": "no",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "bleeding",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0037",
+      "speaker": "Doctor",
+      "sentence": "The USG was done quite a while ago, when the gallbladder issue was found.",
+      "NER_tags": [
+        {
+          "entity": "USG",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "quite a while ago,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "gallbladder",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0041",
+      "speaker": "Patient",
+      "sentence": "but now she doesn't take them every day anymore, once in a week",
+      "NER_tags": [
+        {
+          "entity": "every day",
+          "type": "HABIT_FREQUENCY"
+        },
+        {
+          "entity": "once in a",
+          "type": "SYMPTOM_FREQUENCY"
+        }
+      ],
+      "DAC_tag": "Request-Drug_Recommendation",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0046",
+      "speaker": "Patient",
+      "sentence": "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort.",
+      "NER_tags": [
+        {
+          "entity": "No, no—the",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "three days a week,",
+          "type": "SYMPTOM_FREQUENCY"
+        },
+        {
+          "entity": "body",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "In 2018, when my mother had knee pain, I took her to a medicine doctor.",
+      "NER_tags": [
+        {
+          "entity": "2018,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "knee pain,",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0005",
+      "speaker": "Patient",
+      "sentence": "After running tests, he said that she has rheumatoid arthritis",
+      "NER_tags": [
+        {
+          "entity": "rheumatoid",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "arthritis",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Medical_Advice",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0007",
+      "speaker": "Patient",
+      "sentence": "In 2018, she was on medication for that.",
+      "NER_tags": [
+        {
+          "entity": "In 2018,",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Inform-Etiology",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0008",
+      "speaker": "Patient",
+      "sentence": "Then after some time—about a year later—her bleeding became heavy, her menstrual bleeding.",
+      "NER_tags": [
+        {
+          "entity": "a year",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "bleeding",
+          "type": "SYMPTOM_VALUE"
+        },
+        {
+          "entity": "heavy,",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "menstrual bleeding.",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0012",
+      "speaker": "Patient",
+      "sentence": "So we showed it to the doctor then, and he referred us to get a USG done.",
+      "NER_tags": [
+        {
+          "entity": "USG",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0013",
+      "speaker": "Patient",
+      "sentence": "After the USG, it was found that there is a stone in the GB",
+      "NER_tags": [
+        {
+          "entity": "USG,",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "stone in the GB",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0015",
+      "speaker": "Patient",
+      "sentence": "So, since there was a stone, at that time I was in Kalyani, so I showed the report at AIIMS.",
+      "NER_tags": [
+        {
+          "entity": "stone,",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0034",
+      "speaker": "Patient",
+      "sentence": "There was one medicine called folic acid, and I also have a picture of another one",
+      "NER_tags": [
+        {
+          "entity": "folic acid,",
+          "type": "MEDICATION"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0037",
+      "speaker": "Doctor",
+      "sentence": "The USG was done quite a while ago, when the gallbladder issue was found.",
+      "NER_tags": [
+        {
+          "entity": "USG",
+          "type": "MEDICAL_TEST_NAME"
+        },
+        {
+          "entity": "quite a while ago,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "gallbladder",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0046",
+      "speaker": "Patient",
+      "sentence": "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort.",
+      "NER_tags": [
+        {
+          "entity": "No, no—the",
+          "type": "POLARITY"
+        },
+        {
+          "entity": "three days a week,",
+          "type": "SYMPTOM_FREQUENCY"
+        },
+        {
+          "entity": "body",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

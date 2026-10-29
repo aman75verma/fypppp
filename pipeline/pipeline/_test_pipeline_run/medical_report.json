@@ -1,0 +1,55 @@
+{
+  "chief_complaint": [],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0004",
+      "sentence": "For about two days, and it gets worse in the heat.",
+      "NER_tags": [
+        {
+          "entity": "gets worse in the",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "heat.",
+          "type": "EXPOSURE_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0005",
+      "sentence": "Any history of stomach ulcers?",
+      "NER_tags": [
+        {
+          "entity": "stomach ulcers?",
+          "type": "MEDICAL_HISTORY_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": [
+    {
+      "sentence_id": "sent_0004",
+      "sentence": "For about two days, and it gets worse in the heat.",
+      "NER_tags": [
+        {
+          "entity": "gets worse in the",
+          "type": "SYMPTOM_CHARACTERISTICS"
+        },
+        {
+          "entity": "heat.",
+          "type": "EXPOSURE_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ]
+}

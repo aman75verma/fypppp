@@ -1,0 +1,491 @@
+{
+  "sent_0001": {
+    "sentence": "tell me what the problem is??",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0002": {
+    "sentence": "I'm telling you—I'll share my mother's history a bit, please listen",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0003": {
+    "sentence": "hmm, tell me",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0004": {
+    "sentence": "In 2018, when my mother had knee pain, I took her to a medicine doctor.",
+    "NER_tags": [
+      {
+        "entity": "2018,",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "knee pain,",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0005": {
+    "sentence": "After running tests, he said that she has rheumatoid arthritis",
+    "NER_tags": [
+      {
+        "entity": "rheumatoid",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "arthritis",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0006": {
+    "sentence": "okay, 2018?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0007": {
+    "sentence": "In 2018, she was on medication for that.",
+    "NER_tags": [
+      {
+        "entity": "In 2018,",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Inform-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0008": {
+    "sentence": "Then after some time—about a year later—her bleeding became heavy, her menstrual bleeding.",
+    "NER_tags": [
+      {
+        "entity": "a year",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "bleeding",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "heavy,",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "menstrual bleeding.",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0009": {
+    "sentence": "Bleeding from where?",
+    "NER_tags": [
+      {
+        "entity": "Bleeding",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0010": {
+    "sentence": "That bleeding that happens during menstruation",
+    "NER_tags": [
+      {
+        "entity": "bleeding",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0011": {
+    "sentence": "menstrual bleeding?",
+    "NER_tags": [
+      {
+        "entity": "bleeding?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0012": {
+    "sentence": "So we showed it to the doctor then, and he referred us to get a USG done.",
+    "NER_tags": [
+      {
+        "entity": "USG",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0013": {
+    "sentence": "After the USG, it was found that there is a stone in the GB",
+    "NER_tags": [
+      {
+        "entity": "USG,",
+        "type": "MEDICAL_TEST_NAME"
+      },
+      {
+        "entity": "stone in the GB",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0014": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0015": {
+    "sentence": "So, since there was a stone, at that time I was in Kalyani, so I showed the report at AIIMS.",
+    "NER_tags": [
+      {
+        "entity": "stone,",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0016": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0017": {
+    "sentence": "So we showed it to the doctor, and he said that since there is no pain or any other symptoms right now, there is no need for an operation at this time",
+    "NER_tags": [
+      {
+        "entity": "no",
+        "type": "POLARITY"
+      },
+      {
+        "entity": "pain",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "no",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0018": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0019": {
+    "sentence": "So currently, the problem she has is that since 2024...",
+    "NER_tags": [
+      {
+        "entity": "since 2024...",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0020": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0021": {
+    "sentence": "She has severe constipation—meaning she isn't able to pass stool, and it happens only once every 2–3 days",
+    "NER_tags": [
+      {
+        "entity": "severe",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "constipation—meaning",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "only once every",
+        "type": "SYMPTOM_FREQUENCY"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0022": {
+    "sentence": "okay",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0023": {
+    "sentence": "She is having gas.",
+    "NER_tags": [
+      {
+        "entity": "gas.",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0024": {
+    "sentence": "go on after that.",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0025": {
+    "sentence": "Since when has the constipation been happening?",
+    "NER_tags": [
+      {
+        "entity": "when",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "constipation",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0026": {
+    "sentence": "Since around 2024, you can say",
+    "NER_tags": [
+      {
+        "entity": "Since around 2024,",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0027": {
+    "sentence": "okay",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0028": {
+    "sentence": "Maybe she had it before, but she didn't mention it",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0029": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0030": {
+    "sentence": "maybe then it wasn't happening properly, there was no bleeding while passing stool",
+    "NER_tags": [
+      {
+        "entity": "no",
+        "type": "POLARITY"
+      },
+      {
+        "entity": "bleeding",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0031": {
+    "sentence": "okay ...",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0032": {
+    "sentence": "is she taking any medicines for rheumatoid arthritis?",
+    "NER_tags": [
+      {
+        "entity": "rheumatoid",
+        "type": "MEDICAL_HISTORY_VALUE"
+      },
+      {
+        "entity": "arthritis?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0033": {
+    "sentence": "Her medication is still ongoing—they told us to continue it.",
+    "NER_tags": [
+      {
+        "entity": "still ongoing—they",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0034": {
+    "sentence": "There was one medicine called folic acid, and I also have a picture of another one",
+    "NER_tags": [
+      {
+        "entity": "folic acid,",
+        "type": "MEDICATION"
+      }
+    ],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0035": {
+    "sentence": "show the picture Has any test been done for the stomach?",
+    "NER_tags": [
+      {
+        "entity": "stomach?",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0036": {
+    "sentence": "yes, test has been done",
+    "NER_tags": [],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0037": {
+    "sentence": "The USG was done quite a while ago, when the gallbladder issue was found.",
+    "NER_tags": [
+      {
+        "entity": "USG",
+        "type": "MEDICAL_TEST_NAME"
+      },
+      {
+        "entity": "quite a while ago,",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "gallbladder",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0038": {
+    "sentence": "Alright, still please show that report as well.",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0039": {
+    "sentence": "Put it down",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0040": {
+    "sentence": "These were the tests, and there were those two medicines...",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0041": {
+    "sentence": "but now she doesn't take them every day anymore, once in a week",
+    "NER_tags": [
+      {
+        "entity": "every day",
+        "type": "HABIT_FREQUENCY"
+      },
+      {
+        "entity": "once in a",
+        "type": "SYMPTOM_FREQUENCY"
+      }
+    ],
+    "DAC_tag": "Request-Drug_Recommendation",
+    "SLI_tags": []
+  },
+  "sent_0042": {
+    "sentence": "hmm..",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0043": {
+    "sentence": "Meaning, did the doctor say that, or did she decide it herself?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0044": {
+    "sentence": "no, no , doctor said so.",
+    "NER_tags": [
+      {
+        "entity": "no, no",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0045": {
+    "sentence": "doctor asked to take it once in a week??",
+    "NER_tags": [
+      {
+        "entity": "once in a week??",
+        "type": "SYMPTOM_FREQUENCY"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0046": {
+    "sentence": "No, no—the doctor had said it should be taken three days a week, but my mother doesn't take it because of body discomfort.",
+    "NER_tags": [
+      {
+        "entity": "No, no—the",
+        "type": "POLARITY"
+      },
+      {
+        "entity": "three days a week,",
+        "type": "SYMPTOM_FREQUENCY"
+      },
+      {
+        "entity": "body",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0047": {
+    "sentence": "okay , show the ultrasonography report",
+    "NER_tags": [
+      {
+        "entity": "ultrasonography report",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  }
+}

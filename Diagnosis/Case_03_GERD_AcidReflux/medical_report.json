@@ -1,0 +1,102 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "burning sensation in the stomach",
+      "NER_tags": [
+        {
+          "entity": "burning sensation",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "From the chest area.",
+      "NER_tags": [
+        {
+          "entity": "chest",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0020",
+      "speaker": "Patient",
+      "sentence": "If she eats anything else, she feels like vomiting,",
+      "NER_tags": [
+        {
+          "entity": "vomiting,",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "burning sensation in the stomach",
+      "NER_tags": [
+        {
+          "entity": "burning sensation",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0004",
+      "speaker": "Patient",
+      "sentence": "From the chest area.",
+      "NER_tags": [
+        {
+          "entity": "chest",
+          "type": "SYMPTOM_LOCATION"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0020",
+      "speaker": "Patient",
+      "sentence": "If she eats anything else, she feels like vomiting,",
+      "NER_tags": [
+        {
+          "entity": "vomiting,",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Request-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [
+    {
+      "sentence_id": "sent_0017",
+      "speaker": "Patient",
+      "sentence": "Blood sugar was tested, but nothing significant was there.",
+      "NER_tags": [
+        {
+          "entity": "Blood sugar",
+          "type": "MEDICAL_TEST_NAME"
+        }
+      ],
+      "DAC_tag": "Request-Etiology",
+      "SLI_tags": []
+    }
+  ],
+  "social_history": []
+}

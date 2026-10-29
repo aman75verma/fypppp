@@ -1,0 +1,38 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 4: Diet-Induced Dysmotility and Postprandial Distress
+===========================================================================
+Expected Clinical Diagnosis: Diet-Induced Non-Ulcer Dyspepsia with Irritable Bowel Syndrome (IBS-Mixed)
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "Whatever I eat causes pinching effect in my stomach—like if I eat chickpeas, it causes pinching trouble; even eating peanuts causes discomfort."
+      Dialogue Act: [Inform-Etiology]
+      Extracted Medical Entities: pinching effect (SYMPTOM_VALUE), stomach—like (SYMPTOM_LOCATION), pinching discomfort. (SYMPTOM_VALUE)
+  [2] "And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: stomach pain (SYMPTOM_VALUE)
+  [3] "Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: mild, (SYMPTOM_CHARACTERISTICS), stomach stomach (SYMPTOM_LOCATION), burning churning (SYMPTOM_VALUE)
+  [4] "The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood)."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: bowels (SYMPTOM_LOCATION), bowel movement (SYMPTOM_VALUE), incomplete, uneasy (SYMPTOM_CHARACTERISTICS), dysentery(loose (SYMPTOM_VALUE)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  [1] "Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks."
+      Entities: 1–2 weeks. (TEMPORAL)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Gastric Ulcer
+  Secondary / Differential Diagnoses: Peptic Ulcer Disease, Gastroenteritis, or Helicobacter pylori infection
+
+  Pathophysiological Clinical Reasoning:
+    the patient's symptoms are indicative of an ulcerated lesion in the stomach, which can cause discomfort upon ingestion of certain foods and lead to GERD symptoms
+
+  Recommended Diagnostic Investigations & Workup:
+    1. endoscopy with biopsy
+    2. stool testing for H. pylori.
+
+===========================================================================

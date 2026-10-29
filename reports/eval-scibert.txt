@@ -1,0 +1,24 @@
+MediTOD NER (SciBERT) — Test Set Evaluation Report
+Model: allenai/scibert_scivocab_uncased
+Best Epoch: 15
+Test Entity F1: 0.7793
+Test Loss: 0.0072
+
+                         precision    recall  f1-score   support
+
+         EXPOSURE_VALUE     0.7265    0.8947    0.8019        95
+        HABIT_FREQUENCY     0.5833    0.8140    0.6796        43
+            HABIT_VALUE     0.6748    0.8397    0.7483       131
+  MEDICAL_HISTORY_VALUE     0.7059    0.7368    0.7210       114
+      MEDICAL_TEST_NAME     0.8117    0.8865    0.8475       141
+             MEDICATION     0.8922    0.9371    0.9141       159
+               POLARITY     0.4250    0.7846    0.5514        65
+SYMPTOM_CHARACTERISTICS     0.3667    0.5323    0.4342        62
+      SYMPTOM_FREQUENCY     0.6750    0.8571    0.7552        63
+       SYMPTOM_LOCATION     0.8408    0.9086    0.8734       186
+          SYMPTOM_VALUE     0.7736    0.9024    0.8331       553
+               TEMPORAL     0.5044    0.6867    0.5816        83
+
+              micro avg     0.7151    0.8560    0.7793      1695
+              macro avg     0.6650    0.8150    0.7284      1695
+           weighted avg     0.7305    0.8560    0.7860      1695

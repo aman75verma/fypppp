@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Chronic Dyspepsia with Suspected Peptic Ulcer Disease (PUD)",
+  "secondary_diagnoses": [
+    "Erosive Gastritis / Duodenitis",
+    "Functional Postprandial Distress Syndrome"
+  ],
+  "clinical_reasoning": "A 6-7 month history of diffuse abdominal burning, early satiety, epigastric tightness, and postprandial pain below the chest indicates chronic peptic disease. The persistence of symptoms and anorexia over half a year warrants urgent diagnostic upper GI endoscopy to evaluate for gastric or duodenal ulceration and rule out mucosal malignancy.",
+  "recommended_tests": [
+    "Upper GI Endoscopy (Esophagogastroduodenoscopy) with mucosal biopsy",
+    "H. pylori Rapid Urease Test (RUT)",
+    "Complete Blood Count (CBC) to screen for microcytic anemia",
+    "Abdominal Ultrasonography (USG)"
+  ]
+}

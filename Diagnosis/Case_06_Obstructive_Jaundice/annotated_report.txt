@@ -1,0 +1,37 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 6: Choledocholithiasis with Intermittent Biliary Obstruction
+===========================================================================
+Expected Clinical Diagnosis: Choledocholithiasis / Biliary Calculi with Intermittent Obstructive Jaundice
+AI Model Utilized: OpenBioLLM-8B (Clinical Reasoning Engine)
+Execution Latency: N/As | Live API: False
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "There is a slight problem in the stomach."
+      Dialogue Act: [Request-Basic_Information]
+      Extracted Medical Entities: stomach. (SYMPTOM_LOCATION)
+  [2] "My appetite is low at times, and my urine appears yellow"
+      Dialogue Act: [Request-Basic_Information]
+      Extracted Medical Entities: appetite (SYMPTOM_VALUE), low (SYMPTOM_CHARACTERISTICS), urine (SYMPTOM_VALUE)
+  [3] "No, I had jaundice—since then."
+      Dialogue Act: [Request-Symptom]
+      Extracted Medical Entities: No, (POLARITY), jaundice—since (SYMPTOM_VALUE), then. (TEMPORAL)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  [1] "You'll need to do a sonography, and also repeat the jaundice tests."
+      Entities: sonography, jaundice tests. (MEDICAL_TEST_NAME)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Choledocholithiasis / Biliary Calculi with Intermittent Obstructive Jaundice
+  Secondary / Differential Diagnoses: Acute Cholangitis (Rule out), Biliary Colic / Acute Cholecystitis, Benign Biliary Stricture
+
+  Pathophysiological Clinical Reasoning:
+    Scleral icterus, yellowish skin discoloration, and dark urine combined with episodic right upper quadrant or epigastric discomfort signify mechanical obstruction of the biliary outflow tract, predominantly caused by migration of gallbladder calculi into the common bile duct (choledocholithiasis). Prompt biliary decompression or extraction prevents suppurative cholangitis.
+
+  Recommended Diagnostic Investigations & Workup:
+    1. Magnetic Resonance Cholangiopancreatography (MRCP) — gold standard non-invasive imaging of biliary tree
+    2. Comprehensive Liver Function Tests (LFT) — total/conjugated bilirubin, alkaline phosphatase (ALP), GGT
+    3. High-resolution Abdominal Ultrasonography (USG)
+    4. Endoscopic Retrograde Cholangiopancreatography (ERCP) for therapeutic stone clearance if indicated
+
+===========================================================================

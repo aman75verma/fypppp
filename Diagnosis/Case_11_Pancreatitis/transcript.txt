@@ -1,0 +1,47 @@
+# Process 11 Transcript
+
+Doctor: tell me whats the problem ?
+
+Patient: Doctor, whatever I eat, it feels like...
+
+Doctor: What does it feel like?
+
+Patient: It feels heavy on this side, near the side of the abdomen (towards the flank).
+
+Doctor: Since when has this been happening?
+
+Patient: For many days.
+
+Doctor: it doesn't seem like stomach problem it looks like nerve problem , okay? But is there any test doen for stomach?
+
+Patient: yes, 1 time I have done the report
+
+Doctor: what report?
+
+Patient: I did the ultrasonography said it was fat
+
+Doctor: That usually happens if there is abdominal fat, but you don't have that. but there was no endoscopy?
+
+Patient: no there was not
+
+Doctor: any other deaseses , sugar , pressure, anything?
+
+Patient: nothing
+
+Doctor: any addiction?
+
+Patient: no
+
+Doctor: Is everything else normal—your appetite, bowel movements, and urination?
+
+Patient: yes But I feel very little hunger—I hardly feel hungry at all.
+
+Doctor: okay, I will do the test and all once
+
+Patient: cannot eat anything also
+
+Doctor: okay, I don't think it is a stomach problem specific, I think it is a problem related to nerve , later you need to get checked up by a nerve doctor , 1st the report should be done here then
+
+Patient: okay
+
+Doctor: I am giving you medicine for like 3 week , okay?

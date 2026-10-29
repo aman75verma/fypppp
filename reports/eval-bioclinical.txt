@@ -1,0 +1,24 @@
+MediTOD NER (BioClinicalBERT) — Test Set Evaluation Report
+Model: emilyalsentzer/Bio_ClinicalBERT
+Best Epoch: 15
+Test Entity F1: 0.7657
+Test Loss: 0.0093
+
+                         precision    recall  f1-score   support
+
+         EXPOSURE_VALUE     0.6803    0.8737    0.7650        95
+        HABIT_FREQUENCY     0.5806    0.8372    0.6857        43
+            HABIT_VALUE     0.6433    0.8397    0.7285       131
+  MEDICAL_HISTORY_VALUE     0.7049    0.7544    0.7288       114
+      MEDICAL_TEST_NAME     0.8000    0.8794    0.8378       141
+             MEDICATION     0.8547    0.9245    0.8882       159
+               POLARITY     0.4250    0.7846    0.5514        65
+SYMPTOM_CHARACTERISTICS     0.4634    0.6129    0.5278        62
+      SYMPTOM_FREQUENCY     0.6207    0.8571    0.7200        63
+       SYMPTOM_LOCATION     0.8098    0.8925    0.8491       186
+          SYMPTOM_VALUE     0.7382    0.9078    0.8143       553
+               TEMPORAL     0.4560    0.6867    0.5481        83
+
+              micro avg     0.6914    0.8578    0.7657      1695
+              macro avg     0.6481    0.8209    0.7204      1695
+           weighted avg     0.7051    0.8578    0.7715      1695

@@ -1,0 +1,11 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - burning sensation in the stomach [Symptoms: burning sensation]\n  - From the chest area. [Location: chest]\n  - If she eats anything else, she feels like vomiting, [Symptoms: vomiting,]\n\nHISTORY OF PRESENT ILLNESS:\n  - burning sensation in the stomach\n  - From the chest area.\n  - If she eats anything else, she feels like vomiting,\n\nPAST MEDICAL HISTORY:\n  - Blood sugar was tested, but nothing significant was there. [Tests: Blood sugar]",
+  "prediction": {
+    "primary_diagnosis": "Gastroesophageal Reflux Disease (Gerd)",
+    "secondary_diagnoses": [],
+    "clinical_reasoning": "The patient's chief complaint of burning sensation in the stomach and vomiting suggests a possible diagnosis of gastroesophageal reflux disease (GERD). This condition is characterized by the backward flow of stomach acid into the esophagus, causing irritation and inflammation. Other potential causes for these symptoms include gastritis or peptic ulcer disease. However, given the patient's history of burning sensation in the stomach and vomiting, GERD appears to be the most likely diagnosis.  To confirm the diagnosis and rule out other conditions, further investigations such as an upper endoscopy or pH monitoring may be recommended. Additionally, lifestyle modifications including dietary changes and elevating the head during sleep can provide symptomatic relief. It is important for the patient to follow up with a healthcare provider for a thorough evaluation and appropriate management of their symptoms.",
+    "recommended_tests": []
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

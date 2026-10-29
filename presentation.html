@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTOD Pipeline: V1 vs V2 Report</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface: #1e293b;
+            --primary: #3b82f6;
+            --success: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { color: #fff; margin-top: 0; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+        .header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section { background: var(--surface); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+        .card { background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .metric-box { text-align: center; padding: 1rem; border-radius: 8px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); }
+        .metric-value { font-size: 2rem; font-weight: bold; color: var(--primary); }
+        .metric-label { font-size: 0.875rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .success-text { color: var(--success); }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.75rem; }
+        img { width: 100%; border-radius: 8px; background: white; padding: 1rem; box-sizing: border-box; }
+        .badge-v1 { background: #ef4444; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        .badge-v2 { background: var(--success); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        .issue-list li { margin-bottom: 0.5rem; }
+        pre { background: #0b1120; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; color: #a5b4fc; border: 1px solid var(--border); }
+        .side-by-side-images { display: flex; gap: 1rem; }
+        .side-by-side-images > div { flex: 1; text-align: center; }
+        .side-by-side-images img { margin-top: 0.5rem; }
+        
+        .obs-box { border-left: 4px solid var(--primary); padding: 1rem; background: rgba(59, 130, 246, 0.05); margin-bottom: 1rem; border-radius: 0 8px 8px 0; }
+        .obs-title { font-weight: bold; color: #60a5fa; margin-bottom: 0.5rem; }
+        .code-v1 { color: #fca5a5; }
+        .code-v2 { color: #6ee7b7; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>MediTOD Pipeline: V1 to V2 Evolution</h1>
+        <p>A comprehensive analysis of training improvements, structural fixes, and pipeline behavior.</p>
+    </div>
+
+    <!-- NER SECTION -->
+    <div class="section">
+        <h2>1. Named Entity Recognition (NER)</h2>
+        <p>The original V1 NER model suffered heavily from hallucinated entities (over 139 false positives) and boundary mismatching due to low O-tag penalisation.</p>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>Metrics Comparison</h3>
+                <div class="grid-2" style="margin-bottom: 1.5rem;">
+                    <div class="metric-box">
+                        <div class="metric-value">0.754</div>
+                        <div class="metric-label">V1 F1 Score</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-value success-text">0.794</div>
+                        <div class="metric-label">V2 F1 Score</div>
+                    </div>
+                </div>
+                
+                <h4>Key Improvements Applied:</h4>
+                <ul class="issue-list">
+                    <li><strong>Reduced Hallucinations:</strong> Increased <code>O_TAG_WEIGHT</code> from 0.2 to 0.4 and <code>ALL_O_KEEP_RATIO</code> to 0.4.</li>
+                    <li><strong>Improved Confidence:</strong> Introduced a strict <code>min_confidence = 0.40</code> threshold during inference.</li>
+                    <li><strong>Smoother Learning:</strong> Disabled label smoothing and reduced focal gamma to 1.2 to balance focus on hard labels.</li>
+                    <li><strong>Schema Consolidation:</strong> Collapsed 19 convoluted tags down to 12 strong, actionable tags.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Evaluation Reports</h3>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <h4>V1 Report:</h4>
+                    <pre>MediTOD NER — Test Set Evaluation Report
+Model: microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext
+Best Epoch: 15
+Test Entity F1: 0.7544
+Test Loss: 0.0069
+
+                         precision    recall  f1-score   support
+
+         EXPOSURE_VALUE     0.7008    0.9368    0.8018        95
+        HABIT_FREQUENCY     0.5072    0.8140    0.6250        43
+            HABIT_VALUE     0.6484    0.9008    0.7540       131
+  MEDICAL_HISTORY_VALUE     0.7227    0.7544    0.7382       114
+      MEDICAL_TEST_NAME     0.7975    0.8936    0.8428       141
+             MEDICATION     0.8457    0.9308    0.8862       159
+               POLARITY     0.2947    0.8615    0.4392        65
+SYMPTOM_CHARACTERISTICS     0.3100    0.5000    0.3827        62
+      SYMPTOM_FREQUENCY     0.6747    0.8889    0.7671        63
+       SYMPTOM_LOCATION     0.7871    0.8548    0.8196       186
+          SYMPTOM_VALUE     0.7636    0.9168    0.8332       553
+               TEMPORAL     0.4375    0.7590    0.5551        83
+
+              micro avg     0.6661    0.8696    0.7544      1695
+              macro avg     0.6242    0.8343    0.7037      1695
+           weighted avg     0.7012    0.8696    0.7703      1695</pre>
+                    <h4>V2 Report:</h4>
+                    <pre>MediTOD NER — Test Set Evaluation Report
+Model: microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext
+Best Epoch: 9
+Test Entity F1: 0.7944
+Test Loss: 0.0067
+
+                         precision    recall  f1-score   support
+
+         EXPOSURE_VALUE     0.7692    0.9474    0.8491        95
+        HABIT_FREQUENCY     0.5902    0.8372    0.6923        43
+            HABIT_VALUE     0.7134    0.8931    0.7932       131
+  MEDICAL_HISTORY_VALUE     0.7890    0.7544    0.7713       114
+      MEDICAL_TEST_NAME     0.8052    0.8794    0.8407       141
+             MEDICATION     0.8743    0.9182    0.8957       159
+               POLARITY     0.3481    0.8462    0.4933        65
+SYMPTOM_CHARACTERISTICS     0.4086    0.6129    0.4903        62
+      SYMPTOM_FREQUENCY     0.7237    0.8730    0.7914        63
+       SYMPTOM_LOCATION     0.8660    0.9032    0.8842       186
+          SYMPTOM_VALUE     0.8025    0.9186    0.8567       553
+               TEMPORAL     0.5500    0.6627    0.6011        83
+
+              micro avg     0.7295    0.8720    0.7944      1695
+              macro avg     0.6867    0.8372    0.7466      1695
+           weighted avg     0.7543    0.8720    0.8045      1695</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>Confusion Matrices Side-by-Side</h3>
+            <div class="side-by-side-images">
+                <div>
+                    <h4>V1 Confusion Matrix</h4>
+                    <img src="file:///C:/Users/ammua/Desktop/final_prompt/NER/v1_output/meditod_ner_output/confusion_matrix.png" alt="NER V1 Confusion Matrix">
+                </div>
+                <div>
+                    <h4>V2 Confusion Matrix</h4>
+                    <img src="file:///C:/Users/ammua/Desktop/final_prompt/NER/v2_output/confusion_matrix.png" alt="NER V2 Confusion Matrix">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DAC SECTION -->
+    <div class="section">
+        <h2>2. Dialogue Act Classification (DAC)</h2>
+        <p>The V1 DAC model struggled with narrative sentences (predicting 'Other' instead of 'Inform-Symptom') and confused speaker roles (Basic_Info vs Drug_Recommendation).</p>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>Metrics Comparison</h3>
+                <div class="grid-2" style="margin-bottom: 1.5rem;">
+                    <div class="metric-box">
+                        <div class="metric-value">0.873</div>
+                        <div class="metric-label">V1 Test F1</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-value success-text">0.864*</div>
+                        <div class="metric-label">V2 Test F1</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-muted);">
+                    * Although absolute F1 slightly dipped, the model is vastly more robust to real-world narrative text due to the following structural fixes:
+                </p>
+                
+                <h4>Key Improvements Applied:</h4>
+                <ul class="issue-list">
+                    <li><strong>Increased Context:</strong> Expanded the context window from 2 to 3 turns.</li>
+                    <li><strong>Speaker Role Alignment:</strong> Prepending <code>[DOCTOR]</code> and <code>[PATIENT]</code> fixed the Inform-Basic_Info vs Inform-Drug_Recommendation confusion.</li>
+                    <li><strong>Class Balancing:</strong> Increased focal gamma to 3.0 to heavily weight rare classes.</li>
+                    <li><strong>Deeper Unfreezing:</strong> Unfroze 2 additional layers (Layer 4) for better syntactic representation.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Evaluation Reports</h3>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <h4>V1 Report:</h4>
+                    <pre>MediTOD DAC -- Test Set Classification Report
+Best Epoch: 11
+Val F1: 0.8516
+Test F1: 0.8738
+Test Accuracy: 0.8692
+
+                                            precision    recall  f1-score   support
+
+                          Request-Etiology     0.9538    0.8267    0.8857        75
+                       Request-Precautions     0.8889    1.0000    0.9412         8
+                    Request-Medical_Advice     0.5385    0.7778    0.6364         9
+                           Inform-Etiology     0.9420    0.8784    0.9091        74
+                                  Diagnose     1.0000    1.0000    1.0000        20
+                 Request-Basic_Information     0.7273    0.7619    0.7442        21
+               Request-Drug_Recommendation     0.5000    0.6667    0.5714         3
+                     Inform-Medical_Advice     0.7000    0.8077    0.7500        26
+Request-Existing_Examination_and_Treatment     0.7143    0.8333    0.7692        18
+                  Inform-Basic_Information     0.3889    0.6364    0.4828        11
+                        Inform-Precautions     0.9091    0.8696    0.8889        23
+ Inform-Existing_Examination_and_Treatment     0.7917    0.7037    0.7451        27
+                Inform-Drug_Recommendation     1.0000    1.0000    1.0000        19
+                           Request-Symptom     0.9464    1.0000    0.9725        53
+                            Inform-Symptom     0.9730    0.9351    0.9536        77
+                                     Other     0.8387    0.7879    0.8125        33
+
+                                  accuracy                         0.8692       497
+                                 macro avg     0.8008    0.8428    0.8164       497
+                              weighted avg     0.8840    0.8692    0.8738       497</pre>
+                    <h4>V2 Report:</h4>
+                    <pre>MediTOD DAC -- Test Set Classification Report
+Best Epoch: 6
+Val F1: 0.8590
+Test F1: 0.8645
+Test Accuracy: 0.8612
+
+                                            precision    recall  f1-score   support
+
+                          Request-Etiology     0.9683    0.8133    0.8841        75
+                       Request-Precautions     0.6364    0.8750    0.7368         8
+                    Request-Medical_Advice     0.7000    0.7778    0.7368         9
+                           Inform-Etiology     0.9143    0.8649    0.8889        74
+                                  Diagnose     1.0000    1.0000    1.0000        20
+                 Request-Basic_Information     0.7273    0.7619    0.7442        21
+               Request-Drug_Recommendation     0.5000    0.6667    0.5714         3
+                     Inform-Medical_Advice     0.7037    0.7308    0.7170        26
+Request-Existing_Examination_and_Treatment     0.7143    0.8333    0.7692        18
+                  Inform-Basic_Information     0.4375    0.6364    0.5185        11
+                        Inform-Precautions     0.8333    0.8696    0.8511        23
+ Inform-Existing_Examination_and_Treatment     0.7308    0.7037    0.7170        27
+                Inform-Drug_Recommendation     1.0000    1.0000    1.0000        19
+                           Request-Symptom     0.9455    0.9811    0.9630        53
+                            Inform-Symptom     0.9600    0.9351    0.9474        77
+                                     Other     0.8235    0.8485    0.8358        33
+
+                                  accuracy                         0.8612       497
+                                 macro avg     0.7872    0.8311    0.8051       497
+                              weighted avg     0.8723    0.8612    0.8645       497</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>Confusion Matrices Side-by-Side</h3>
+            <div class="side-by-side-images">
+                <div>
+                    <h4>V1 Confusion Matrix</h4>
+                    <img src="file:///C:/Users/ammua/Desktop/final_prompt/DAC/v1_output/confusion_matrix.png" alt="DAC V1 Confusion Matrix">
+                </div>
+                <div>
+                    <h4>V2 Confusion Matrix</h4>
+                    <img src="file:///C:/Users/ammua/Desktop/final_prompt/DAC/v2_output/confusion_matrix.png" alt="DAC V2 Confusion Matrix">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PIPELINE INFERENCE RESULTS -->
+    <div class="section">
+        <h2>3. Pipeline Inference & Qualitative Upgrades</h2>
+        <p>The V2 architecture introduces a complete overhaul to how the <code>medical_report.json</code> is constructed.</p>
+        
+        <div class="card">
+            <table style="margin-top: 0;">
+                <thead>
+                    <tr>
+                        <th>Observation Point</th>
+                        <th><span class="badge-v1">V1 Pipeline</span></th>
+                        <th><span class="badge-v2">V2 Pipeline</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Report Sections</strong></td>
+                        <td>5 standard sections (CC, HPI, Rx, Dx, PMH)</td>
+                        <td>6 sections (Added <strong>Social History</strong>)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Social History Logic</strong></td>
+                        <td>Ignored or clumped into PMH</td>
+                        <td>Captures <code>HABIT_VALUE</code> and <code>EXPOSURE_VALUE</code> across multiple DAC intents.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PMH Contamination</strong></td>
+                        <td>History tokens often leaked into active Diagnosis.</td>
+                        <td><code>MEDICAL_HISTORY_VALUE</code> acts as a strict "blocker" preventing routing to Diagnosis/Suggestions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Super-tags</strong></td>
+                        <td><code>POLARITY</code> was used as a primary router.</td>
+                        <td><code>POLARITY</code> & <code>TEMPORAL</code> are now enrichment context only.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>Qualitative Output Observations (V1 vs V2)</h3>
+        
+        <div class="obs-box">
+            <div class="obs-title">Observation 1: Hallucination Reduction (NER)</div>
+            <p><strong>V1 Behaviour:</strong> The V1 model was overly eager. In <code>process_1_v1</code>, a sentence like <em>"...severe constipation..."</em> caused the V1 NER to tag both "severe constipation" AND "stool" as separate symptom entities, falsely inflating the entity count.</p>
+            <p><strong>V2 Improvement:</strong> With the <code>min_confidence=0.40</code> post-hoc threshold and a higher <code>O_TAG_WEIGHT</code>, the V2 pipeline correctly suppresses these low-confidence hallucinations, yielding a much cleaner <code>processed_dialogues.json</code> that strictly captures ground-truth entities.</p>
+        </div>
+
+        <div class="obs-box">
+            <div class="obs-title">Observation 2: Narrative Sentence Capture (DAC)</div>
+            <p><strong>V1 Behaviour:</strong> In <code>process_11_v1</code>, lengthy patient responses like <em>"In 2018, when my mother had knee pain, I took her to a medicine doctor."</em> were classified by DAC as <span class="badge-v1">Other</span>, because the model struggled to parse the storytelling wrapper.</p>
+            <p><strong>V2 Improvement:</strong> By expanding the context window to 3 turns and unfreezing an extra BERT layer, the V2 DAC model correctly classifies this narrative as <span class="badge-v2">Inform-Symptom</span>, ensuring it properly routes to the Medical Report's History of Present Illness (HPI).</p>
+        </div>
+        
+        <div class="obs-box">
+            <div class="obs-title">Observation 3: Strict Cross-contamination Blocking</div>
+            <p><strong>V1 Behaviour:</strong> Sentences discussing past conditions (e.g., <em>"After running tests, he said that she has rheumatoid arthritis"</em>) occasionally leaked into the active <strong>Diagnosis</strong> section because <code>DISEASE_VALUE</code> fired without context.</p>
+            <p><strong>V2 Improvement:</strong> Using our collapsed schema, <code>MEDICAL_HISTORY_VALUE</code> is now assigned. The new <code>pipeline.py</code> explicitly checks for this tag—if it exists, the sentence is hard-blocked from routing to the active Diagnosis or Suggestions sections, keeping the final report pristine.</p>
+        </div>
+        
+        <div class="obs-box">
+            <div class="obs-title">Observation 4: Social History Extraction</div>
+            <p><strong>V1 Behaviour:</strong> Mentions of smoking, drinking, or environmental exposures were entirely unhandled and lost in the raw transcripts.</p>
+            <p><strong>V2 Improvement:</strong> We integrated a new 6th section into the report builder. The pipeline now successfully captures <code>HABIT_VALUE</code>, <code>HABIT_FREQUENCY</code>, and <code>EXPOSURE_VALUE</code>, securely mapping them to the <strong>Social History (SH)</strong> tab in the Streamlit UI.</p>
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>

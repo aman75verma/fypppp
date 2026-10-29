@@ -1,0 +1,488 @@
+{
+  "sent_0001": {
+    "sentence": "what is the prblem tell me",
+    "NER_tags": [
+      {
+        "entity": "prblem",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0002": {
+    "sentence": "Not able to eat properly—whatever is eaten turns into gas.",
+    "NER_tags": [
+      {
+        "entity": "Not able to eat gas.",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0003": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0004": {
+    "sentence": "A few days ago, blood level had dropped and needed a blood transfusion.",
+    "NER_tags": [
+      {
+        "entity": "A few days ago,",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "blood level",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "blood transfusion.",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0005": {
+    "sentence": "When did this happen?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0006": {
+    "sentence": "When did your blood level drop?",
+    "NER_tags": [
+      {
+        "entity": "blood level",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0007": {
+    "sentence": "My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago.",
+    "NER_tags": [
+      {
+        "entity": "blood level",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "about 2 weeks ago,",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "blood",
+        "type": "MEDICATION"
+      },
+      {
+        "entity": "2–4 days ago.",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0008": {
+    "sentence": "How long have you been unable to eat properly?",
+    "NER_tags": [
+      {
+        "entity": "unable to eat",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0009": {
+    "sentence": "For about 2 weeks—since the time my blood level dropped",
+    "NER_tags": [
+      {
+        "entity": "2 weeks—since",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "blood level",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0010": {
+    "sentence": "Before this, did you have any known illnesses—like diabetes, blood pressure, thyroid, or anything else?",
+    "NER_tags": [
+      {
+        "entity": "diabetes, blood pressure, thyroid,",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0011": {
+    "sentence": "yes there is pressure",
+    "NER_tags": [],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0012": {
+    "sentence": "is medication taken for that?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0013": {
+    "sentence": "yes sir I had consulted a doctor earlier, and I had started taking medicines.",
+    "NER_tags": [
+      {
+        "entity": "yes",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0014": {
+    "sentence": "for what?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0015": {
+    "sentence": "Pressure?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0016": {
+    "sentence": "for gas and I was not able to sleep.",
+    "NER_tags": [
+      {
+        "entity": "not able to sleep.",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0017": {
+    "sentence": "So sir, my mother stays in our village.",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0018": {
+    "sentence": "After going there, she was fine for a few days, but then complications started again.",
+    "NER_tags": [
+      {
+        "entity": "complications",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0019": {
+    "sentence": "So we went to a doctor at Apollo Hospitals and consulted here.",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0020": {
+    "sentence": "The doctor said it's a stomach-related problem, but coming here frequently might be difficult.",
+    "NER_tags": [
+      {
+        "entity": "frequently",
+        "type": "SYMPTOM_FREQUENCY"
+      }
+    ],
+    "DAC_tag": "Inform-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0021": {
+    "sentence": "any addiction?",
+    "NER_tags": [
+      {
+        "entity": "addiction?",
+        "type": "HABIT_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0022": {
+    "sentence": "no",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0023": {
+    "sentence": "how is the apetite?",
+    "NER_tags": [
+      {
+        "entity": "apetite?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0024": {
+    "sentence": "She's not able to eat properly.",
+    "NER_tags": [
+      {
+        "entity": "not able to",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0025": {
+    "sentence": "is it for the past 2 week or before that?",
+    "NER_tags": [
+      {
+        "entity": "past 2 week",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0026": {
+    "sentence": "before that",
+    "NER_tags": [],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0027": {
+    "sentence": "is there any weight loss?",
+    "NER_tags": [
+      {
+        "entity": "weight loss?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0028": {
+    "sentence": "It's visibly noticeable—her blouse has become loose",
+    "NER_tags": [
+      {
+        "entity": "visibly",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "blouse",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0029": {
+    "sentence": "no",
+    "NER_tags": [],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0030": {
+    "sentence": "Is there any vomiting or anything like that?",
+    "NER_tags": [
+      {
+        "entity": "vomiting",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0031": {
+    "sentence": "no",
+    "NER_tags": [],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0032": {
+    "sentence": "bowel movement is fine?",
+    "NER_tags": [
+      {
+        "entity": "bowel movement",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0033": {
+    "sentence": "The stool is somewhat blackish in color.",
+    "NER_tags": [
+      {
+        "entity": "stool",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "somewhat blackish in color.",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0034": {
+    "sentence": "blackish?",
+    "NER_tags": [
+      {
+        "entity": "blackish?",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0035": {
+    "sentence": "after the blood transfution",
+    "NER_tags": [
+      {
+        "entity": "blood transfution",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0036": {
+    "sentence": "after the blood transfution it became blackish?",
+    "NER_tags": [
+      {
+        "entity": "blood transfution",
+        "type": "MEDICAL_HISTORY_VALUE"
+      },
+      {
+        "entity": "blackish?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0037": {
+    "sentence": "Is she taking any iron supplements or medicines?",
+    "NER_tags": [
+      {
+        "entity": "iron supplements",
+        "type": "MEDICATION"
+      }
+    ],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0038": {
+    "sentence": "yes, we are only feeding her that , that is written here",
+    "NER_tags": [],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0039": {
+    "sentence": "Oh, that's because of taking iron supplements—the stool can become black due to that.",
+    "NER_tags": [
+      {
+        "entity": "iron supplements—the",
+        "type": "MEDICATION"
+      },
+      {
+        "entity": "black",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0040": {
+    "sentence": "Alright, please lie down—I'll examine your abdomen.",
+    "NER_tags": [
+      {
+        "entity": "abdomen.",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Inform-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0041": {
+    "sentence": "my body is becoming very weak",
+    "NER_tags": [
+      {
+        "entity": "body",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Inform-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0042": {
+    "sentence": "Only one time of blood was given?",
+    "NER_tags": [
+      {
+        "entity": "one time",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0043": {
+    "sentence": "And after the transfusion, you haven't done another blood test, right?",
+    "NER_tags": [
+      {
+        "entity": "blood",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ],
+    "DAC_tag": "Request-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0044": {
+    "sentence": "no there was blood test in the hospital and the doctor there told that everything is fine.",
+    "NER_tags": [
+      {
+        "entity": "no",
+        "type": "POLARITY"
+      },
+      {
+        "entity": "blood test",
+        "type": "MEDICAL_TEST_NAME"
+      }
+    ],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0045": {
+    "sentence": "that report was not given?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0046": {
+    "sentence": "no they have written that its fine",
+    "NER_tags": [
+      {
+        "entity": "no",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0047": {
+    "sentence": "okay",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  }
+}

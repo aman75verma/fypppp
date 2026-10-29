@@ -1,0 +1,24 @@
+MediTOD NER — Test Set Evaluation Report
+Model: microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext
+Best Epoch: 9
+Test Entity F1: 0.7944
+Test Loss: 0.0067
+
+                         precision    recall  f1-score   support
+
+         EXPOSURE_VALUE     0.7692    0.9474    0.8491        95
+        HABIT_FREQUENCY     0.5902    0.8372    0.6923        43
+            HABIT_VALUE     0.7134    0.8931    0.7932       131
+  MEDICAL_HISTORY_VALUE     0.7890    0.7544    0.7713       114
+      MEDICAL_TEST_NAME     0.8052    0.8794    0.8407       141
+             MEDICATION     0.8743    0.9182    0.8957       159
+               POLARITY     0.3481    0.8462    0.4933        65
+SYMPTOM_CHARACTERISTICS     0.4086    0.6129    0.4903        62
+      SYMPTOM_FREQUENCY     0.7237    0.8730    0.7914        63
+       SYMPTOM_LOCATION     0.8660    0.9032    0.8842       186
+          SYMPTOM_VALUE     0.8025    0.9186    0.8567       553
+               TEMPORAL     0.5500    0.6627    0.6011        83
+
+              micro avg     0.7295    0.8720    0.7944      1695
+              macro avg     0.6867    0.8372    0.7466      1695
+           weighted avg     0.7543    0.8720    0.8045      1695

@@ -1,0 +1,186 @@
+{
+  "sent_0001": {
+    "sentence": "tell me whats the problem?",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0002": {
+    "sentence": "Sir, I've been having stomach problems and for the past 2 years—whenever I get loose motion, it continues for about 15 to 20 days",
+    "DAC_tag": "Other",
+    "NER_tags": [
+      {
+        "entity": "past 2 years",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "loose",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "15 to 20 days",
+        "type": "TEMPORAL"
+      }
+    ]
+  },
+  "sent_0003": {
+    "sentence": "okay Loose motion Is heppening for 2 years?",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  },
+  "sent_0004": {
+    "sentence": "sometime or everytime?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": [
+      {
+        "entity": "sometime or everytime",
+        "type": "SYMPTOM_FREQUENCY"
+      }
+    ]
+  },
+  "sent_0005": {
+    "sentence": "sometime, in between 1 month it will be perfectly fine then it will start again, for 1 week it might be heavier and then for another week it will be less, and whenever it starts no food gets digested , lower abdomen feels ache, sounds like\"kao kao\"",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": []
+  },
+  "sent_0006": {
+    "sentence": "hmm",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0007": {
+    "sentence": "I'm having abdominal cramps, and I'm passing stools frequently",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "cra",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  },
+  "sent_0008": {
+    "sentence": "Is there any blood with the stool?\"",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0009": {
+    "sentence": "Sometimes it happens during loose motion",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0010": {
+    "sentence": "so there is blood?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0011": {
+    "sentence": "This has also been happening for about 2 years, right?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0012": {
+    "sentence": "yes",
+    "DAC_tag": "Inform-Drug_Recommendation",
+    "NER_tags": []
+  },
+  "sent_0013": {
+    "sentence": "This has been happening for so long—haven't you had any tests or investigations done?\"",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  },
+  "sent_0014": {
+    "sentence": "About one to one-and-a-half years ago, I got tests done in Berhampore, Murshidabad.",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": [
+      {
+        "entity": "one",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "to",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "one -",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "and - a",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "- half years ago",
+        "type": "TEMPORAL"
+      }
+    ]
+  },
+  "sent_0015": {
+    "sentence": "I had a USG, and they said I have fatty liver and a gas problem.",
+    "DAC_tag": "Inform-Basic_Information",
+    "NER_tags": []
+  },
+  "sent_0016": {
+    "sentence": "They prescribed some medicines and also did some blood tests.",
+    "DAC_tag": "Inform-Medical_Advice",
+    "NER_tags": [
+      {
+        "entity": "blood tests",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ]
+  },
+  "sent_0017": {
+    "sentence": "The blood tests showed there was some infection in the liver and kidneys.",
+    "DAC_tag": "Diagnose",
+    "NER_tags": []
+  },
+  "sent_0018": {
+    "sentence": "any addiction?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0019": {
+    "sentence": "no there is none",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0020": {
+    "sentence": "any other deaseses like sugar ?",
+    "DAC_tag": "Request-Existing_Examination_and_Treatment",
+    "NER_tags": []
+  },
+  "sent_0021": {
+    "sentence": "pressure?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0022": {
+    "sentence": "no there is nothing",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0023": {
+    "sentence": "your apetite is fine?",
+    "DAC_tag": "Request-Symptom",
+    "NER_tags": []
+  },
+  "sent_0024": {
+    "sentence": "apetite is fine.",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0025": {
+    "sentence": "okay",
+    "DAC_tag": "Other",
+    "NER_tags": []
+  },
+  "sent_0026": {
+    "sentence": "but the pain in the abdomen is not going away",
+    "DAC_tag": "Inform-Symptom",
+    "NER_tags": [
+      {
+        "entity": "pain",
+        "type": "SYMPTOM_VALUE"
+      }
+    ]
+  }
+}

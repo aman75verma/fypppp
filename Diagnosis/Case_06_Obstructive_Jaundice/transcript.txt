@@ -1,0 +1,39 @@
+# Process 6 Transcript
+
+Doctor: Please tell me what the problem is?
+
+Patient: There is a slight problem in the stomach.
+
+Doctor: What kind of problem are you having? Please tell me. Please tell me what problem you are experiencing
+
+Patient: My appetite is low at times, and my urine appears yellow
+
+Doctor: Okay, since when have these been happening?
+
+Patient: I've been noticing this for about a month.
+
+Doctor: Is it always yellow, or does it become yellow only sometimes?
+
+Patient: No, I had jaundice—since then. If I stay out in the sun or work in the fields during the day, then it happens
+
+Doctor: When you stay out in the sun or work in the fields, your urine becomes yellow—but otherwise, it doesn't happen, right?
+
+Patient: No, after the evening the urine becomes clear again.
+
+Doctor: Then it's not jaundice. Do you have any reports related to the stomach?
+
+Patient: yes there is report
+
+Doctor: any addiction?
+
+Patient: no I don't drink
+
+Doctor: any other addiction?
+
+Patient: bidi
+
+Doctor: any deaseses? thyroid? anything else? Is your appetite normal?
+
+Patient: I don't feel hungry immediately at mealtimes. Sometimes I feel lightheaded.
+
+Doctor: okay. in this report there is joundice but it is 2 month old report. Then again the report should be done at this time, if there is anything, that time there was stone that's why jaundice happened. Then if you're saying that sometimes it is becoming pale/whitish, it could mean the stone has passed. You'll need to do a sonography, and also repeat the jaundice tests. If any problem is found, then the stone may need to be removed. If it has already passed out, then nothing further will be required. Get the tests done and show me the reports

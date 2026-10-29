@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - No, I had jaundice—since then. [Symptoms: jaundice—since]\n  - When you stay out in the sun or work in the fields, your urine becomes yellow—but otherwise, it doesn't happen, right? [Symptoms: urine | Characteristics: yellow—but]\n  - Then it's not jaundice. [Symptoms: jaundice.]\n  - in this report there is joundice but it is 2 month old report. [Symptoms: joundice]\n  - Then again the report should be done at this time, if there is anything, that time there was stone that's why jaundice happened. [Symptoms: jaundice]\n\nHISTORY OF PRESENT ILLNESS:\n  - I've been noticing this for about a month. [Timeline: for about a month.]\n  - No, I had jaundice—since then. [Timeline: then.]\n  - When you stay out in the sun or work in the fields, your urine becomes yellow—but otherwise, it doesn't happen, right?\n  - No, after the evening the urine becomes clear again. [Timeline: after the evening]\n  - in this report there is joundice but it is 2 month old report. [Timeline: 2 month old]\n\nPAST MEDICAL HISTORY:\n  - Then again the report should be done at this time, if there is anything, that time there was stone that's why jaundice happened. [History: stone]\n  - You'll need to do a sonography, and also repeat the jaundice tests. [Tests: sonography, jaundice tests.]\n\nSOCIAL HISTORY:\n  - When you stay out in the sun or work in the fields, your urine becomes yellow—but otherwise, it doesn't happen, right?\n\nEXISTING DIAGNOSIS NOTES:\n  - Then if you're saying that sometimes it is becoming pale/whitish, it could mean the stone has passed.\n  - If any problem is found, then the stone may need to be removed.\n\nMEDICATIONS/SUGGESTIONS:\n  - You'll need to do a sonography, and also repeat the jaundice tests.",
+  "prediction": {
+    "primary_diagnosis": "Functional Gastrointestinal Disorder (FGID) / Dyspepsia",
+    "secondary_diagnoses": [
+      "Early Gastritis",
+      "Dietary / Lifestyle-Induced Bowel Dysmotility"
+    ],
+    "clinical_reasoning": "Clinical findings extracted from the consultation indicate recurring gastrointestinal symptomatology without acute surgical abdomen signs. Systematic workup is warranted to distinguish functional versus structural pathology.",
+    "recommended_tests": [
+      "Abdominal Ultrasonography (USG)",
+      "Complete Blood Count (CBC) with Differential",
+      "Basic Metabolic Panel & Liver Function Tests",
+      "Routine Stool Examination"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

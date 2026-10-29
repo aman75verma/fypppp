@@ -1,0 +1,334 @@
+{
+  "sent_0001": {
+    "sentence": "please tell me whats the problem?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0002": {
+    "sentence": "sir for the last 7 months there is pain in my abdomen like burning sensation",
+    "NER_tags": [
+      {
+        "entity": "for last 7 months",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "pain",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "abdomen",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "burning sensation",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0003": {
+    "sentence": "where?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0004": {
+    "sentence": "on the top side",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0005": {
+    "sentence": "okay",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0006": {
+    "sentence": "I went up for checking to doctor , did the endroscopy also 4 months ago , I had an ulcer in my stomach—I tested positive for it",
+    "NER_tags": [
+      {
+        "entity": "endroscopy",
+        "type": "MEDICAL_TEST_NAME"
+      },
+      {
+        "entity": "4 months ago",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "ulcer",
+        "type": "MEDICAL_HISTORY_VALUE"
+      },
+      {
+        "entity": "stomach—I",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "positive",
+        "type": "POLARITY"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0007": {
+    "sentence": "okay",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0008": {
+    "sentence": "I have taken all the medicines and completed the full course.",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0009": {
+    "sentence": "hmm",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0010": {
+    "sentence": "But still, I notice blood passing with the stool.",
+    "NER_tags": [
+      {
+        "entity": "blood passing",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "stool.",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Inform-Existing_Examination_and_Treatment",
+    "SLI_tags": []
+  },
+  "sent_0011": {
+    "sentence": "Since when have you been passing blood in your stool?",
+    "NER_tags": [
+      {
+        "entity": "Since when",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "blood",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "stool?",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0012": {
+    "sentence": "since yesterday The stool is completely black like tar, and there is blood mixed with it, First, in the morning when I passed stool, there was fresh blood.",
+    "NER_tags": [
+      {
+        "entity": "since yesterday",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "black",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "tar, blood",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "in the morning",
+        "type": "TEMPORAL"
+      },
+      {
+        "entity": "fresh",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0013": {
+    "sentence": "After that, it has been completely black.",
+    "NER_tags": [
+      {
+        "entity": "completely black.",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0014": {
+    "sentence": "then getting admiited will be better.",
+    "NER_tags": [
+      {
+        "entity": "admiited",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0015": {
+    "sentence": "Endoscopy is also needed, blood transfusion might also be needed, okay It's quite possible that the bleeding is coming from here and hasn't stopped yet.",
+    "NER_tags": [
+      {
+        "entity": "Endoscopy",
+        "type": "MEDICAL_TEST_NAME"
+      },
+      {
+        "entity": "blood",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "transfusion",
+        "type": "MEDICAL_TEST_NAME"
+      },
+      {
+        "entity": "bleeding",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0016": {
+    "sentence": "Okay, we'll need to check that.",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0017": {
+    "sentence": "Are you on an empty stomach, or have you eaten?",
+    "NER_tags": [
+      {
+        "entity": "stomach,",
+        "type": "SYMPTOM_LOCATION"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0018": {
+    "sentence": "I have eaten just now",
+    "NER_tags": [],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0019": {
+    "sentence": "then it's a problem, I'm writing an admission note for you.",
+    "NER_tags": [],
+    "DAC_tag": "Request-Etiology",
+    "SLI_tags": []
+  },
+  "sent_0020": {
+    "sentence": "Sir, I'm saying—on both sides it feels like something is pricking, like a needle, and there is a burning sensation.",
+    "NER_tags": [
+      {
+        "entity": "both sides",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "pricking, burning sensation.",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0021": {
+    "sentence": "okay This report is very old , 4 month old",
+    "NER_tags": [
+      {
+        "entity": "4 month",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0022": {
+    "sentence": "yes sir Sir I have a kid also",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0023": {
+    "sentence": "just get admitted for 1 or 2 days , hopefully it will be done by tomorrow, if your endoscopy is needed then also it cants be done before the evening, when did u ate?",
+    "NER_tags": [
+      {
+        "entity": "endoscopy",
+        "type": "MEDICAL_TEST_NAME"
+      },
+      {
+        "entity": "before the evening,",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0024": {
+    "sentence": "11",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0025": {
+    "sentence": "so 4 hours are needed atleast , so endoscopy will be done in the evening and if blood transfusion is needed then till tomorrow morning it will be needed, we will look after that later after looking at the report",
+    "NER_tags": [
+      {
+        "entity": "endoscopy",
+        "type": "MEDICAL_TEST_NAME"
+      },
+      {
+        "entity": "blood transfusion",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "till tomorrow",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Inform-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0026": {
+    "sentence": "okay",
+    "NER_tags": [],
+    "DAC_tag": "Inform-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0027": {
+    "sentence": "atleast getting admitted for 1 day is needed when there is black stool perticularly",
+    "NER_tags": [
+      {
+        "entity": "black stool",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "perticularly",
+        "type": "SYMPTOM_FREQUENCY"
+      }
+    ],
+    "DAC_tag": "Inform-Medical_Advice",
+    "SLI_tags": []
+  },
+  "sent_0028": {
+    "sentence": "sir medicine?",
+    "NER_tags": [],
+    "DAC_tag": "Other",
+    "SLI_tags": []
+  },
+  "sent_0029": {
+    "sentence": "but medicine could not controlled the problem in your case",
+    "NER_tags": [],
+    "DAC_tag": "Request-Medical_Advice",
+    "SLI_tags": []
+  }
+}

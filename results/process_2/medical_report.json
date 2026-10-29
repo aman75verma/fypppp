@@ -1,0 +1,83 @@
+{
+  "chief_complaint": [
+    {
+      "sentence_id": "sent_0003",
+      "speaker": "Patient",
+      "sentence": "But recently, for the past few days, I'm noticing a slight burning sensation and some pain again.",
+      "NER_tags": [
+        {
+          "entity": "recently, for few days,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "burning sensation pain",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0007",
+      "speaker": "Patient",
+      "sentence": "This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you.",
+      "NER_tags": [
+        {
+          "entity": "gas burning sensation",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "history_of_present_illness": [
+    {
+      "sentence_id": "sent_0002",
+      "speaker": "Patient",
+      "sentence": "I had come to you once before—it had improved then.",
+      "NER_tags": [
+        {
+          "entity": "once before—it",
+          "type": "TEMPORAL"
+        }
+      ],
+      "DAC_tag": "Request-Basic_Information",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0003",
+      "speaker": "Patient",
+      "sentence": "But recently, for the past few days, I'm noticing a slight burning sensation and some pain again.",
+      "NER_tags": [
+        {
+          "entity": "recently, for few days,",
+          "type": "TEMPORAL"
+        },
+        {
+          "entity": "burning sensation pain",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    },
+    {
+      "sentence_id": "sent_0007",
+      "speaker": "Patient",
+      "sentence": "This time, the gas has reduced quite a bit, but the burning sensation hasn't completely gone away—that's why I've come to see you.",
+      "NER_tags": [
+        {
+          "entity": "gas burning sensation",
+          "type": "SYMPTOM_VALUE"
+        }
+      ],
+      "DAC_tag": "Inform-Symptom",
+      "SLI_tags": []
+    }
+  ],
+  "suggestions": [],
+  "diagnosis": [],
+  "past_medical_history": [],
+  "social_history": []
+}

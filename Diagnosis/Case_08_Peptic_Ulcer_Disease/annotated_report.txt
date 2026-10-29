@@ -1,0 +1,49 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 8: Refractory Epigastric Pain with Acid Peptic Dyspepsia
+===========================================================================
+Expected Clinical Diagnosis: Peptic Ulcer Disease (PUD) / Gastric Erosion
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "Not able to eat properly—whatever is eaten turns into gas."
+      Dialogue Act: [Request-Basic_Information]
+      Extracted Medical Entities: Not able to eat (SYMPTOM_VALUE)
+  [2] "My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago."
+      Dialogue Act: [Inform-Existing_Examination_and_Treatment]
+      Extracted Medical Entities: blood level (SYMPTOM_VALUE), about 2 weeks ago, 2–4 days ago. (TEMPORAL)
+  [3] "For about 2 weeks—since the time my blood level dropped"
+      Dialogue Act: [Request-Symptom]
+      Extracted Medical Entities: weeks—since (TEMPORAL), blood level (SYMPTOM_VALUE)
+  [4] "After going there, she was fine for a few days, but then complications started again."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: complications (SYMPTOM_VALUE)
+  [5] "She's not able to eat properly."
+      Dialogue Act: [Request-Basic_Information]
+      Extracted Medical Entities: not able to (SYMPTOM_VALUE)
+  [6] "my body is becoming very weak"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: body (SYMPTOM_LOCATION)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  [1] "A few days ago, blood level had dropped and needed a blood transfusion."
+      Entities: A few days ago, (TEMPORAL), blood transfusion. (MEDICAL_HISTORY_VALUE)
+  [2] "My blood level dropped about 2 weeks ago, and I was given blood 2–4 days ago."
+      Entities: blood level (SYMPTOM_VALUE), about 2 weeks ago, 2–4 days ago. (TEMPORAL)
+  [3] "no there was blood test in the hospital and the doctor there told that everything is fine."
+      Entities: no there (POLARITY), blood test (MEDICAL_TEST_NAME)
+  [4] "no they have written that its fine"
+      Entities: no (POLARITY)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Malabsorption
+  Secondary / Differential Diagnoses: Iron deficiency Anemia due to chronic blood loss or malabsorption
+
+  Pathophysiological Clinical Reasoning:
+    the patient's gastrointestinal symptoms are indicative of malabsorption, which can lead to vitamin and mineral deficiencies including iron, resulting in anemia. Confirmatory investigations would include serologic testing for celiac disease antibodies such as anti-tissue transglutaminase (anti-TTG) or endomysial antibody (EMA), and further evaluation of iron status through complete blood count (CBC) with peripheral smear examination and serum iron studies.
+
+  Recommended Diagnostic Investigations & Workup:
+    (Routine clinical follow-up)
+
+===========================================================================

@@ -1,0 +1,87 @@
+{
+  "sent_0001": {
+    "sentence": "Hello, what brings you in today?",
+    "NER_tags": [],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0002": {
+    "sentence": "Doctor, I have severe pain in my upper abdomen and I have been vomiting since morning.",
+    "NER_tags": [
+      {
+        "entity": "severe",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "pain",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "upper abdomen",
+        "type": "SYMPTOM_LOCATION"
+      },
+      {
+        "entity": "vomiting",
+        "type": "SYMPTOM_VALUE"
+      },
+      {
+        "entity": "since morning.",
+        "type": "TEMPORAL"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0003": {
+    "sentence": "How long have you had this pain?",
+    "NER_tags": [
+      {
+        "entity": "pain?",
+        "type": "SYMPTOM_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Basic_Information",
+    "SLI_tags": []
+  },
+  "sent_0004": {
+    "sentence": "For about two days, and it gets worse in the heat.",
+    "NER_tags": [
+      {
+        "entity": "gets worse in the",
+        "type": "SYMPTOM_CHARACTERISTICS"
+      },
+      {
+        "entity": "heat.",
+        "type": "EXPOSURE_VALUE"
+      }
+    ],
+    "DAC_tag": "Inform-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0005": {
+    "sentence": "Any history of stomach ulcers?",
+    "NER_tags": [
+      {
+        "entity": "stomach ulcers?",
+        "type": "MEDICAL_HISTORY_VALUE"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  },
+  "sent_0006": {
+    "sentence": "No, but I took pain medications last week.",
+    "NER_tags": [
+      {
+        "entity": "No,",
+        "type": "POLARITY"
+      },
+      {
+        "entity": "pain medications",
+        "type": "MEDICATION"
+      }
+    ],
+    "DAC_tag": "Request-Symptom",
+    "SLI_tags": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - There is abdominal pain, and when food stays here, it feels swollen or bloated. [Symptoms: abdominal pain, | Characteristics: swollen]\n  - yes My abdomen feels swollen, and my body—hands and feet—also get swollen [Location: abdomen, body—hands feet—also | Characteristics: swollen,]\n  - I have bowel movements once every two days. [Symptoms: bowel movements | Frequency: once every two days.]\n  - bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this [Symptoms: bowel movement]\n  - okay , And I'm not able to digest food properly; my stomach stays bloated [Symptoms: able to, bloated | Location: stomach]\n\nHISTORY OF PRESENT ILLNESS:\n  - There is abdominal pain, and when food stays here, it feels swollen or bloated.\n  - yes My abdomen feels swollen, and my body—hands and feet—also get swollen\n  - I have bowel movements once every two days.\n  - bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this [Timeline: moths]\n  - okay , And I'm not able to digest food properly; my stomach stays bloated",
+  "prediction": {
+    "primary_diagnosis": "Celiac disease",
+    "secondary_diagnoses": [
+      "Irritable Bowel Syndrome (IBS) or Inflammatory Bowel Disease (IBD)"
+    ],
+    "clinical_reasoning": "The patient's chief complaint includes abdominal pain and bloating, as well as swelling of the abdomen and extremities. The patient also reports infrequent bowel movements and difficulty digesting food properly. Based on these symptoms, a possible primary diagnosis is Celiac disease. Secondary diagnoses could include Irritable Bowel Syndrome (IBS) or Inflammatory Bowel Disease (IBD). To confirm the diagnosis, recommended tests include blood tests for antibodies associated with celiac disease, such as anti-endomysial antibody test and anti-tissue transglutaminase antibody test. Additionally, an endoscopy may be performed to evaluate the small intestine for damage characteristic of celiac disease.",
+    "recommended_tests": [
+      "blood tests for antibodies associated with celiac disease",
+      "such as anti",
+      "endomysial antibody test",
+      "anti",
+      "tissue transglutaminase antibody test. Additionally",
+      "an endoscopy may be performed to evaluate the small intestine for damage characteristic of celiac disease."
+    ]
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

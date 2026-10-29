@@ -1,0 +1,19 @@
+{
+  "model_name": "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext",
+  "max_seq_len": 264,
+  "context_window": 3,
+  "batch_size": 32,
+  "num_epochs": 15,
+  "backbone_lr": 1e-05,
+  "classifier_lr": 5e-05,
+  "weight_decay": 0.05,
+  "warmup_ratio": 0.1,
+  "focal_gamma": 3.0,
+  "dropout": 0.2,
+  "patience": 5,
+  "freeze_layers": 4,
+  "best_epoch": 6,
+  "best_val_f1": 0.8590263271318984,
+  "test_f1": 0.8644697278262791,
+  "test_accuracy": 0.8611670020120724
+}

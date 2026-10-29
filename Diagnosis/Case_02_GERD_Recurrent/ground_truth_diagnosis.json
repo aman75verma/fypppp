@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Gastroesophageal Reflux Disease (GERD) with Recurrent Acid Peptic Disease",
+  "secondary_diagnoses": [
+    "Non-Erosive Reflux Disease (NERD)",
+    "Mild Acute Gastritis"
+  ],
+  "clinical_reasoning": "Patient with a history of responsive acid peptic disease presents with breakthrough epigastric and retrosternal burning and pain despite self-resuming prior acid-suppressing medication. While excessive gas symptoms responded to treatment, refractory mucosal burning indicates ongoing gastric hyperacidity or subacute mucosal irritation characteristic of GERD / recurrent gastritis.",
+  "recommended_tests": [
+    "Upper GI Endoscopy (Esophagogastroduodenoscopy / EGD)",
+    "Helicobacter pylori Stool Antigen Test or Urea Breath Test",
+    "Complete Blood Count (CBC)",
+    "Trial of optimized Proton Pump Inhibitor (PPI) and mucosal protectant therapy"
+  ]
+}

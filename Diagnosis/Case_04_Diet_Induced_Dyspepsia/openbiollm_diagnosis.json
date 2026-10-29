@@ -1,0 +1,18 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - Whatever I eat causes pinching effect in my stomach—like if I eat chickpeas, it causes pinching trouble; even eating peanuts causes discomfort. [Symptoms: pinching effect, pinching discomfort. | Location: stomach—like]\n  - And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain [Symptoms: stomach pain]\n  - Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning [Symptoms: burning churning | Location: stomach stomach | Characteristics: mild,]\n  - The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood). [Symptoms: bowel movement, dysentery(loose | Location: bowels | Characteristics: incomplete, uneasy]\n\nHISTORY OF PRESENT ILLNESS:\n  - Whatever I eat causes pinching effect in my stomach—like if I eat chickpeas, it causes pinching trouble; even eating peanuts causes discomfort.\n  - And I can't tolerate rich food at all—if I eat rich food, even a little meat, it leads to stomach pain\n  - It has been happening for about two months. [Timeline: for two months.]\n  - Earlier it was mild, but now the irritation in the stomach has increased—it feels like the stomach is constantly burning or churning\n  - The bowels don't feel completely clear—even if there is some bowel movement in the morning, it still feels like there's an incomplete, uneasy sensation remaining like dysentery(loose motion with mucus/blood).\n  - Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks. [Timeline: 1–2 weeks.]\n\nPAST MEDICAL HISTORY:\n  - Yes, that's what I'm saying—some medicines that are usually given to reduce these issues could cause problems for the baby if you conceive, and you might not realize it immediately—you may only find out after 1–2 weeks.",
+  "prediction": {
+    "primary_diagnosis": "Gastric Ulcer",
+    "secondary_diagnoses": [
+      "Peptic Ulcer Disease",
+      "Gastroenteritis",
+      "or Helicobacter pylori infection"
+    ],
+    "clinical_reasoning": "the patient's symptoms are indicative of an ulcerated lesion in the stomach, which can cause discomfort upon ingestion of certain foods and lead to GERD symptoms",
+    "recommended_tests": [
+      "endoscopy with biopsy",
+      "stool testing for H. pylori."
+    ]
+  },
+  "api_used": true,
+  "model": "OpenBioLLM-8B (Local Ollama)"
+}

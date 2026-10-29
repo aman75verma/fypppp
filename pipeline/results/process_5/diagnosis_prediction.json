@@ -1,0 +1,19 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi... [Symptoms: stiff swollen dhi... | Characteristics: heavy and tight,]\n  - Okay—from below the chest? [Location: chest?]\n  - Yes, I mean there is pain. [Symptoms: pain.]\n\nHISTORY OF PRESENT ILLNESS:\n  - yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi...\n  - Okay—from below the chest?\n\nPAST MEDICAL HISTORY:\n  - I mean, earlier you had a problem and you were advised to get an endoscopy—have you done it? [Tests: endoscopy—have]\n  - Also, please get an endoscopy done and show me the report once. [Tests: endoscopy]\n\nMEDICATIONS/SUGGESTIONS:\n  - Also, please get an endoscopy done and show me the report once.",
+  "prediction": {
+    "primary_diagnosis": "Functional Gastrointestinal Disorder (FGID) / Dyspepsia",
+    "secondary_diagnoses": [
+      "Early Gastritis",
+      "Dietary / Lifestyle-Induced Bowel Dysmotility"
+    ],
+    "clinical_reasoning": "Clinical findings extracted from the consultation indicate recurring gastrointestinal symptomatology without acute surgical abdomen signs. Systematic workup is warranted to distinguish functional versus structural pathology.",
+    "recommended_tests": [
+      "Abdominal Ultrasonography (USG)",
+      "Complete Blood Count (CBC) with Differential",
+      "Basic Metabolic Panel & Liver Function Tests",
+      "Routine Stool Examination"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

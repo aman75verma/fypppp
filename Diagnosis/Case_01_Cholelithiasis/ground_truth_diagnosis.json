@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Cholelithiasis (Gallbladder Stones) with Chronic Functional Constipation",
+  "secondary_diagnoses": [
+    "Rheumatoid Arthritis (pre-existing, on medication since 2018)",
+    "Menorrhagia (heavy menstrual bleeding — resolved / under observation)"
+  ],
+  "clinical_reasoning": "Patient is an elderly female with USG-confirmed gallbladder stone (cholelithiasis) discovered during investigation of menorrhagia. The stone was deemed non-surgical at AIIMS due to absence of acute pain. Current symptoms are severe constipation (stool only every 2-3 days) and gas, classic manifestations of impaired biliary digestion and altered bowel motility. Pre-existing rheumatoid arthritis medication (e.g. NSAIDs/DMARDs) may further contribute to constipation. The triad of gallstones, chronic constipation, and flatulence points toward biliary-associated gastrointestinal dysmotility.",
+  "recommended_tests": [
+    "Repeat Abdominal USG to assess gallstone status and biliary duct caliber",
+    "Liver Function Tests (LFT) including Bilirubin, ALP, and GGT",
+    "Thyroid Function Tests (TSH, FT4) to rule out secondary hypothyroidism",
+    "Complete Blood Count (CBC) to screen for occult anemia"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "primary_diagnosis": "Severe Anemia Secondary to Suspected Upper Gastrointestinal Bleed",
+  "secondary_diagnoses": [
+    "Iron Supplementation-Associated Dyspepsia & Melenoid Stool",
+    "Hypertension",
+    "Rule out Gastric / Colonic Malignancy or Bleeding Peptic Ulcer"
+  ],
+  "clinical_reasoning": "An elderly patient with acute severe anemia necessitating packed red blood cell transfusion combined with anorexia, early satiety, and blackish stool represents a medical emergency. While iron therapy produces black stools, the sudden severe blood loss in an elderly patient mandates comprehensive endoscopic evaluation to identify and exclude bleeding peptic ulcers, vascular ectasias, or occult GI neoplasms.",
+  "recommended_tests": [
+    "Upper GI Endoscopy (EGD) and Colonoscopy",
+    "Repeat Complete Blood Count (CBC) with Peripheral Blood Smear",
+    "Serum Ferritin, Iron, and Total Iron Binding Capacity (TIBC)",
+    "Fecal Occult Blood Test (iFOBT)"
+  ]
+}

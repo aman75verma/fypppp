@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTOD Pipeline Logic — 12-Tag Schema (v2)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+        :root {
+            --bg: #0F1117;
+            --card: #1A1D27;
+            --border: #2A2D3A;
+            --text: #E4E7EC;
+            --muted: #8B8FA3;
+            --accent: #6366F1;
+            --accent-soft: rgba(99, 102, 241, 0.15);
+            --green: #22C55E;
+            --green-soft: rgba(34, 197, 94, 0.15);
+            --amber: #F59E0B;
+            --amber-soft: rgba(245, 158, 11, 0.15);
+            --red: #EF4444;
+            --red-soft: rgba(239, 68, 68, 0.15);
+            --blue: #3B82F6;
+            --blue-soft: rgba(59, 130, 246, 0.15);
+            --cyan: #06B6D4;
+            --cyan-soft: rgba(6, 182, 212, 0.15);
+            --pink: #EC4899;
+            --pink-soft: rgba(236, 72, 153, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            padding: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: var(--text);
+        }
+
+        .section-block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            transition: border-color 0.2s;
+        }
+
+        .section-block:hover { border-color: var(--accent); }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .s1 .section-number { background: var(--green-soft); color: var(--green); }
+        .s2 .section-number { background: var(--blue-soft); color: var(--blue); }
+        .s3 .section-number { background: var(--amber-soft); color: var(--amber); }
+        .s4 .section-number { background: var(--cyan-soft); color: var(--cyan); }
+        .s5 .section-number { background: var(--red-soft); color: var(--red); }
+        .s6 .section-number { background: var(--pink-soft); color: var(--pink); }
+
+        .logic-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: auto;
+        }
+
+        .logic-and { background: var(--green-soft); color: var(--green); }
+        .logic-or { background: var(--amber-soft); color: var(--amber); }
+        .logic-hier { background: var(--accent-soft); color: var(--accent); }
+
+        .condition {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid var(--border);
+            padding: 0.6rem 1rem;
+            margin: 0.5rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+        }
+
+        .condition strong { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            background: rgba(99, 102, 241, 0.12);
+            color: #A5B4FC;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .note {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid var(--border);
+        }
+
+        .path {
+            margin: 0.4rem 0;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+        }
+        .path-a { background: var(--green-soft); border-left: 3px solid var(--green); }
+        .path-b { background: var(--blue-soft); border-left: 3px solid var(--blue); }
+        .path-c { background: var(--amber-soft); border-left: 3px solid var(--amber); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        th {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 0.6rem 0.8rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            border: 1px solid var(--border);
+            padding: 0.5rem 0.8rem;
+            text-align: center;
+        }
+
+        td:first-child {
+            text-align: left;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #A5B4FC;
+        }
+
+        tr:hover td { background: rgba(255,255,255,0.03); }
+
+        .check { color: var(--green); font-weight: 700; }
+        .block { color: var(--red); font-weight: 700; font-size: 0.7rem; }
+        .ctx { color: var(--amber); font-size: 0.75rem; }
+
+        .schema-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .schema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .tag-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .tag-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--muted);
+            min-width: 18px;
+        }
+
+        .design-principle {
+            background: var(--accent-soft);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .design-principle h3 {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .design-principle p {
+            font-size: 0.88rem;
+            color: var(--text);
+        }
+
+        .design-principle ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        .design-principle li { margin: 0.25rem 0; }
+    </style>
+</head>
+<body>
+
+    <h1>MediTOD Pipeline Logic &mdash; v2</h1>
+    <p class="subtitle">
+        Medical Report Generation Rules &middot; 12-Tag NER Schema &middot; 16 DAC Intents &middot; 6 Report Sections
+        <br>Updated for the collapsed tag schema (19 &rarr; 12 tags). SLI module disabled.
+    </p>
+
+    <!-- ===== TAG SCHEMA ===== -->
+    <h2>Active NER Tags (12-Tag Schema)</h2>
+    <div class="schema-card">
+        <div class="schema-grid">
+            <div class="tag-item"><span class="tag-num">1</span> <code>SYMPTOM_VALUE</code></div>
+            <div class="tag-item"><span class="tag-num">2</span> <code>SYMPTOM_LOCATION</code></div>
+            <div class="tag-item"><span class="tag-num">3</span> <code>SYMPTOM_CHARACTERISTICS</code></div>
+            <div class="tag-item"><span class="tag-num">4</span> <code>SYMPTOM_FREQUENCY</code></div>
+            <div class="tag-item"><span class="tag-num">5</span> <code>TEMPORAL</code></div>
+            <div class="tag-item"><span class="tag-num">6</span> <code>MEDICATION</code></div>
+            <div class="tag-item"><span class="tag-num">7</span> <code>MEDICAL_TEST_NAME</code></div>
+            <div class="tag-item"><span class="tag-num">8</span> <code>MEDICAL_HISTORY_VALUE</code></div>
+            <div class="tag-item"><span class="tag-num">9</span> <code>HABIT_VALUE</code></div>
+            <div class="tag-item"><span class="tag-num">10</span> <code>HABIT_FREQUENCY</code></div>
+            <div class="tag-item"><span class="tag-num">11</span> <code>EXPOSURE_VALUE</code></div>
+            <div class="tag-item"><span class="tag-num">12</span> <code>POLARITY</code></div>
+        </div>
+        <p class="note" style="margin-top: 1rem;">
+            <code>POLARITY</code> and <code>TEMPORAL</code> are <strong>cross-cutting super-tags</strong>: they appear alongside entities in every report section and do not independently route a sentence. They are used as <em>enrichment</em>, never as primary routing signals.
+        </p>
+    </div>
+
+    <!-- ===== SECTION LOGIC ===== -->
+    <h2>Report Section Routing Logic</h2>
+
+    <!-- 1. Chief Complaint -->
+    <div class="section-block s1">
+        <div class="section-title">
+            <span class="section-number">1</span>
+            Chief Complaint (CC)
+            <span class="logic-label logic-and">AND logic</span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.75rem;">
+            Captures what brought the patient in. Requires both a symptom-class NER entity <em>and</em> a symptom-informing DAC intent.
+        </p>
+        <div class="condition">
+            <strong>NER (any of):</strong><br>
+            <code>SYMPTOM_VALUE</code> &nbsp; <code>SYMPTOM_LOCATION</code>
+        </div>
+        <div class="condition">
+            <strong>DAC (any of):</strong><br>
+            <code>Inform-Symptom</code> &nbsp; <code>Inform-Basic_Information</code>
+        </div>
+        <p class="note">
+            <strong>Why only these NER tags?</strong> In the collapsed schema, <code>DISEASE_VALUE</code> has been merged into <code>SYMPTOM_VALUE</code>, so conditions like "diabetes" and "hypertension" are automatically captured here. <code>SYMPTOM_LOCATION</code> provides anatomical grounding ("chest pain", "lower back").
+        </p>
+        <p class="note">
+            <strong>POLARITY co-occurrence:</strong> If <code>POLARITY</code> appears alongside <code>SYMPTOM_VALUE</code> (e.g., "no fever"), the sentence still routes to CC but should be rendered with the negation preserved in the report ("Patient denies fever").
+        </p>
+    </div>
+
+    <!-- 2. History of Present Illness -->
+    <div class="section-block s2">
+        <div class="section-title">
+            <span class="section-number">2</span>
+            History of Present Illness (HPI)
+            <span class="logic-label logic-and">AND logic</span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.75rem;">
+            Captures the timeline, quality, and pattern of the current complaint. The NER tags here are <em>modifiers</em> of symptoms, not the symptoms themselves.
+        </p>
+        <div class="condition">
+            <strong>NER (any of):</strong><br>
+            <code>SYMPTOM_CHARACTERISTICS</code> &nbsp; <code>SYMPTOM_FREQUENCY</code> &nbsp; <code>SYMPTOM_LOCATION</code> &nbsp; <code>TEMPORAL</code>
+        </div>
+        <div class="condition">
+            <strong>DAC (any of):</strong><br>
+            <code>Inform-Basic_Information</code> &nbsp; <code>Inform-Symptom</code> &nbsp; <code>Inform-Etiology</code>
+        </div>
+        <p class="note">
+            <strong>TEMPORAL routing:</strong> In the old schema, <code>SYMPTOM_WHEN</code> was HPI-exclusive. Now that it is collapsed into <code>TEMPORAL</code>, the DAC intent disambiguates: <code>TEMPORAL</code> + <code>Inform-Symptom</code> &rarr; HPI, while <code>TEMPORAL</code> + <code>Inform-Existing_Examination_and_Treatment</code> &rarr; PMH. The tag alone is never sufficient.
+        </p>
+        <p class="note">
+            <strong>Overlap with CC:</strong> <code>SYMPTOM_LOCATION</code> legitimately appears in both CC and HPI. A sentence like "burning pain in the chest since two weeks" satisfies <em>both</em> sections &mdash; the pipeline should route it to <em>both</em> CC (for the symptom) and HPI (for the characteristics + temporal detail).
+        </p>
+    </div>
+
+    <!-- 3. Past Medical History -->
+    <div class="section-block s3">
+        <div class="section-title">
+            <span class="section-number">3</span>
+            Past Medical History (PMH)
+            <span class="logic-label logic-hier">Hierarchical OR</span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.75rem;">
+            Uses a three-path hierarchical acceptance strategy. A sentence qualifies via <em>any</em> path.
+        </p>
+        <div class="path path-a">
+            <strong>Path A &mdash; Strong NER Signal (Free NER):</strong><br>
+            Contains <code>MEDICAL_HISTORY_VALUE</code> OR <code>MEDICAL_TEST_NAME</code> &rarr; <strong>Accept regardless of DAC tag.</strong><br>
+            <em>Rationale:</em> These tags have near-zero false positive rates (precision &gt;90% in our model). If the NER model says "tuberculosis 5 years ago" is <code>MEDICAL_HISTORY_VALUE</code>, trust it.
+        </div>
+        <div class="path path-b">
+            <strong>Path B &mdash; Strong DAC Signal (Free DAC):</strong><br>
+            DAC = <code>Inform-Existing_Examination_and_Treatment</code> &rarr; Accept if <em>any</em> non-O NER entity exists.<br>
+            <em>Rationale:</em> This intent almost always indicates discussion of prior tests, surgeries, or treatments. Even if NER only picks up <code>TEMPORAL</code> or <code>MEDICATION</code>, the sentence belongs in PMH.
+        </div>
+        <div class="path path-c">
+            <strong>Path C &mdash; Conditional DAC (requires NER confirmation):</strong><br>
+            DAC = <code>Inform-Basic_Information</code> OR <code>Inform-Medical_Advice</code> OR <code>Inform-Drug_Recommendation</code> OR <code>Inform-Precautions</code><br>
+            &rarr; ONLY accept if <code>MEDICAL_HISTORY_VALUE</code> is present.<br>
+            <em>Rationale:</em> These DAC tags are broad &mdash; they could describe current treatment or past events. We only route to PMH when NER explicitly confirms historical content.
+        </div>
+        <p class="note">
+            <strong>TEMPORAL enrichment:</strong> If <code>TEMPORAL</code> co-occurs with <code>MEDICAL_HISTORY_VALUE</code> (e.g., "had TB five years ago"), include the temporal span in the PMH report entry.
+        </p>
+    </div>
+
+    <!-- 4. Social History -->
+    <div class="section-block s4">
+        <div class="section-title">
+            <span class="section-number">4</span>
+            Social History (SH)
+            <span class="logic-label logic-and">NER-driven</span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.75rem;">
+            Captures lifestyle, habits, and environmental exposures. NER is the primary routing signal; DAC acts as a soft filter.
+        </p>
+        <div class="condition">
+            <strong>NER (any of):</strong><br>
+            <code>HABIT_VALUE</code> &nbsp; <code>HABIT_FREQUENCY</code> &nbsp; <code>EXPOSURE_VALUE</code>
+        </div>
+        <div class="condition">
+            <strong>DAC (any of &mdash; soft filter):</strong><br>
+            <code>Inform-Basic_Information</code> &nbsp; <code>Inform-Symptom</code> &nbsp; <code>Inform-Etiology</code> &nbsp; <code>Inform-Existing_Examination_and_Treatment</code>
+        </div>
+        <div class="condition">
+            <strong>Exclusion:</strong><br>
+            If <code>MEDICAL_HISTORY_VALUE</code> is also present &rarr; route to PMH instead (medical history takes precedence over social context).
+        </div>
+        <p class="note">
+            <strong>POLARITY + HABIT_VALUE:</strong> Sentences like "no, I don't smoke" contain <code>POLARITY</code> + <code>HABIT_VALUE</code>. The negation should be rendered in the report ("Patient denies smoking"). This combination is clinically important &mdash; absence of risk factors is as valuable as their presence.
+        </p>
+        <p class="note">
+            <strong>Wide DAC acceptance:</strong> Social history questions from doctors frequently get classified as <code>Request-Etiology</code> or <code>Inform-Etiology</code> ("What kind of work do you do?" &rarr; understanding occupational exposure). The DAC filter is intentionally broad here.
+        </p>
+    </div>
+
+    <!-- 5. Diagnosis -->
+    <div class="section-block s5">
+        <div class="section-title">
+            <span class="section-number">5</span>
+            Diagnosis (Dx)
+            <span class="logic-label logic-and">Strict AND + Blocker</span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.75rem;">
+            The strictest routing. Requires a doctor-side diagnosis intent <em>and</em> a disease/symptom entity, with explicit blockers to prevent past-history contamination.
+        </p>
+        <div class="condition">
+            <strong>DAC (required &mdash; one of):</strong><br>
+            <code>Diagnose</code> &nbsp; <code>Inform-Medical_Advice</code>
+        </div>
+        <div class="condition">
+            <strong>NER (required &mdash; any of):</strong><br>
+            <code>SYMPTOM_VALUE</code>
+        </div>
+        <div class="condition" style="border-left-color: var(--red);">
+            <strong>Blocker (must NOT contain):</strong><br>
+            <code>MEDICAL_HISTORY_VALUE</code>
+        </div>
+        <p class="note">
+            <strong>Why <code>SYMPTOM_VALUE</code> for diagnosis?</strong> In the collapsed schema, <code>DISEASE_VALUE</code> was merged into <code>SYMPTOM_VALUE</code>. So "diabetes", "hypertension", "GERD" are all <code>SYMPTOM_VALUE</code> entities. The <code>Diagnose</code> DAC intent is what distinguishes a <em>diagnosis statement</em> from a <em>symptom report</em>.
+        </p>
+        <p class="note">
+            <strong>Speaker awareness:</strong> Per our DAC error analysis, <code>Diagnose</code> is almost always a <em>doctor</em> utterance (100% accuracy in test set). If speaker information is available, use it as additional validation &mdash; patient utterances should never route to Dx.
+        </p>
+    </div>
+
+    <!-- 6. Medications / Suggestions -->
+    <div class="section-block s6">
+        <div class="section-title">
+            <span class="section-number">6</span>
+            Medications &amp; Suggestions (Rx)
+            <span class="logic-label logic-and">AND + Blocker</span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.75rem;">
+            Captures prescriptions, precautions, and follow-up advice from the doctor. Requires both a recommendation-class DAC intent <em>and</em> medication or advice NER entities.
+        </p>
+        <div class="condition">
+            <strong>DAC (any of):</strong><br>
+            <code>Inform-Drug_Recommendation</code> &nbsp; <code>Inform-Precautions</code> &nbsp; <code>Inform-Medical_Advice</code>
+        </div>
+        <div class="condition">
+            <strong>NER (any of):</strong><br>
+            <code>MEDICATION</code> &nbsp; <code>MEDICAL_TEST_NAME</code>
+        </div>
+        <div class="condition" style="border-left-color: var(--red);">
+            <strong>Blocker:</strong><br>
+            <code>MEDICAL_HISTORY_VALUE</code> &mdash; If present, sentence describes <em>past</em> medication, not a current prescription. Route to PMH instead.
+        </div>
+        <p class="note">
+            <strong>Why include <code>MEDICAL_TEST_NAME</code>?</strong> Doctors frequently recommend tests alongside medications: "Get an HbA1c done and continue metformin." When the DAC is <code>Inform-Medical_Advice</code>, a test name is a recommendation, not history.
+        </p>
+        <p class="note">
+            <strong>DAC-only fallback:</strong> If DAC is <code>Inform-Precautions</code> but NER finds no <code>MEDICATION</code> or <code>MEDICAL_TEST_NAME</code> (e.g., "avoid spicy food", "take rest"), still accept the sentence &mdash; precautions are often NER-light lifestyle advice. Use a soft rule: <code>Inform-Precautions</code> alone &rarr; accept with lower confidence.
+        </p>
+    </div>
+
+    <!-- ===== ROUTING TABLE ===== -->
+    <h2>NER Tag &rarr; Report Section Routing Matrix</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>NER Tag</th>
+                <th>CC</th>
+                <th>HPI</th>
+                <th>PMH</th>
+                <th>SH</th>
+                <th>Dx</th>
+                <th>Rx</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SYMPTOM_VALUE</td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td class="ctx">Primary entity</td>
+            </tr>
+            <tr>
+                <td>SYMPTOM_LOCATION</td>
+                <td class="check">&check;</td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="ctx">Primary entity</td>
+            </tr>
+            <tr>
+                <td>SYMPTOM_CHARACTERISTICS</td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="ctx">HPI modifier</td>
+            </tr>
+            <tr>
+                <td>SYMPTOM_FREQUENCY</td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="ctx">HPI modifier</td>
+            </tr>
+            <tr>
+                <td>TEMPORAL</td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td class="ctx">ctx</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="ctx">Cross-cutting enrichment</td>
+            </tr>
+            <tr>
+                <td>MEDICATION</td>
+                <td></td>
+                <td></td>
+                <td class="ctx">ctx</td>
+                <td></td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td class="ctx">Primary entity</td>
+            </tr>
+            <tr>
+                <td>MEDICAL_TEST_NAME</td>
+                <td></td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td class="ctx">Primary entity</td>
+            </tr>
+            <tr>
+                <td>MEDICAL_HISTORY_VALUE</td>
+                <td></td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td class="block">BLOCK</td>
+                <td class="block">BLOCK</td>
+                <td class="ctx">Primary entity + Blocker</td>
+            </tr>
+            <tr>
+                <td>HABIT_VALUE</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td></td>
+                <td class="ctx">Primary entity</td>
+            </tr>
+            <tr>
+                <td>HABIT_FREQUENCY</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td></td>
+                <td class="ctx">SH modifier</td>
+            </tr>
+            <tr>
+                <td>EXPOSURE_VALUE</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">&check;</td>
+                <td></td>
+                <td></td>
+                <td class="ctx">Primary entity</td>
+            </tr>
+            <tr>
+                <td>POLARITY</td>
+                <td class="ctx">ctx</td>
+                <td class="ctx">ctx</td>
+                <td class="ctx">ctx</td>
+                <td class="ctx">ctx</td>
+                <td class="ctx">ctx</td>
+                <td class="ctx">ctx</td>
+                <td class="ctx">Cross-cutting enrichment</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="note" style="margin-top: 0.5rem;">
+        <strong>Legend:</strong> <span class="check">&check;</span> = Primary routing signal &nbsp;&nbsp;
+        <span class="ctx">ctx</span> = Contextual enrichment (included if sentence qualifies via other tags) &nbsp;&nbsp;
+        <span class="block">BLOCK</span> = Presence excludes sentence from this section
+    </p>
+
+    <!-- ===== DESIGN PRINCIPLES ===== -->
+    <div class="design-principle">
+        <h3>Design Principles (v2)</h3>
+        <ul>
+            <li><strong>POLARITY and TEMPORAL never route alone.</strong> These super-tags absorbed 5+ legacy status/when tags. They enrich the sentence once it is routed by a primary entity, but are never the sole routing signal.</li>
+            <li><strong>MEDICAL_HISTORY_VALUE is a hard blocker</strong> for Dx and Rx sections. This prevents past conditions from contaminating current diagnoses ("had TB five years ago" &ne; current diagnosis) and past medications from appearing as current prescriptions.</li>
+            <li><strong>DAC-first for Dx.</strong> Diagnosis requires <code>Diagnose</code> intent &mdash; this is the highest-precision DAC class (100% accuracy). The NER alone cannot distinguish "patient reports diabetes" from "doctor diagnoses diabetes."</li>
+            <li><strong>NER-first for SH.</strong> Social history tags (<code>HABIT_VALUE</code>, <code>EXPOSURE_VALUE</code>) are semantically unique &mdash; they never appear in other clinical contexts. NER is the primary signal; DAC is a soft filter.</li>
+            <li><strong>Dual-routing is allowed.</strong> A sentence can appear in both CC and HPI (e.g., "severe burning chest pain since two weeks"). This avoids information loss.</li>
+            <li><strong>Inform-Precautions is DAC-sufficient for Rx.</strong> Lifestyle advice ("avoid spicy food") may not contain any entity but is clinically important. Accept with lower confidence.</li>
+        </ul>
+    </div>
+
+    <!-- ===== DATASET STATS ===== -->
+    <h2>Dataset Statistics (12-Tag Schema, 204 dialogues)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>Span Count</th>
+                <th>% of All</th>
+                <th>Primary Section</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>SYMPTOM_VALUE</td><td>5,607</td><td>32.8%</td><td>CC / Dx</td></tr>
+            <tr><td>SYMPTOM_LOCATION</td><td>2,022</td><td>11.8%</td><td>CC + HPI</td></tr>
+            <tr><td>MEDICATION</td><td>1,493</td><td>8.7%</td><td>Rx</td></tr>
+            <tr><td>MEDICAL_TEST_NAME</td><td>1,332</td><td>7.8%</td><td>PMH / Rx</td></tr>
+            <tr><td>HABIT_VALUE</td><td>1,216</td><td>7.1%</td><td>SH</td></tr>
+            <tr><td>EXPOSURE_VALUE</td><td>1,127</td><td>6.6%</td><td>SH</td></tr>
+            <tr><td>MEDICAL_HISTORY_VALUE</td><td>998</td><td>5.8%</td><td>PMH</td></tr>
+            <tr><td>SYMPTOM_CHARACTERISTICS</td><td>750</td><td>4.4%</td><td>HPI</td></tr>
+            <tr><td>SYMPTOM_FREQUENCY</td><td>692</td><td>4.1%</td><td>HPI</td></tr>
+            <tr><td>TEMPORAL</td><td>679</td><td>4.0%</td><td>HPI (enrichment)</td></tr>
+            <tr><td>POLARITY</td><td>662</td><td>3.9%</td><td>All (enrichment)</td></tr>
+            <tr><td>HABIT_FREQUENCY</td><td>516</td><td>3.0%</td><td>SH</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>17,094</strong></td><td></td><td></td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

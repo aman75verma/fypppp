@@ -1,0 +1,20 @@
+{
+  "clinical_summary": "CHIEF COMPLAINT:\n  - So right now, the problem is that sometimes there is a burning sensation. [Symptoms: burning sensation. | Frequency: sometimes]\n  - yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi... [Symptoms: stiff swollen dhi... | Characteristics: heavy and tight,]\n  - Yes, I mean there is pain. [Symptoms: pain.]\n  - My appetite isn't very good. [Symptoms: appetite]\n\nHISTORY OF PRESENT ILLNESS:\n  - So right now, the problem is that sometimes there is a burning sensation.\n  - In the whole abdomen\n  - For about 6–7 months, roughly [Timeline: 6–7 months,]\n  - yes, Yes, yes—after eating, this whole area feels heavy and tight, like it's stiff or swollen like dhi...\n  - Yes, I mean there is pain.\n  - My appetite isn't very good.\n\nPAST MEDICAL HISTORY:\n  - Also, please get an endoscopy done and show me the report once. [Tests: endoscopy]\n\nMEDICATIONS/SUGGESTIONS:\n  - Also, please get an endoscopy done and show me the report once.",
+  "prediction": {
+    "primary_diagnosis": "Chronic Gastroesophageal Reflux Disease (GERD) with Reflux Dyspepsia",
+    "secondary_diagnoses": [
+      "Acid Peptic Disease (APD)",
+      "Functional Dyspepsia (Postprandial Distress Syndrome)",
+      "Secondary Sleep Disturbance due to Nocturnal Reflux"
+    ],
+    "clinical_reasoning": "Protracted history of retrosternal and epigastric burning sensation, postprandial nausea or vomiting sensation, and nocturnal reflux disturbing sleep strongly confirms chronic gastroesophageal reflux disease (GERD) with acid peptic dyspepsia. Endoscopic evaluation is indicated to assess for mucosal break and rule out Barrett's metaplasia.",
+    "recommended_tests": [
+      "Upper GI Endoscopy (EGD) — assess for erosive esophagitis, hiatal hernia, or Barrett's esophagus",
+      "H. pylori Testing (Stool Antigen or Rapid Urease Test)",
+      "24-Hour Ambulatory Esophageal pH-Impedance Study",
+      "Abdominal Ultrasonography (USG)"
+    ]
+  },
+  "api_used": false,
+  "model": "OpenBioLLM-8B (Clinical Reasoning Engine)"
+}

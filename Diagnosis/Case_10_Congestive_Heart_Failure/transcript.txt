@@ -1,0 +1,51 @@
+# Process 10 Transcript
+
+Doctor: tell me whats the problem?
+
+Patient: There is abdominal pain, and when food stays here, it feels swollen or bloated.
+
+Doctor: Does your abdomen feel swollen or bloated?
+
+Patient: yes My abdomen feels swollen, and my body—hands and feet—also get swollen
+
+Doctor: Since when has this been happening?
+
+Patient: near about 1 year
+
+Doctor: 1 year?
+
+Patient: hmm
+
+Doctor: any other deaseses like sugar , pressure, thyroid?
+
+Patient: yes there is thyroid
+
+Doctor: medication taken for thyroid?
+
+Patient: yes 100 power
+
+Doctor: okay, any addiction?
+
+Patient: no there is none
+
+Doctor: bowel movement?
+
+Patient: I have bowel movements once every two days.
+
+Doctor: that problem is there for way long right?
+
+Patient: bowel movement is not getting cleared for long, for like 3 to 4 moths its happening like this
+
+Doctor: 3 – 4 moths , right? hmm, u told no addiction is there right? Is your apetite working fine?
+
+Patient: no there is probelm
+
+Doctor: any test was there? for this stomach problem?
+
+Patient: yes there was but I didn't bring the report
+
+Doctor: if you didn't bring it then what can be done, As u didn't bring it u have to do it , there is no otherwise
+
+Patient: okay , And I'm not able to digest food properly; my stomach stays bloated
+
+Doctor: The upper part of the abdomen, right? I'll examine and check it.

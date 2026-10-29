@@ -1,0 +1,339 @@
+{
+    "description": "Medical knowledge base for entity-dense synthetic data generation. Each category maps to the NER tag it should produce. Use these terms when generating synthetic doctor-patient dialogues.",
+    "schema_version": "12-tag-v1",
+    "generated_for": "MediTOD NER Synthetic Data Generation",
+
+    "SYMPTOM_VALUE": {
+        "description": "Symptom names — common and colloquial (includes former DISEASE_VALUE)",
+        "count_target": "Generate until total reaches ~6000 across all data",
+        "terms": {
+            "common_symptoms": [
+                "pain", "chest pain", "headache", "migraine", "fever", "cough",
+                "cold", "nausea", "vomiting", "diarrhea", "constipation",
+                "fatigue", "weakness", "dizziness", "shortness of breath",
+                "wheezing", "sore throat", "runny nose", "stuffy nose",
+                "sneezing", "itching", "rash", "swelling", "numbness",
+                "tingling", "tremor", "palpitations", "chest tightness",
+                "bloating", "gas", "heartburn", "acid reflux", "indigestion",
+                "loss of appetite", "weight loss", "weight gain",
+                "insomnia", "excessive sleep", "night sweats", "chills",
+                "body aches", "joint pain", "muscle pain", "back pain",
+                "neck pain", "shoulder pain", "knee pain", "hip pain",
+                "abdominal pain", "stomach pain", "cramps", "spasms",
+                "bleeding", "bruising", "discharge", "frequent urination",
+                "painful urination", "blood in urine", "blood in stool",
+                "difficulty swallowing", "hoarseness", "vision problems",
+                "hearing loss", "tinnitus", "vertigo", "fainting",
+                "anxiety", "depression", "confusion", "memory loss",
+                "seizures", "convulsions", "paralysis"
+            ],
+            "colloquial_indian_english": [
+                "burning sensation", "pinching", "churning", "heaviness",
+                "tightness", "stiffness", "swollen feeling", "rock in stomach",
+                "not able to sleep", "body discomfort", "loose motion",
+                "loose stools", "stomach upset", "gas trouble", "acidity",
+                "body pain", "whole body pain", "joint problem", "sugar problem",
+                "BP problem", "thyroid problem", "urine problem", "stone problem",
+                "menstrual bleeding", "heavy bleeding", "irregular periods",
+                "skin problem", "hair fall", "dark circles", "puffy eyes",
+                "breathlessness", "chest heaviness", "pounding heart",
+                "feeling weak", "feeling dizzy", "feeling nauseous",
+                "unwell", "uncomfortable", "uneasy",
+                "restless", "irritable", "drowsy", "lethargic"
+            ],
+            "diseases_as_symptoms": [
+                "diabetes", "blood pressure", "hypertension", "thyroid",
+                "asthma", "arthritis", "rheumatoid arthritis", "osteoarthritis",
+                "cancer", "tuberculosis", "TB", "pneumonia", "bronchitis",
+                "COPD", "heart disease", "heart attack", "stroke",
+                "kidney disease", "liver disease", "fatty liver",
+                "hepatitis", "jaundice", "anemia", "ulcer", "stomach ulcer",
+                "peptic ulcer", "GERD", "IBS", "Crohn's disease",
+                "gallstones", "kidney stones", "UTI", "urinary infection",
+                "skin infection", "fungal infection", "viral infection",
+                "COVID", "dengue", "malaria", "typhoid", "cholesterol",
+                "esophagitis", "gastritis", "colitis", "sinusitis",
+                "tonsillitis", "appendicitis", "hernia", "piles",
+                "hemorrhoids", "fistula", "abscess", "cyst",
+                "fibroids", "PCOD", "PCOS", "endometriosis"
+            ]
+        }
+    },
+
+    "POLARITY": {
+        "description": "Status/presence indicators — yes/no/present/absent/denied (merged from all STATUS tags)",
+        "count_target": "Generate until total reaches ~6000",
+        "terms": {
+            "affirmative": [
+                "yes", "yeah", "yep", "yup", "uh-huh", "correct",
+                "right", "true", "positive", "present", "confirmed",
+                "active", "chronic", "ongoing",
+                "currently", "still",
+                "yes doctor", "that's right", "I think so"
+            ],
+            "negative": [
+                "no", "nope", "nah", "not really", "never", "none",
+                "nothing", "negative", "absent", "denied", "resolved",
+                "cleared", "gone", "stopped", "no longer",
+                "not anymore", "not at all", "I don't think so",
+                "I doubt it", "unlikely", "ruled out"
+            ],
+            "status_qualifiers": [
+                "taking", "not taking", "prescribed", "stopped",
+                "quit", "never used", "used to", "currently using",
+                "nobody", "no one", "no contact", "no exposure",
+                "not aware of any", "don't think so"
+            ]
+        }
+    },
+
+    "TEMPORAL": {
+        "description": "Time references — onset, duration, when (merged SYMPTOM_WHEN + MEDICAL_HISTORY_WHEN)",
+        "count_target": "Generate until total reaches ~1500",
+        "terms": {
+            "relative_time": [
+                "yesterday", "today", "this morning", "last night",
+                "two days ago", "three days ago", "a week ago",
+                "two weeks ago", "last week", "last month",
+                "a month ago", "two months ago", "six months ago",
+                "a year ago", "two years ago", "few days ago",
+                "couple of days", "recently", "just now", "just started",
+                "since morning", "since yesterday", "since last week"
+            ],
+            "duration": [
+                "for a week", "for two weeks", "for a month",
+                "for three months", "for six months", "for a year",
+                "for two years", "about a week", "around two weeks",
+                "almost a month", "over a year", "couple of months",
+                "few weeks now", "long time", "many years"
+            ],
+            "specific_time": [
+                "2020", "2021", "2022", "2023", "2024", "2025",
+                "in January", "last summer", "during pregnancy",
+                "after surgery", "before the tests", "when I was younger",
+                "in childhood", "as a teenager", "after delivery",
+                "post-op", "pre-operative"
+            ],
+
+            "colloquial_indian": [
+                "since 2024", "6-7 months", "2-3 years", "10-15 days",
+                "from childhood", "from long time", "quite a while ago",
+                "some time ago", "very recently", "not too long ago",
+                "around noon", "after that incident"
+            ]
+        }
+    },
+
+    "SYMPTOM_CHARACTERISTICS": {
+        "description": "Quality/nature of symptoms — how it feels, looks, color",
+        "count_target": "Generate until total reaches ~800",
+        "terms": [
+            "sharp", "dull", "burning", "throbbing", "stabbing",
+            "aching", "cramping", "squeezing", "pressure-like",
+            "tingling", "shooting", "radiating", "constant", "intermittent",
+            "mild", "moderate", "severe", "intense", "unbearable",
+            "dry", "wet", "productive", "bloody", "yellow", "green",
+            "clear", "mucus", "watery", "thick", "thin",
+            "hot", "cold", "warm", "numb", "heavy",
+            "sharp pain", "dull ache", "burning pain",
+            "pressure like pain", "very sharp", "extremely painful",
+            "slightly painful", "mildly uncomfortable",
+            "comes and goes", "gets worse", "gets better",
+            "worse at night", "worse after eating", "worse with movement"
+        ]
+    },
+
+    "SYMPTOM_FREQUENCY": {
+        "description": "How often symptoms occur — CRITICALLY LOW, needs heavy generation",
+        "count_target": "Generate until total reaches ~500 (currently only 157!)",
+        "terms": [
+            "daily", "every day", "twice a day", "once a day",
+            "every other day", "every few days", "weekly",
+            "once a week", "twice a week", "three times a week",
+            "monthly", "occasionally", "sometimes", "frequently",
+            "rarely", "often", "constantly", "continuously",
+            "all the time", "non-stop", "nonstop", "on and off",
+            "intermittently", "periodically", "sporadically",
+            "every morning", "every night", "after every meal",
+            "multiple times a day", "several times",
+            "once in a while", "hardly ever", "almost never",
+            "more often lately", "less frequent now",
+            "a few times", "many times", "countless times"
+        ]
+    },
+
+    "SYMPTOM_LOCATION": {
+        "description": "Body parts and anatomical locations",
+        "count_target": "Generate until total reaches ~1000",
+        "terms": [
+            "head", "forehead", "temple", "scalp",
+            "eyes", "ears", "nose", "mouth", "throat", "neck",
+            "jaw", "teeth", "tongue", "lips", "gums",
+            "chest", "breast", "ribcage", "sternum",
+            "stomach", "abdomen", "belly", "upper abdomen", "lower abdomen",
+            "belly button", "navel area", "epigastric region",
+            "back", "lower back", "upper back", "spine",
+            "shoulder", "arm", "elbow", "wrist", "hand", "fingers",
+            "hip", "thigh", "knee", "calf", "ankle", "foot", "toes",
+            "groin", "pelvis", "buttocks",
+            "liver", "kidney", "gallbladder", "pancreas", "spleen",
+            "lung", "heart", "intestine", "colon", "rectum",
+            "bladder", "uterus", "ovaries", "prostate",
+            "skin", "joints", "muscles", "bones", "lymph nodes",
+            "whole body", "entire body", "left side", "right side",
+            "both sides", "upper part", "lower part",
+            "GB", "whole abdomen", "epigastric", "umbilical region"
+        ]
+    },
+
+    "MEDICAL_HISTORY_VALUE": {
+        "description": "Past conditions, surgeries, procedures, family history items",
+        "count_target": "Generate until total reaches ~900",
+        "terms": [
+            "hypertension", "diabetes", "high blood pressure",
+            "heart disease", "heart attack", "stroke", "cancer",
+            "surgery", "appendectomy", "cholecystectomy", "C-section",
+            "knee replacement", "hip replacement", "bypass surgery",
+            "tuberculosis", "TB", "hepatitis", "jaundice",
+            "asthma", "epilepsy", "thyroid disorder",
+            "kidney stones", "gallstones", "hernia repair",
+            "blood transfusion", "fracture", "broken bone",
+            "allergies", "drug allergy", "food allergy",
+            "rheumatoid arthritis", "osteoporosis",
+            "anemia", "bleeding disorders", "clotting disorder",
+            "mental health", "depression history", "anxiety disorder",
+            "childhood illness", "measles", "chickenpox",
+            "vaccination", "COVID", "pneumonia",
+            "stone in the GB", "gallbladder issue", "stone",
+            "previous operation", "old injury", "past surgery"
+        ]
+    },
+
+    "MEDICAL_TEST_NAME": {
+        "description": "Test and examination names — including abbreviations common in Indian English",
+        "count_target": "Generate until total reaches ~600",
+        "terms": {
+            "imaging": [
+                "X-ray", "chest X-ray", "CT scan", "MRI", "ultrasound",
+                "USG", "sonography", "ultrasonography", "PET scan",
+                "mammogram", "DEXA scan", "echocardiogram", "Echo",
+                "angiogram", "angiography", "fluoroscopy",
+                "ultrasonography report", "USG report"
+            ],
+            "blood_tests": [
+                "blood test", "blood work", "CBC", "complete blood count",
+                "blood sugar", "fasting sugar", "HbA1c", "lipid profile",
+                "liver function test", "LFT", "kidney function test", "KFT",
+                "thyroid test", "TSH", "T3", "T4",
+                "uric acid", "creatinine", "BUN", "electrolytes",
+                "ESR", "CRP", "PT INR", "coagulation test",
+                "vitamin D", "vitamin B12", "iron studies",
+                "ALT", "AST", "bilirubin", "albumin",
+                "blood culture", "urine culture", "stool test"
+            ],
+            "procedures": [
+                "endoscopy", "colonoscopy", "biopsy", "laparoscopy",
+                "bronchoscopy", "cystoscopy", "EEG", "EMG",
+                "ECG", "EKG", "Holter monitor", "stress test",
+                "treadmill test", "TMT", "pulmonary function test",
+                "spirometry", "sleep study", "bone marrow biopsy",
+                "lumbar puncture", "spinal tap",
+                "nasal swab", "throat swab", "COVID test",
+                "monospot test", "Pap smear", "PSA test"
+            ],
+            "other": [
+                "physical exam", "check-up", "follow-up",
+                "oxygen saturation", "heart rate", "BP check",
+                "temperature", "pulse", "weight check",
+                "eye exam", "hearing test", "skin test",
+                "allergy test", "patch test", "genetic test"
+            ]
+        }
+    },
+
+    "HABIT_VALUE": {
+        "description": "Substances, activities, lifestyle habits",
+        "count_target": "Generate until total reaches ~700",
+        "terms": [
+            "smoking", "cigarettes", "tobacco", "chewing tobacco",
+            "vaping", "e-cigarettes",
+            "alcohol", "drinking", "beer", "wine", "whiskey", "liquor",
+            "marijuana", "cannabis", "weed", "drugs", "cocaine",
+            "heroin", "recreational drugs", "opioids",
+            "exercise", "walking", "running", "gym", "yoga",
+            "swimming", "cycling", "sports",
+            "diet", "vegetarian", "non-vegetarian", "junk food",
+            "fast food", "caffeine", "coffee", "tea",
+            "sleep habits", "screen time", "stress",
+            "sedentary lifestyle", "physical activity"
+        ]
+    },
+
+    "HABIT_FREQUENCY": {
+        "description": "Quantified habit usage — LOW COUNT, needs heavy generation",
+        "count_target": "Generate until total reaches ~500 (currently only 213!)",
+        "terms": [
+            "a pack a day", "half a pack a day", "two packs a day",
+            "1 pack per day", "10 cigarettes a day", "5 cigarettes",
+            "2 drinks a week", "3 beers a day", "socially",
+            "on weekends", "every day", "daily", "occasionally",
+            "once in a while", "rarely", "never", "not anymore",
+            "used to", "for 10 years", "for 20 years", "for 30 years",
+            "since college", "since I was young",
+            "3 times a week", "every morning", "after meals",
+            "30 minutes daily", "1 hour daily",
+            "occasional drinker",
+            "social smoker", "chain smoker"
+        ]
+    },
+
+    "EXPOSURE_VALUE": {
+        "description": "Environmental exposures, contacts, allergens",
+        "count_target": "Generate until total reaches ~700",
+        "terms": [
+            "dust", "pollen", "mold", "pet dander", "animal hair",
+            "cats", "dogs", "birds", "pets",
+            "chemicals", "pesticides", "asbestos", "lead", "mercury",
+            "smoke", "secondhand smoke", "pollution", "fumes",
+            "sick person", "sick contact", "coworker was sick",
+            "family member was sick", "someone at school",
+            "crowded places", "public transport", "hospital visit",
+            "travel", "international travel", "rural area",
+            "construction site", "factory", "mine",
+            "cold weather", "heat", "sun exposure",
+            "insect bites", "tick bite", "mosquito bite",
+            "contaminated water", "contaminated food"
+        ]
+    },
+
+    "MEDICATION": {
+        "description": "Drug names + what they treat (merged MEDICATION_VALUE + MEDICATION_RESPONSE)",
+        "count_target": "Generate until total reaches ~1200",
+        "terms": {
+            "common_drugs": [
+                "metformin", "insulin", "aspirin", "ibuprofen",
+                "paracetamol", "acetaminophen", "Tylenol", "Advil",
+                "amoxicillin", "azithromycin", "ciprofloxacin",
+                "lisinopril", "amlodipine", "atenolol", "losartan",
+                "metoprolol", "enalapril", "hydrochlorothiazide",
+                "omeprazole", "pantoprazole", "ranitidine", "antacids",
+                "albuterol", "montelukast", "fluticasone", "inhaler",
+                "prednisone", "prednisolone", "dexamethasone",
+                "levothyroxine", "synthroid",
+                "atorvastatin", "rosuvastatin", "simvastatin",
+                "warfarin", "clopidogrel", "heparin",
+                "gabapentin", "pregabalin", "tramadol",
+                "sertraline", "fluoxetine", "escitalopram",
+                "diazepam", "lorazepam", "alprazolam",
+                "tenofovir", "entecavir", "ribavirin",
+                "spironolactone", "furosemide",
+                "pain relief", "pain medications", "painkillers",
+                "antibiotics", "antihistamines", "steroids",
+                "blood thinners", "beta blockers", "calcium supplements",
+                "iron supplements", "multivitamins", "probiotics",
+                "eye drops", "ear drops", "cough syrup",
+                "OTC medicine", "herbal medicine"
+            ]
+        }
+    }
+}

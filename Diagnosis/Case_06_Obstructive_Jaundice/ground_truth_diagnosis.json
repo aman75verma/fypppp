@@ -1,0 +1,14 @@
+{
+  "primary_diagnosis": "Choledocholithiasis / Biliary Calculi with Intermittent Obstructive Jaundice",
+  "secondary_diagnoses": [
+    "Dehydration-Induced Urine Concentration exacerbating visible chromaturia",
+    "Tobacco Use Disorder (Bidi smoker)"
+  ],
+  "clinical_reasoning": "Documented 2-month history of gallbladder/biliary calculus with prior jaundice. Current presentation of episodic dark yellow urine following heavy physical exertion in heat is a combination of transient biliary ductal obstruction (migrating calculus) and heat-induced concentrated dehydration. Repeating hepatobiliary imaging and liver enzymes is critical to confirm stone clearance versus persistent choledocholithiasis.",
+  "recommended_tests": [
+    "High-Resolution Abdominal Ultrasonography (USG Hepatobiliary System)",
+    "Liver Function Tests (Total & Direct Bilirubin, AST, ALT, Alkaline Phosphatase)",
+    "Urine Routine and Microscopy (Urobilinogen & Bile Salts)",
+    "MRCP (Magnetic Resonance Cholangiopancreatography) if ductal dilatation is observed"
+  ]
+}

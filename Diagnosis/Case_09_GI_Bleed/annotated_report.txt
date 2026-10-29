@@ -1,0 +1,41 @@
+===========================================================================
+MEDITOD CLINICAL CASE DOSSIER: Case 9: Acute Upper/Lower Gastrointestinal Hemorrhage
+===========================================================================
+Expected Clinical Diagnosis: Gastrointestinal Bleed (Upper vs Lower GI Hemorrhage)
+AI Model Utilized: OpenBioLLM-8B (Local Ollama)
+Execution Latency: N/As | Live API: True
+---------------------------------------------------------------------------
+
+1. PRESENTING CHIEF COMPLAINT (DE-CONTAMINATED):
+  [1] "sir for the last 7 months there is pain in my abdomen like burning sensation"
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: for last 7 months (TEMPORAL), pain (SYMPTOM_VALUE), abdomen (SYMPTOM_LOCATION), burning sensation (SYMPTOM_CHARACTERISTICS)
+  [2] "But still, I notice blood passing with the stool."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: blood (SYMPTOM_VALUE), stool. (SYMPTOM_LOCATION)
+  [3] "since yesterday The stool is completely black like tar, and there is blood mixed with it, First, in the morning when I passed stool, there was fresh blood."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: since yesterday (TEMPORAL), black (SYMPTOM_CHARACTERISTICS), blood (SYMPTOM_VALUE)
+  [4] "Sir, I'm saying—on both sides it feels like something is pricking, like a needle, and there is a burning sensation."
+      Dialogue Act: [Inform-Symptom]
+      Extracted Medical Entities: sides (SYMPTOM_LOCATION), pricking, burning (SYMPTOM_CHARACTERISTICS)
+
+2. PAST MEDICAL HISTORY & DIAGNOSTIC TESTS (ISOLATED):
+  [1] "I went up for checking to doctor , did the endroscopy also 4 months ago , I had an ulcer in my stomach—I tested positive for it"
+      Entities: 4 months ago (TEMPORAL), ulcer (MEDICAL_HISTORY_VALUE), stomach—I (SYMPTOM_LOCATION)
+  [2] "Endoscopy is also needed, blood transfusion might also be needed, okay It's quite possible that the bleeding is coming from here and hasn't stopped yet."
+      Entities: Endoscopy blood transfusion (MEDICAL_TEST_NAME), bleeding (SYMPTOM_VALUE)
+  [3] "so 4 hours are needed atleast , so endoscopy will be done in the evening and if blood transfusion is needed then till tomorrow morning it will be needed, we will look after that later after looking at the report"
+      Entities: endoscopy (MEDICAL_TEST_NAME), blood (SYMPTOM_VALUE), transfusion (MEDICAL_HISTORY_VALUE), till tomorrow (TEMPORAL)
+
+3. OPENBIOLLM-8B PREDICTED DIAGNOSTIC EVALUATION:
+  Primary Diagnosis: Melena (Upper GI Bleed)
+  Secondary / Differential Diagnoses: peptic ulcer disease with complications such as bleeding or perforation, ischemic colitis, diverticulosis with bleeding, or malignancy in the colon or stomach. Further evaluation is needed through endoscopy, possibly a blood transfusion to address the acute presentation of gastrointestinal bleeding.
+
+  Pathophysiological Clinical Reasoning:
+    The patient's chief complaint includes abdominal pain with a burning sensation and blood in the stool, which is consistent with gastrointestinal bleeding. The history of present illness reveals an ulcer in the stomach confirmed by endoscopy 4 months ago. The recent change in stool color to black indicates melena, suggesting active upper gastrointestinal bleeding. The location of the pain on both sides suggests possible involvement of the colon or small intestine. A differential diagnosis for this patient may include peptic ulcer disease with complications such as bleeding or perforation, ischemic colitis, diverticulosis with bleeding, or malignancy in the colon or stomach. Further evaluation is needed through endoscopy and possibly a blood transfusion to address the acute presentation of gastrointestinal bleeding.
+
+  Recommended Diagnostic Investigations & Workup:
+    (Routine clinical follow-up)
+
+===========================================================================
